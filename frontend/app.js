@@ -4936,7 +4936,11 @@ window.fetchCurrentState = fetchCurrentState;
 let aboutPreviousView = "home";
 
 function openAboutDeveloperPage() {
-    window.location.href = "about.html";
+    if (window.location.pathname.startsWith("/bikkad")) {
+        window.location.href = "/bikkad/about.html";
+    } else {
+        window.location.href = "about.html";
+    }
 }
 window.openAboutDeveloperPage = openAboutDeveloperPage;
 

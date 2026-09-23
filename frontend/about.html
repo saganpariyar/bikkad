@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sagan Pariyar - Principal Data Engineer &amp; Co-Founder | Sobha IT Solutions</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=23">
+    <link rel="stylesheet" href="style.css?v=36">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -594,7 +594,7 @@
     <!-- Top Sticky Navigation -->
     <header class="about-standalone-navbar">
         <div class="about-nav-left">
-            <a href="index.html" class="btn-nav-back" title="Return to Desi Card Games Hub">
+            <a href="index.html" onclick="returnToHub(); return false;" class="btn-nav-back" title="Return to Desi Card Games Hub">
                 ← <span>Back to Games Hub</span>
             </a>
             <div class="about-nav-brand">
@@ -611,7 +611,7 @@
                 <span class="text-en">🌐 हिंदी</span>
                 <span class="text-hi">🌐 English</span>
             </button>
-            <a href="index.html" class="btn-nav-play">
+            <a href="index.html" onclick="returnToHub(); return false;" class="btn-nav-play">
                 ▶ Play Games
             </a>
         </div>
@@ -1014,10 +1014,10 @@
 
         <!-- Action Links -->
         <div class="bottom-action-bar">
-            <a href="index.html" class="btn-nav-play" style="padding: 14px 36px; font-size: 1.1rem;">
+            <a href="index.html" onclick="returnToHub(); return false;" class="btn-nav-play" style="padding: 14px 36px; font-size: 1.1rem;">
                 🎮 Play Desi Card Games Now
             </a>
-            <a href="index.html" class="btn-nav-back" style="padding: 14px 28px; font-size: 1rem;">
+            <a href="index.html" onclick="returnToHub(); return false;" class="btn-nav-back" style="padding: 14px 28px; font-size: 1rem;">
                 ← Back to Home Lobby
             </a>
         </div>
@@ -1025,6 +1025,14 @@
     </main>
 
     <script>
+        function returnToHub() {
+            if (window.location.pathname.startsWith('/bikkad')) {
+                window.location.href = '/bikkad/';
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
         function toggleStandaloneAboutLang() {
             const body = document.getElementById('about-page-body');
             if (body.classList.contains('body-lang-en')) {
