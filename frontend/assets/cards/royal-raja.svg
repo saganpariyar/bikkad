@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 135" width="100%" height="100%">
+  <!-- Royal Rajput Maharaja Miniature Bust -->
+  <!-- Background Aura / Halo (Prabhavali) -->
+  <circle cx="50" cy="54" r="32" fill="#fef08a" opacity="0.35" stroke="#facc15" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Royal Rajasthani Safa (Turban) -->
+  <!-- Main Turban Volume -->
+  <path d="M 22 44 Q 50 20 78 44 Q 82 54 75 58 Q 50 62 25 58 Q 18 52 22 44 Z" fill="#b91c1c"/>
+  <path d="M 26 42 Q 50 26 74 42" fill="none" stroke="#facc15" stroke-width="2"/>
+  <path d="M 28 48 Q 50 34 72 48" fill="none" stroke="#facc15" stroke-width="1.5"/>
+
+  <!-- Turban Kalgi (Jeweled Feather / Crest) -->
+  <path d="M 32 36 Q 30 18 36 12 Q 38 20 36 34 Z" fill="#facc15" stroke="#ca8a04" stroke-width="0.8"/>
+  <circle cx="34" cy="36" r="3" fill="#1e3a8a" stroke="#facc15" stroke-width="0.8"/>
+  <circle cx="34" cy="36" r="1.2" fill="#ffffff"/>
+
+  <!-- Royal Pearl Turban Band (Sarpech) -->
+  <path d="M 26 53 Q 50 58 74 53" fill="none" stroke="#fef08a" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3,1"/>
+
+  <!-- Face (Warm Golden Tone) -->
+  <ellipse cx="50" cy="68" rx="19" ry="22" fill="#fbcfe8" opacity="0.15"/>
+  <ellipse cx="50" cy="68" rx="18" ry="21" fill="#fcd34d" opacity="0.95" stroke="#d97706" stroke-width="0.8"/>
+
+  <!-- Majestic Eyebrows -->
+  <path d="M 35 62 Q 42 58 48 62" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 65 62 Q 58 58 52 62" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Royal Almond Eyes with Kohl (Surma) -->
+  <ellipse cx="41" cy="66" rx="5" ry="3.2" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+  <circle cx="41" cy="66" r="2.2" fill="#0f172a"/>
+  <circle cx="40" cy="65" r="0.7" fill="#ffffff"/>
+
+  <ellipse cx="59" cy="66" rx="5" ry="3.2" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+  <circle cx="59" cy="66" r="2.2" fill="#0f172a"/>
+  <circle cx="58" cy="65" r="0.7" fill="#ffffff"/>
+
+  <!-- Sharp Rajput Nose & Tilak -->
+  <path d="M 50 61 L 50 72 L 48 74" fill="none" stroke="#b45309" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="50" cy="62" r="1.4" fill="#dc2626"/>
+
+  <!-- Imperial Moustache & Trimmed Rajput Beard -->
+  <path d="M 50 78 Q 42 75 32 77 Q 27 79 26 75 Q 31 73 40 75 Q 46 76 50 78 Q 54 76 60 75 Q 69 73 74 75 Q 73 79 68 77 Q 58 75 50 78 Z" 
+        fill="#0f172a"/>
+  <!-- Royal Beard Contour -->
+  <path d="M 37 83 Q 50 94 63 83 Q 50 90 37 83 Z" fill="#1e293b"/>
+
+  <!-- Lips -->
+  <line x1="45" y1="82" x2="55" y2="82" stroke="#b91c1c" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Royal Angrakha (Sherwani Robe) -->
+  <path d="M 30 96 L 16 135 L 84 135 L 70 96 Q 50 102 30 96 Z" fill="#0f766e" stroke="#115e59" stroke-width="1.2"/>
+  <!-- Gold Embroidered Placket -->
+  <path d="M 50 99 L 50 135" stroke="#facc15" stroke-width="3"/>
+  <path d="M 44 98 Q 50 102 56 98" fill="none" stroke="#facc15" stroke-width="2"/>
+
+  <!-- Royal Pearl Necklace (Kanthi Haar) -->
+  <path d="M 33 104 Q 50 120 67 104" fill="none" stroke="#fef08a" stroke-width="3" stroke-dasharray="3,1.5"/>
+  <circle cx="50" cy="116" r="4.5" fill="#dc2626" stroke="#facc15" stroke-width="1"/>
+  <circle cx="50" cy="116" r="1.8" fill="#fef08a"/>
+</svg>

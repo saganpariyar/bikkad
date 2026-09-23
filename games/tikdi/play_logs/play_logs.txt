@@ -1,0 +1,148 @@
+================================================================================
+          TIKDI (3-PLAYER CARD GAME / 3-2-5 / 5-3-2)
+                 3 CONSECUTIVE ROUND SIMULATIONS
+================================================================================
+
+--------------------------------------------------------------------------------
+ROUND 1: OPENING ROUND
+--------------------------------------------------------------------------------
+Roles & Quotas:
+  - Player A (Trump Chooser): 5 tricks
+  - Player B (Non-Dealer):    3 tricks
+  - Player C (Dealer):        2 tricks
+
+Stage 1 Dealing (5 cards each):
+  - Player A: [♠A, ♠K, ♠10, ♥A, ♣9]
+  - Player B: [♠8, ♠7, ♥8, ♦K, ♣A]
+  - Player C: [♠9, ♥K, ♥7, ♦A, ♣8]
+  - Player A declares TRUMP: SPADES (Kaali / ♠).
+
+Stage 2 & 3 Dealing:
+  - Remaining 3 cards, then 2 cards are dealt to complete 10-card hands.
+  - Final Hands:
+    Player A: [♠A, ♠K, ♠Q, ♠10, ♥A, ♥Q, ♥J, ♦9, ♣J, ♣9]
+    Player B: [♠J, ♠8, ♠7, ♥10, ♥8, ♦K, ♦J, ♦10, ♣A, ♣Q]
+    Player C: [♠9, ♥K, ♥9, ♥7, ♦A, ♦Q, ♦8, ♣K, ♣10, ♣8]
+
+Tricks Breakdown:
+  - Trick 1: A leads ♠A. B plays ♠7. C plays ♠9.
+    Winner: Player A (A: 1, B: 0, C: 0)
+  - Trick 2: A leads ♠K. B plays ♠8. C is void, discards ♥7.
+    Winner: Player A (A: 2, B: 0, C: 0)
+  - Trick 3: A leads ♥A. B plays ♥8. C plays ♥K.
+    Winner: Player A (A: 3, B: 0, C: 0)
+  - Trick 4: A leads ♣9. B plays ♣A. C plays ♣8.
+    Winner: Player B (A: 3, B: 1, C: 0)
+  - Trick 5: B leads ♦K. C plays ♦A. A is void in ♦, cuts with ♠10!
+    Winner: Player A (A: 4, B: 1, C: 0)
+  - Trick 6: A leads ♠Q. B plays ♠J. C discards ♣10.
+    Winner: Player A (A: 5, B: 1, C: 0)
+  - Trick 7: A leads ♥Q. B plays ♥10. C plays ♥9.
+    Winner: Player A (A: 6, B: 1, C: 0)
+  - Trick 8: A leads ♦9. B plays ♦J. C plays ♦Q.
+    Winner: Player C (A: 6, B: 1, C: 1)
+  - Trick 9: C leads ♣K. A plays ♣J. B plays ♣Q.
+    Winner: Player C (A: 6, B: 1, C: 2)
+  - Trick 10: C leads ♦8. A discards ♥J. B plays ♦10.
+    Winner: Player B (A: 6, B: 2, C: 2)
+
+Round 1 Tally:
+  - Player A: Won 6 | Quota 5 | Net: +1 (Surplus)
+  - Player B: Won 2 | Quota 3 | Net: -1 (Deficit)
+  - Player C: Won 2 | Quota 2 | Net:  0 (Target Met)
+Carryover: Player A holds a +1 credit over Player B for Round 2.
+
+
+--------------------------------------------------------------------------------
+ROUND 2: PENALTY ENFORCEMENT & SECOND ROTATION
+--------------------------------------------------------------------------------
+Roles & Quotas (Clockwise Shift):
+  - Player B (Trump Chooser): 5 tricks
+  - Player C (Non-Dealer):    3 tricks
+  - Player A (Dealer):        2 tricks
+
+Dealing:
+  - Dealer A distributes 5 cards each.
+  - Player B declares TRUMP: HEARTS (Laal / ♥).
+  - Dealer A distributes 3 cards, then 2 cards to each player.
+
+Pre-Play Penalty Resolution (Mechanism 1):
+  - Player A is owed 1 trick by Player B.
+  - Player B presents 10 cards face-down.
+  - Player A blindly picks 1 card: ♥A (a massive loss for B!).
+  - Player A gives B an unwanted low card in return: ♦8.
+
+Tricks Breakdown:
+  - Trick 1: B leads ♥K. C plays ♥8. A plays ♥A (the pulled card!).
+    Winner: Player A (A: 1, B: 0, C: 0)
+  - Trick 2: A leads ♦K. B plays ♦8. C plays ♦A.
+    Winner: Player C (A: 1, B: 0, C: 1)
+  - Trick 3: C leads ♣A. A plays ♣8. B plays ♣10.
+    Winner: Player C (A: 1, B: 0, C: 2)
+  - Trick 4: C leads ♣K. A plays ♣9. B cuts with ♥7.
+    Winner: Player B (A: 1, B: 1, C: 2)
+  - Trick 5: B leads ♥Q. C plays ♥9. A plays ♥10.
+    Winner: Player B (A: 1, B: 2, C: 2)
+  - Trick 6: B leads ♥J. C plays ♠7. A discards ♦9.
+    Winner: Player B (A: 1, B: 3, C: 2)
+  - Trick 7: B leads ♠A. C plays ♠8. A plays ♠K.
+    Winner: Player B (A: 1, B: 4, C: 2)
+  - Trick 8: B leads ♠Q. C plays ♠9. A plays ♠10.
+    Winner: Player B (A: 1, B: 5, C: 2)
+  - Trick 9: B leads ♦10. C plays ♦Q. A plays ♦J.
+    Winner: Player C (A: 1, B: 5, C: 3)
+  - Trick 10: C leads ♣Q. A plays ♣J. B discards ♠J.
+    Winner: Player C (A: 1, B: 5, C: 4)
+
+Round 2 Tally:
+  - Player B: Won 5 | Quota 5 | Net:  0 (Target Met)
+  - Player C: Won 4 | Quota 3 | Net: +1 (Surplus)
+  - Player A: Won 1 | Quota 2 | Net: -1 (Deficit)
+Carryover: Player C holds a +1 credit over Player A for Round 3.
+
+
+--------------------------------------------------------------------------------
+ROUND 3: THIRD ROTATION & ACCUMULATED DEBT
+--------------------------------------------------------------------------------
+Roles & Quotas (Clockwise Shift):
+  - Player C (Trump Chooser): 5 tricks
+  - Player A (Non-Dealer):    3 tricks
+  - Player B (Dealer):        2 tricks
+
+Dealing:
+  - Dealer B distributes 5 cards each.
+  - Player C declares TRUMP: CLUBS (Chidi / ♣).
+  - Dealer B distributes 3 cards, then 2 cards to each player.
+
+Pre-Play Penalty Resolution (Mechanism 1):
+  - Player C is owed 1 card by Player A.
+  - Player C pulls 1 card blindly from Player A: ♣K.
+  - Player C returns an unwanted card to Player A: ♠8.
+
+Tricks Breakdown:
+  - Trick 1: C leads ♣A. A plays ♣10. B plays ♣8.
+    Winner: Player C (A: 0, B: 0, C: 1)
+  - Trick 2: C leads ♣K. A discards ♠8. B plays ♣9.
+    Winner: Player C (A: 0, B: 0, C: 2)
+  - Trick 3: C leads ♣Q. A discards ♠9. B plays ♣J.
+    Winner: Player C (A: 0, B: 0, C: 3)
+  - Trick 4: C leads ♦A. A plays ♦9. B plays ♦8.
+    Winner: Player C (A: 0, B: 0, C: 4)
+  - Trick 5: C leads ♦K. A plays ♦10. B plays ♦J.
+    Winner: Player C (A: 0, B: 0, C: 5)
+  - Trick 6: C leads ♥8. A plays ♥A. B plays ♥7.
+    Winner: Player A (A: 1, B: 0, C: 5)
+  - Trick 7: A leads ♥K. B plays ♥9. C plays ♥10.
+    Winner: Player A (A: 2, B: 0, C: 5)
+  - Trick 8: A leads ♠A. B plays ♠10. C is void, cuts with ♣7!
+    Winner: Player C (A: 2, B: 0, C: 6)
+  - Trick 9: C leads ♦Q. A discards ♥Q. B plays ♦9.
+    Winner: Player C (A: 2, B: 0, C: 7)
+  - Trick 10: C leads ♠7. A plays ♠K. B plays ♠Q.
+    Winner: Player A (A: 3, B: 0, C: 7)
+
+Round 3 Tally:
+  - Player C: Won 7 | Quota 5 | Net: +2 (Surplus)
+  - Player A: Won 3 | Quota 3 | Net:  0 (Target Met)
+  - Player B: Won 0 | Quota 2 | Net: -2 (Deficit)
+Carryover: Player C is owed 2 cards by Player B before Round 4 begins.

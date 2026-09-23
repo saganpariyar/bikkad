@@ -1,0 +1,87 @@
+# TASK: Full-Stack Production Implementation of Bikkad (Bandh Rang Double Sir) Card Game
+
+Build a complete, production-grade, interactive multiplayer/AI card game of **Bikkad** (also known as Bandh Rang Double Sir / Tug-of-War Court Piece). 
+The game must support flexible seat configurations (1 Human + 3 AI, 2 Humans + 2 AI, 4 AI Auto-Simulation, or 4-Player Local/Network Multiplayer), integrate local **Ollama AI** agents with low-latency structured output and deterministic fallbacks, and feature a modern real-time Web UI.
+
+---
+
+## 1. GAME SPECIFICATION & STATE MACHINE (`rule.txt` Logic)
+
+### A. Team Setup & Deck
+- **Deck:** Standard 52-card pack without Jokers.
+- **Card Hierarchy (High to Low):** A > K > Q > J > 10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2.
+- **Seating (Clockwise):** South (P1 - Team A), West (P2 - Team B), North (P3 - Team A), East (P4 - Team B).
+
+### B. Deal & Hidden Trump (*Bandh Hukum*)
+1. Dealer deals **5 cards** clockwise to each player.
+2. The Eldest Hand (player directly left of the dealer, who leads Trick 1) selects **1 card to place face-down as the Hidden Trump**.
+3. Dealer distributes the remaining 8 cards to each player (13 cards total in hand).
+
+### C. Trick Play & Void Logic
+1. **Must Follow Suit:** Players must play a card of the led suit if they hold one. Off-suit discards without trump have 0 trick value.
+2. **Void Options (No cards of led suit):**
+   - **Discard (Sluff):** Play any off-suit card without revealing the trump (0 value).
+   - **Demand the Cut (*Rang Kholna*):** Turn the hidden trump face-up for all players.
+     - The demanding player **must cut with a card of the newly revealed trump suit**.
+     - *Edge Case Handling:* If the demanding player is void in the led suit AND also holds zero cards of the revealed trump suit, the trump remains face-up for the table, and the player plays a standard 0-value discard.
+     - Once opened, the trump suit remains active for all subsequent tricks.
+
+### D. Double Sir Pot Accumulator
+1. Individual tricks are not collected immediately; cards accumulate face-down in the **Center Pot**.
+2. A team collects the entire pot only upon winning **2 consecutive tricks** (by either partner).
+3. If Team B wins Trick 1, but Team A wins Trick 2, Team B's streak resets to 0, Team A gains 1 pending win, and all 8 cards remain in the pot.
+4. **13th Trick Sweep:** The winner of Trick 13 automatically sweeps all remaining cards in the center pot.
+
+### E. Game Contract Modes
+1. **Regular Mode:**
+   - Lead Team Target: $\ge 9$ tricks ($36+$ cards) $\rightarrow$ Adds **$+9$ points** to dealer debt.
+   - Dealer Team Target: $\ge 5$ tricks ($20+$ cards) $\rightarrow$ Reduces dealer debt by **$-18$ points**.
+2. **Tera Mode (13-Trick Team Challenge):**
+   - Declared before Trick 1. Standard 4 players (2 vs 2). No hidden card; declarer chooses trump at runtime upon first void.
+   - Declarer + Partner must win **all 13 tricks**. If opponents take $\ge 1$ trick, Tera fails immediately.
+   - Early Termination: Abort the round instantly when an opponent takes a trick.
+   - Scoring: Success = **$13$ points** swing in declarer's favor; Failure = **$26$ points** penalty to opponents.
+3. **Double Tera Mode (13-Trick Solo Challenge):**
+   - Declared before Trick 1. Declarer plays **completely SOLO** (Partner sits out; 3 active players).
+   - Solo player must win **all 13 tricks**. Abort instantly if opponents take $\ge 1$ trick.
+   - Scoring: Success = **$26$ points** swing in declarer's favor; Failure = **$52$ points** penalty to opponents (triggers an immediate 52-point bust).
+
+### F. Tug-of-War Score Ladder & Dealer Rotation
+Only **one active burden score** is tracked against the current dealer:
+1. **Getting Free ($\le 0$ Points):** Dealer clears debt. Shuffle passes clockwise to the **opponent**, starting at **9 points**.
+2. **Cap-Out Rollover ($\ge 52$ Points):** If dealer crosses 52 (e.g., $45 + 9 = 54$, or takes a $+52$ Double Tera penalty), they take a *Coat*.
+   - Shuffle bypasses opponents and passes directly to that dealer's **partner**.
+   - Partner inherits the deal at the exact remainder: $\text{Remainder} = \text{Current Score} - 52$ (e.g., $54 - 52 = \mathbf{2\text{ points}}$).
+
+---
+
+## 2. TECHNICAL STACK & ARCHITECTURE
+
+```text
+bikkad_project/
+├── backend/
+│   ├── engine/
+│   │   ├── card.py              # Card & Deck data structures
+│   │   ├── trick_evaluator.py   # Lead suit, trump precedence, and trick winner logic
+│   │   ├── pot_manager.py       # Double Sir 2-in-a-row tracker & pot accumulator
+│   │   ├── ladder_score.py      # +9, -18, Tera, Double Tera math & 52-cap rollover
+│   │   └── game_session.py      # Finite state machine managing round lifecycle
+│   ├── ai/
+│   │   ├── ollama_client.py     # Async HTTP client with strict JSON schema enforcement
+│   │   ├── prompt_builder.py    # Structured context builder for Ollama
+│   │   └── heuristic_fallback.py# Sub-5ms deterministic rule-based AI fallback
+│   ├── server.py                # FastAPI + WebSockets server
+│   └── tests/
+│       ├── test_rules.py        # Card following, trump cuts, 2-in-a-row collection
+│       └── test_ladder.py       # 54 -> 2 rollover and <=0 free transitions
+├── frontend/
+│   ├── index.html               # Responsive green felt table layout
+│   ├── static/
+│   │   ├── js/
+│   │   │   ├── app.js           # WebSocket client & table state dispatcher
+│   │   │   ├── audio.js         # Web Audio API synthesizers / SFX triggers
+│   │   │   └── ui.js            # Card animations, modals, badges, and canvas rendering
+│   │   ├── css/
+│   │   │   └── style.css        # Tailwind / custom CSS for 4-seat positioning
+│   │   └── cards/               # SVG / PNG deck assets (52 faces + 1 back)
+└── run.py                       # Single-command launch script

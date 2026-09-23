@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 135" width="100%" height="100%">
+  <!-- Traditional Rajasthani Jharokha (Cusped Arch) Watermark -->
+  <!-- Outer Arch Outline -->
+  <path d="M 15 130 L 15 65 Q 15 45 28 35 Q 38 25 50 15 Q 62 25 72 35 Q 85 45 85 65 L 85 130" 
+        fill="none" stroke="#b45309" stroke-width="1.8" stroke-dasharray="3,2" opacity="0.4"/>
+
+  <!-- Multi-foil Cusps of Rajput Jharokha -->
+  <path d="M 24 130 L 24 72 
+           C 24 60, 30 52, 34 50 
+           C 38 48, 44 40, 50 30 
+           C 56 40, 62 48, 66 50 
+           C 70 52, 76 60, 76 72 
+           L 76 130" 
+        fill="#edd4b2" opacity="0.3" stroke="#b45309" stroke-width="1.2"/>
+
+  <!-- Chhatri / Dome Top Finial (Kalash) -->
+  <path d="M 50 15 L 50 5" stroke="#b45309" stroke-width="1.6" opacity="0.5"/>
+  <circle cx="50" cy="5" r="2.5" fill="#b45309" opacity="0.5"/>
+  <circle cx="50" cy="9" r="1.5" fill="#b45309" opacity="0.5"/>
+
+  <!-- Subtle Geometric Lattice (Jaali) in Upper Arch -->
+  <g stroke="#b45309" stroke-width="0.7" opacity="0.25">
+    <line x1="38" y1="40" x2="62" y2="40"/>
+    <line x1="32" y1="52" x2="68" y2="52"/>
+    <line x1="45" y1="32" x2="55" y2="60"/>
+    <line x1="55" y1="32" x2="45" y2="60"/>
+    <circle cx="50" cy="46" r="3.5" fill="none"/>
+  </g>
+</svg>

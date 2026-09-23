@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 135" width="100%" height="100%">
+  <!-- Marionette Puppet Strings -->
+  <g stroke="#c28b51" stroke-width="1" stroke-dasharray="2,2" opacity="0.85">
+    <line x1="28" y1="0" x2="28" y2="40" />
+    <line x1="50" y1="0" x2="50" y2="10" />
+    <line x1="72" y1="0" x2="72" y2="40" />
+    <line x1="38" y1="78" x2="38" y2="95" />
+    <line x1="62" y1="78" x2="62" y2="95" />
+  </g>
+
+  <!-- Gold Pom-pom on Turban -->
+  <circle cx="50" cy="12" r="4.5" fill="#facc15" stroke="#ca8a04" stroke-width="0.8"/>
+  <circle cx="50" cy="12" r="2" fill="#fef08a"/>
+
+  <!-- Red Pointed Rajasthani Pagri / Topi -->
+  <polygon points="50,15 22,42 78,42" fill="#b91c1c" stroke="#7f1d1d" stroke-width="1.2"/>
+  <!-- Turban Highlight Shade -->
+  <polygon points="50,15 50,42 78,42" fill="#991b1b"/>
+  <!-- Pagri Gold Brim -->
+  <rect x="20" y="41" width="60" height="5" rx="2" fill="#facc15" stroke="#ca8a04" stroke-width="0.8"/>
+
+  <!-- Oval Head (Warm Terracotta / Skin Tone) -->
+  <ellipse cx="50" cy="62" rx="21" ry="24" fill="#f5a65b" stroke="#d97706" stroke-width="1"/>
+
+  <!-- Eyebrows (Thick Arch) -->
+  <path d="M 33 53 Q 41 49 47 54" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M 67 53 Q 59 49 53 54" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+
+  <!-- Almond-Shaped Puppet Eyes -->
+  <!-- Left Eye -->
+  <ellipse cx="40" cy="57" rx="7.5" ry="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.2"/>
+  <circle cx="40" cy="57" r="3.2" fill="#1e3a8a"/>
+  <circle cx="40" cy="57" r="1.8" fill="#0f172a"/>
+  <circle cx="38.8" cy="55.8" r="0.9" fill="#ffffff"/>
+
+  <!-- Right Eye -->
+  <ellipse cx="60" cy="57" rx="7.5" ry="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.2"/>
+  <circle cx="60" cy="57" r="3.2" fill="#1e3a8a"/>
+  <circle cx="60" cy="57" r="1.8" fill="#0f172a"/>
+  <circle cx="58.8" cy="55.8" r="0.9" fill="#ffffff"/>
+
+  <!-- Nose (Subtle Rajasthani Puppet Contour) -->
+  <path d="M 50 56 L 50 64 L 47 66" fill="none" stroke="#c2410c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Classic Rajasthani Curved Handlebar Moustache -->
+  <path d="M 50 71 Q 40 68 31 71 Q 25 73 24 68 Q 28 66 38 68 Q 45 69 50 71 Q 55 69 62 68 Q 72 66 76 68 Q 75 73 69 71 Q 60 68 50 71 Z" 
+        fill="#1e293b" stroke="#0f172a" stroke-width="1"/>
+
+  <!-- Lips (Subtle Ochre Line) -->
+  <line x1="43" y1="77" x2="57" y2="77" stroke="#b45309" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Pleated Angrakha / Royal Puppet Collar -->
+  <path d="M 33 97 L 26 130 L 74 130 L 67 97 Z" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.2"/>
+  <!-- Gold Stripes on Collar -->
+  <line x1="39" y1="97" x2="36" y2="130" stroke="#facc15" stroke-width="1.8"/>
+  <line x1="50" y1="97" x2="50" y2="130" stroke="#facc15" stroke-width="2"/>
+  <line x1="61" y1="97" x2="64" y2="130" stroke="#facc15" stroke-width="1.8"/>
+
+  <!-- Collar Top & Bottom Gold Trims -->
+  <path d="M 33 97 Q 50 102 67 97" fill="none" stroke="#facc15" stroke-width="2"/>
+  <line x1="26" y1="130" x2="74" y2="130" stroke="#ca8a04" stroke-width="2"/>
+</svg>

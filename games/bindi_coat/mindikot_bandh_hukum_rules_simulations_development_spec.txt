@@ -1,0 +1,365 @@
+================================================================================
+           MINDIKOT / BINDIKOT (WITH BANDH HUKUM / CLOSED TRUMP)
+  COMPLETE OFFICIAL RULEBOOK, 3-GAME SIMULATIONS & AI DEVELOPMENT PROMPT
+================================================================================
+
+
+================================================================================
+PART 1: GAME RULES & SPECIFICATION (BANDH HUKUM VARIANT)
+================================================================================
+
+1. OVERVIEW & PLAYERS
+--------------------------------------------------------------------------------
+Mindikot (also known as Mindi, Mendikot, Bindikot, or Katte) is a popular South 
+Asian partnership trick-taking card game. 
+
+Key Characteristics:
+  - Players: Exactly 4 players seated in two fixed partnerships (Teams of 2).
+    * Team 1: Player 1 (North) & Player 3 (South)
+    * Team 2: Player 2 (East) & Player 4 (West)
+    * Partners sit directly opposite each other.
+  - Deck: Standard 52-card deck (single deck variant) or double deck (for large 
+    groups; here specified for standard 52-card single deck play).
+  - Cards per player: 13 cards each.
+  - Key Focus: Capturing "Mindis" (the 10s of all four suits). While winning tricks 
+    matters for breaking ties and declaring a "Kot", collecting the four 10s is 
+    the primary determinant of victory.
+
+
+2. CARD RANKING & CARD VALUES
+--------------------------------------------------------------------------------
+Rank hierarchy in each suit (Highest to Lowest):
+  Ace > King > Queen > Jack > 10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2
+
+The Mindis (Tens):
+  - 10 of Spades (♠10)
+  - 10 of Hearts (♥10)
+  - 10 of Diamonds (♦10)
+  - 10 of Clubs (♣10)
+
+Capturing these four cards into your team's trick pile is the central goal.
+
+
+3. SEATING, DEALING & THE "BANDH HUKUM" (CLOSED TRUMP)
+--------------------------------------------------------------------------------
+In the "Bandh Hukum" (Closed/Hidden Trump) variant, the trump is NOT declared 
+openly by any bidder. Instead, it is placed face-down on the table and remains 
+secret until a player becomes void in a led suit.
+
+Dealing Protocol:
+  1. Dealer distributes the first batch of 5 cards face-down to each player.
+  2. The player to the dealer's immediate right (or left, depending on rotation; 
+     standard clockwise play: player to dealer's left leads):
+     - Inspects their 5 cards.
+     - Selects ONE card from their hand to serve as the Trump Suit.
+     - Places this card FACE-DOWN in the center of the table without revealing 
+       its suit or rank to anyone. This is the **Bandh Hukum**.
+  3. The dealer then completes the deal by distributing the remaining 8 cards 
+     (dealt in batches of 4 and 4, or 8 directly) to each player.
+  4. All players now hold 13 cards in hand (except the trump placer, who holds 12 
+     in hand plus the 1 face-down trump card on the table, which they add back 
+     to their hand once trump is revealed, or maintains as their card).
+
+
+4. TRICK-TAKING & UNVEILING THE BANDH HUKUM
+--------------------------------------------------------------------------------
+1. Opening Lead: The player who placed the Bandh Hukum leads the first trick.
+2. Obligation to Follow Suit:
+   - A player must follow the suit of the card led if they hold at least one 
+     card of that suit.
+3. Unveiling the Bandh Hukum (Katte):
+   - When any player is VOID (holds no cards) in the led suit:
+     a) The player announces: "Hukum Kholo" (Open the Trump / Reveal Trump).
+     b) The face-down card in the center is turned FACE-UP for all four players 
+        to see.
+     c) Its suit becomes the permanent TRUMP SUIT (Hukum) for the rest of the 
+        hand.
+     d) The player who placed the trump retrieves the revealed card into their 
+        hand (if not played immediately) or it remains assigned to them.
+     e) The void player who triggered the reveal MUST now either:
+        - "Cut" (Katte): Play a card of this newly revealed trump suit.
+        - Discard: If they also hold no trumps, discard any off-suit card.
+4. Determining the Trick Winner:
+   - Before Trump is opened: The highest card of the led suit wins.
+   - After Trump is opened (or in the reveal trick itself):
+     * If one or more trumps are played, the HIGHEST trump wins the trick.
+     * If no trump is played, the HIGHEST card of the led suit wins.
+5. Next Lead: The player who wins the trick gathers the 4 cards for their team 
+   and leads the next trick.
+
+
+5. SCORING, WIN CONDITIONS & DEFINITION OF "KOT"
+--------------------------------------------------------------------------------
+At the end of all 13 tricks, both teams examine their captured cards.
+
+PRIMARY WIN CONDITION: MINDI COUNT (Total = 4 Mindis)
+  - 4 Mindis: The team that captured all 4 Mindis wins the round.
+  - 3 Mindis vs 1 Mindi: The team with 3 Mindis wins the round.
+  - 2 Mindis vs 2 Mindis (Tie in Mindis):
+    * The tie is broken by the NUMBER OF TRICKS won.
+    * There are 13 tricks in total. The team with 7 or more tricks wins.
+
+TYPES OF VICTORIES:
+  1. Regular Win:
+     - Winning 3 or 4 Mindis without meeting the threshold for a Kot.
+  2. KOT (Clean Sweep / 7+ Tricks & 4 Mindis):
+     - If the non-dealing team wins 4 Mindis and at least 7 tricks, it is a KOT.
+     - If one team captures all 4 Mindis AND wins all 13 tricks, it is a 
+       "WHITE-WASH" (52-Patti Kot / Super Kot), the highest possible victory.
+  3. Defending Dealer:
+     - If the dealing team loses, the deal shifts clockwise.
+     - If the dealing team wins, they have defended their deal; in many house 
+       rules, the same dealer deals again, or standard rotation proceeds with 
+       points awarded.
+
+
+================================================================================
+PART 2: THREE STEP-BY-STEP GAME SIMULATIONS
+================================================================================
+
+--------------------------------------------------------------------------------
+GAME 1: TRUMP UNVEILED EARLY, DRAMATIC MINDI THEFT
+--------------------------------------------------------------------------------
+Teams:
+  - Team North-South (N-S) [N: Player 1, S: Player 3]
+  - Team East-West   (E-W) [E: Player 2, W: Player 4]
+Dealer: West (Player 4).
+Trump Placer: North (Player 1, seated left of dealer).
+
+Stage 1 Deal (5 cards each):
+  - North inspects first 5 cards: [♠A, ♠K, ♠10, ♥8, ♦Q].
+  - North selects ♠K as the BANDH HUKUM, placing it face-down in the center.
+Stage 2 Deal:
+  - Remaining cards dealt. All players have 13 cards.
+
+Trick Progression:
+  - Trick 1: North leads ♥A. East plays ♥7. South plays ♥9. West plays ♥10.
+    * West is forced to play their ♥10 (Mindi!).
+    * North's ♥A takes the trick.
+    * N-S captures 1st Mindi (♥10). [N-S: 1 trick, 1 Mindi | E-W: 0]
+
+  - Trick 2: North leads ♦A. East plays ♦8. South plays ♦J. West plays ♦K.
+    * North wins with ♦A. [N-S: 2 tricks, 1 Mindi | E-W: 0]
+
+  - Trick 3: North leads ♦7. East plays ♦9. South plays ♦10 (Mindi!).
+    * West is VOID in Diamonds!
+    * West calls: "Hukum Kholo!" (Open Trump).
+    * North's face-down card is flipped: SPADES (♠) is Trump!
+    * North takes ♠K back to hand.
+    * West, being void in Diamonds, CUTS with ♠8!
+    * West's ♠8 trumps South's ♦10.
+    * E-W captures 2nd Mindi (♦10)! [N-S: 2 tricks, 1 Mindi | E-W: 1 trick, 1 Mindi]
+
+  - Trick 4: West leads ♣K. North plays ♣8. East plays ♣10 (Mindi!). South plays ♣A.
+    * South's ♣A captures East's ♣10!
+    * N-S captures 3rd Mindi (♣10). [N-S: 3 tricks, 2 Mindis | E-W: 1 trick, 1 Mindi]
+
+  - Tricks 5 - 12:
+    * Intensive cross-trumping in Spades.
+    * In Trick 9, North leads ♠A, drawing out East's ♠J and West's ♠10 (Mindi!).
+    * N-S captures 4th Mindi (♠10)!
+
+  - Trick 13: South wins final trick with ♥K.
+
+Game 1 Final Results:
+  - N-S Won: 8 Tricks, 3 Mindis (♥10, ♣10, ♠10)
+  - E-W Won: 5 Tricks, 1 Mindi (♦10)
+  - Verdict: Team North-South WINS by Mindi majority (3-1).
+
+
+--------------------------------------------------------------------------------
+GAME 2: 2-2 MINDI SPLIT (TIE-BREAKER DECIDED BY TRICKS)
+--------------------------------------------------------------------------------
+Teams:
+  - Team North-South (P1 & P3)
+  - Team East-West   (P2 & P4)
+Dealer: North (Player 1).
+Trump Placer: East (Player 2).
+
+Deal & Bandh Hukum:
+  - East inspects first 5 cards: [♥A, ♥K, ♥10, ♦7, ♣9].
+  - East places ♥K face-down as the BANDH HUKUM.
+  - Full hands dealt.
+
+Trick Progression:
+  - Trick 1: East leads ♣A. South plays ♣7. West plays ♣8. North plays ♣10 (Mindi!).
+    * East captures North's ♣10.
+    * E-W secures 1st Mindi (♣10). [E-W: 1 trick, 1 Mindi]
+
+  - Trick 2: East leads ♦A. South plays ♦8. West plays ♦10 (Mindi!). North plays ♦K.
+    * East's ♦A collects West's ♦10 safely into partnership pile.
+    * E-W secures 2nd Mindi (♦10). [E-W: 2 tricks, 2 Mindis]
+
+  - Trick 3: East leads ♦J. South plays ♦Q. West plays ♦9. North is VOID in Diamonds!
+    * North calls: "Hukum Kholo!"
+    * Card revealed: HEARTS (♥) is Trump.
+    * North cuts with ♥8!
+    * North takes the trick. [N-S: 1 trick, 0 Mindis | E-W: 2 tricks, 2 Mindis]
+
+  - Trick 4: North leads ♠A. East plays ♠8. South plays ♠10 (Mindi!). West plays ♠9.
+    * North takes trick, protecting partner's ♠10.
+    * N-S secures 3rd Mindi (♠10). [N-S: 2 tricks, 1 Mindi | E-W: 2 tricks, 2 Mindis]
+
+  - Trick 5: North leads ♠K. East plays ♠J. South plays ♠7. West plays ♠Q.
+    * North wins. [N-S: 3 tricks, 1 Mindi]
+
+  - Trick 6: North leads ♠6. East is void, cuts with ♥7. South cuts higher with ♥Q! West plays ♥9.
+    * South's over-trump takes trick. [N-S: 4 tricks, 1 Mindi]
+
+  - Trick 7: South leads ♥10 (The 4th Mindi!). West plays ♥J. North plays ♥A. East plays ♥K.
+    * North wins with ♥A, pulling the last Mindi for N-S!
+    * N-S secures 4th Mindi (♥10). [N-S: 5 tricks, 2 Mindis | E-W: 2 tricks, 2 Mindis]
+
+  - Tricks 8 - 13:
+    * Both teams sit deadlocked at 2 Mindis each!
+    * The battle pivots completely to trick counting (target: 7 tricks).
+    * South controls the remaining Clubs and takes 2 more tricks.
+    * East takes 2 tricks with top trumps.
+    * Final trick count: N-S: 7 tricks | E-W: 6 tricks.
+
+Game 2 Final Results:
+  - Mindis: Tied 2 - 2 (N-S has ♠10, ♥10 | E-W has ♣10, ♦10)
+  - Trick Count: N-S won 7 tricks | E-W won 6 tricks
+  - Verdict: Team North-South WINS via the 7-trick tie-breaker!
+
+
+--------------------------------------------------------------------------------
+GAME 3: A DEVASTATING "KOT" (4 MINDIS + 10 TRICKS)
+--------------------------------------------------------------------------------
+Teams:
+  - Team North-South (P1 & P3)
+  - Team East-West   (P2 & P4)
+Dealer: South (Player 3).
+Trump Placer: West (Player 4).
+
+Deal & Bandh Hukum:
+  - West places ♦A face-down as BANDH HUKUM.
+  - Hands completed (13 cards each).
+
+Trick Progression:
+  - Trick 1: West leads ♠K. North plays ♠7. East plays ♠A. South plays ♠10 (Mindi!).
+    * East takes South's ♠10!
+    * E-W captures 1st Mindi.
+
+  - Trick 2: East leads ♣K. South plays ♣7. West plays ♣A. North plays ♣10 (Mindi!).
+    * West captures North's ♣10!
+    * E-W captures 2nd Mindi.
+
+  - Trick 3: West leads ♥A. North plays ♥7. East plays ♥10 (Mindi!). South plays ♥8.
+    * West collects East's protected ♥10.
+    * E-W captures 3rd Mindi.
+
+  - Trick 4: West leads ♥K. North plays ♥9. East plays ♥J. South is VOID in Hearts!
+    * South declares: "Hukum Kholo!"
+    * Card revealed: DIAMONDS (♦) is Trump!
+    * South has no Diamonds either! Discards ♠8.
+    * West's ♥K wins the trick.
+
+  - Trick 5: West leads ♦K. North plays ♦8. East plays ♦10 (4th Mindi!). South plays ♦9.
+    * E-W collects the 4th and final Mindi (♦10)!
+    * All 4 Mindis secured by E-W in just 5 tricks.
+
+  - Tricks 6 - 13:
+    * East-West relentlessly play high trumps and master cards, winning 10 tricks 
+      total before conceding 3 minor tricks to North-South.
+
+Game 3 Final Results:
+  - N-S: 3 Tricks, 0 Mindis
+  - E-W: 10 Tricks, 4 Mindis (ALL FOUR)
+  - Verdict: Team East-West inflicts a definitive KOT on Team North-South!
+
+
+================================================================================
+PART 3: AI & SOFTWARE ENGINEERING DEVELOPMENT PROMPT
+================================================================================
+
+Copy and paste the prompt below into an LLM or software engineering assistant 
+to build the complete Mindikot / Bindikot game:
+
+```text
+PROMPT TO BUILD MINDIKOT (BANDH HUKUM VARIANT) GAME ENGINE & UI:
+
+Act as a Principal Software Engineer and Game Designer. Implement a complete, 
+playable, modular digital card game for "Mindikot / Bindikot with Bandh Hukum 
+(Closed Trump)" in Python (CLI / Pygame) or TypeScript (React / Next.js / Canvas).
+
+-------------------------------------------------------------------------------
+1. DOMAIN SPECIFICATION & RULES
+-------------------------------------------------------------------------------
+1. Players: Exactly 4 players in 2 fixed partnerships:
+   - Team 1: Player 0 (Human - South) & Player 2 (Bot - North)
+   - Team 2: Player 1 (Bot - East) & Player 3 (Bot - West)
+2. Deck: Standard 52-card deck (A > K > Q > J > 10 > ... > 2).
+3. The Four Mindis: ♠10, ♥10, ♦10, ♣10.
+4. Dealing & Bandh Hukum Phase:
+   - Deal first 5 cards to each player.
+   - Trump Placer (player next to dealer) chooses 1 card from their 5 cards and 
+     places it FACE-DOWN in the center table as the hidden trump.
+   - Deal remaining 8 cards to each player (total 13 cards each).
+5. Trump Reveal Trigger (Bandh Hukum):
+   - Trump remains hidden and UNKNOWN to all other players.
+   - Trick-taking begins with the trump placer leading Trick 1.
+   - Follow-suit rule is strictly enforced.
+   - When ANY player is void in the led suit, the hidden card is automatically 
+     revealed to the table ("Hukum Kholo").
+   - That suit becomes the active TRUMP suit.
+   - The void player must cut with a trump if they have one, or discard an off-suit.
+6. Winner of Trick:
+   - If trump is revealed: Highest trump wins; otherwise highest card of led suit.
+   - Before trump is revealed: Highest card of led suit wins.
+   - The winning player leads the next trick.
+7. Scoring & Victory Logic:
+   - Count Mindis won by Team 1 vs Team 2:
+     * Team with 4 Mindis wins.
+     * Team with 3 Mindis wins.
+     * If 2 - 2 tie: Team with >= 7 tricks wins.
+   - If a team wins all 4 Mindis and >= 7 tricks: Award "KOT".
+   - If a team wins all 4 Mindis and all 13 tricks: Award "WHITE-WASH / SUPER KOT".
+
+-------------------------------------------------------------------------------
+2. ARCHITECTURAL & CODE REQUIREMENTS
+-------------------------------------------------------------------------------
+1. Data Models:
+   - Card: Suit (HEARTS, SPADES, DIAMONDS, CLUBS), Rank (2..14), isMindi boolean.
+   - Deck: Standard 52-card deck with Fisher-Yates shuffle.
+   - GameState: Enum [DEALING_5, BANDH_HUKUM_SELECTION, DEALING_REST, PLAYING_TRICK, 
+     TRUMP_REVEAL_ANIMATION, TRICK_RESOLVED, ROUND_SUMMARY].
+   - Partnership: Tracks total Mindis captured, total tricks won, and match points.
+
+2. Move Validation Function:
+   - `getLegalMoves(hand, ledSuit, isTrumpRevealed, trumpSuit)`:
+     * If leading: any card in hand is valid.
+     * If following and has ledSuit: MUST play ledSuit.
+     * If following and void in ledSuit:
+       - If trump is revealed: can play any card (trump cuts or off-suit discards).
+       - If trump is hidden: this move TRIGGERS the reveal event.
+
+3. Heuristic AI Agents (for the 3 Bot players):
+   - Trump Selection AI: When picking the Bandh Hukum from 5 cards, choose the suit 
+     with highest count and strong honors (e.g. Ace/King of suit with 2+ cards).
+   - Card Play AI:
+     * Partner Winning: If partner currently owns the trick with a winning card, 
+       throw a Mindi (10) into the trick to score points!
+     * Opponent Winning: Avoid dropping Mindis; play lowest legal card.
+     * Void in led suit (Trump Revealed): Cut with lowest winning trump; if trick 
+       contains a Mindi, cut with secure trump.
+     * Leading: Lead high cards (Aces) of non-trump suits, or lead low cards to 
+       let partner win.
+
+4. User Interface:
+   - Clear visual distinction between the 4 players at the table.
+   - Center area showing:
+     * Current 4 cards played in the trick.
+     * The Bandh Hukum card (shows card back until revealed, then flips face-up).
+   - HUD tracking:
+     * Mindis captured by Team 1 (Human/Partner) vs Team 2 (Opponents).
+     * Tricks won tally (e.g. "Tricks: 6 - 4").
+     * Banner notification on "HUKUM KHOLO!" with glowing animation.
+   - Playable cards in human player's hand must be highlighted; illegal cards disabled.
+
+Please provide complete, fully runnable, production-ready code.
+```
+
+================================================================================
+                                END OF DOCUMENT
+================================================================================

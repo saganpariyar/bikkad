@@ -1,0 +1,93 @@
+# TASK: Build Full Bikkad (Bandh Rang Double Sir) Card Game with Ollama AI Integration
+
+You are tasked with building a full-stack, playable card game of **Bikkad** (also known as Bandh Rang Double Sir / Tug-of-War Court Piece). 
+Refer to `rule.txt` for the definitive game logic and `play_logs.txt` for match validation test cases.
+
+---
+
+### 1. Architectural Requirements
+
+1. **Tech Stack**:
+   - **Backend / Game Logic**: Python 3.11+ (FastAPI or Flask backend with clean modular architecture) or pure Python engine with Pygame/Web UI.
+   - **Frontend**: Clean interactive Web UI (HTML5/Tailwind/React/Vue) or Pygame displaying:
+     - 4 Seats (North, South, East, West).
+     - Center Pot accumulator count with 2-in-a-row indicators.
+     - Live Scoreboard showing active Dealer debt, ladder position, and rollover remainder.
+     - Hidden Trump slot (face-down with a click-to-reveal button).
+     - Mode indicator: `Regular`, `Tera`, or `Double Tera`.
+   - **AI Integration**: Local **Ollama** API (`http://localhost:11434/api/generate` or `ollama-python` client) using models such as `llama3`, `mistral`, or `qwen2.5`.
+
+2. **Seat & Player Flexibility**:
+   - Lobby setting allowing flexible configuration:
+     - `1 Human vs 3 AI Bots` (Human at South P1, Bots at P2, P3, P4).
+     - `2 Humans (Team A or opposing) vs 2 AI Bots`.
+     - `4 AI Bots (Spectator / Auto-simulation mode)`.
+   - In `Double Tera`, dynamically disable and gray out the declarer's partner (3-player active table).
+
+---
+
+### 2. Core Game Engine Implementation (`engine/`)
+
+Implement exact state transitions based on `rule.txt`:
+1. **Deck & Deal**:
+   - 52 standard cards. Deal 5 cards first. Eldest hand sets 1 face-down hidden trump (`Bandh Hukum`).
+   - Deal remaining 8 cards per player (13 total).
+2. **Trick Resolution**:
+   - Must follow suit led. Discards from other suits have 0 value.
+   - If void: Player can either discard or trigger "Open Trump" (`Rang Kholna`).
+   - If Trump opened: Trump suit beats all non-trump suits.
+3. **Double Sir Pot Collection**:
+   - Center pot accumulates cards.
+   - A team must win **2 consecutive tricks** to collect the pot.
+   - Streak resets if the opposing team wins a trick.
+   - Winner of Trick 13 sweeps all remaining pot cards.
+4. **Scoring Ladder (Tug-of-War)**:
+   - Only 1 active score on the board tied to the dealer.
+   - Regular Mode: Lead team wins (>=9 trk) -> `+9`. Dealer team wins (>=5 trk) -> `-18`.
+   - Tera Mode (13-0 Team): Win = `-13` / `+13`; Loss (opponent takes >=1) = `+26` to opponents. Trump chosen at runtime.
+   - Double Tera Mode (13-0 Solo, 1 vs 2): Win = `-26` / `+26`; Loss = `+52` penalty to opponents.
+5. **Dealer Rotation**:
+   - Score `<= 0` (Free) -> Shuffle passes to next OPPONENT starting at 9 points.
+   - Score `>= 52` (Cap Out) -> Shuffle passes to PARTNER starting at remainder `(Score - 52)` points.
+
+---
+
+### 3. Ollama AI Bot Agent (`ai/ollama_player.py`)
+
+Create an AI decision layer for computer players:
+1. **Ollama Prompt Structure**:
+   - On a bot's turn, format the game context into a compact JSON prompt:
+     ```json
+     {
+       "player_id": "P2",
+       "hand": ["AS", "KS", "7H", "4D", "AC"],
+       "led_suit": "S",
+       "trump_suit": "D",
+       "is_trump_revealed": false,
+       "pot_size": 8,
+       "streak_holder": "Team A",
+       "legal_moves": ["AS", "KS"]
+     }
+     ```
+   - System Prompt: Instruct Ollama to act as an expert Bikkad card strategist (e.g., save trumps for cutting big pots, support partner's streak, lead highest when attempting Double Sir).
+   - Return format: JSON `{"card": "AS", "action": "play"}` or `{"action": "open_trump", "card": "4D"}`.
+2. **Deterministic Fallback Engine**:
+   - If Ollama is offline, unreachable, or returns an invalid/illegal card, fall back gracefully to a heuristic rule-based AI (`heuristic_player.py`) without crashing or halting the game.
+
+---
+
+### 4. Verification & Testing Tasks
+
+1. **Unit Tests**:
+   - Validate card validation rules (`must_follow_suit`, `trump_cut_precedence`).
+   - Validate 2-consecutive trick pot accumulation and streak resets.
+   - Validate ladder calculations: test the 54 -> 2 cap rollover and `<=0` free handover.
+2. **Simulation Test**:
+   - Run a 10-game headless automated match comparing engine logs with `play_logs.txt`.
+3. **Artifacts & Documentation**:
+   - Create a complete `README.md` with instructions on:
+     - Installing dependencies (`pip install -r requirements.txt`).
+     - Setting up Ollama (`ollama run llama3`).
+     - Running the game server and launching the UI.
+
+Please formulate an implementation plan, execute the code generation across files, run unit tests, and launch the application.

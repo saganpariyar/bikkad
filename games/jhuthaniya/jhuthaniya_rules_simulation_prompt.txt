@@ -1,0 +1,283 @@
+================================================================================
+                           JHUTHANIYA (BLUFF / CHEAT)
+         Official Rules, Detailed Game Simulation Logs & LLM Development Prompt
+================================================================================
+
+--------------------------------------------------------------------------------
+SECTION 1: COMPLETE OFFICIAL RULES
+--------------------------------------------------------------------------------
+
+1. OVERVIEW & OBJECTIVE
+   - Name: Jhuthaniya (also known globally as Bluff, Cheat, or I Doubt It).
+   - Players: 2 to 7 players (ideal with 3 to 5 players).
+   - Deck: Standard 52-card deck (no jokers). For 6-7 players, a double deck can be used.
+   - Objective: Be among the players who get rid of all their cards.
+   - Loser: The game continues until only 1 player is left holding cards. That final
+     player is designated the sole "Loser" (Jhuthaniya).
+
+2. SETUP & DEAL
+   - A dealer is randomly chosen.
+   - The entire deck is shuffled and dealt clockwise, one card at a time, until all
+     cards are distributed.
+   - Depending on the number of players, some may receive one card more than others
+     (e.g., in a 4-player game, all receive 13 cards; in a 3-player game, two get 17
+     and one gets 18). This asymmetry is a normal part of the game.
+   - Players inspect and organize their hands privately.
+
+3. ROUND STRUCTURE & TURN ACTIONS
+   - The starting player (or the winner of the previous game) begins.
+   - On their turn, the active player places 1 to 4 cards face down into the center pot
+     (the discard pile) and declares their claim out loud:
+       * Format: "[Count] [Rank]" (e.g., "3 Begams / Queens", "2 Kings", "1 Ace").
+   - The player may tell the truth (playing actual cards of that rank) or bluff
+     (placing unrelated cards face down).
+
+4. THE CHALLENGE WINDOW ("JHUTH!" / "BLUFF!")
+   - Before the next player takes their turn, any other player (or the immediate next
+     player, depending on house preference) can challenge the claim by shouting:
+     "Jhuth!" (Bluff!) or "Check!".
+   - If multiple players challenge simultaneously, the challenger seated nearest to the
+     left of the playing player takes priority.
+
+5. RESOLVING A CHALLENGE
+   - Inspection:
+     * Standard Rule: The challenger reveals the played cards (or designates one card from
+       the played batch to inspect).
+   - Case A: The claim was a BLUFF (the cards do not match the declared rank):
+     * The bluffing player is caught.
+     * The bluffing player MUST pick up the ENTIRE center pot and add it to their hand.
+     * The next turn begins with the challenger or the player to the left of the bluffer.
+   - Case B: The claim was TRUTHFUL (the cards match the declared rank):
+     * The challenger was mistaken.
+     * The challenger MUST pick up the ENTIRE center pot into their hand.
+     * The honest player retains the advantage, and the next turn proceeds.
+
+6. PASS / SKIP
+   - If no player chooses to challenge the claim, players say "Pass" or "Skip".
+   - The cards remain face down in the pot.
+   - The turn passes clockwise to the next player, who now plays their own set of cards.
+
+7. WINNING & ELIMINATION
+   - When a player places their last card(s) face down, they announce they are out.
+   - However, they are not officially safe until the challenge window passes.
+     * If someone challenges and the player bluffed on their last card, they collect the
+       entire pot and remain in the game.
+     * If the play is unchallenged, or if challenged and proven honest, the player is
+       officially SAFE (exits the game as a winner).
+   - Gameplay continues among the remaining players until only ONE player remains holding
+     cards. That player is the LOSER.
+
+
+--------------------------------------------------------------------------------
+SECTION 2: STEP-BY-STEP SIMULATION LOGS (3 COMPLETE GAMES)
+--------------------------------------------------------------------------------
+
+================================================================================
+GAME SIMULATION #1: 3-Player Dynamic (Aarav, Priya, Rohan)
+================================================================================
+Setup: 52 cards dealt. Aarav (18 cards), Priya (17 cards), Rohan (17 cards).
+Pot Starts: Empty.
+
+[Turn 1] Aarav
+- Hand: 18 cards | Pot: 0 cards
+- Play: Places 3 cards face down.
+- Declaration: "3 Queens (Begams)"
+- Reality: [Q-Hearts, Q-Diamonds, 9-Clubs] -> (Bluff)
+- Action: Priya checks her hand (she has 1 Queen). Rohan hesitates.
+- Rohan calls: "Pass." Priya calls: "Pass."
+- Outcome: Unchallenged. Cards stay face down. Pot now: 3 cards.
+- Aarav hand: 15 cards.
+
+[Turn 2] Priya
+- Hand: 17 cards | Pot: 3 cards
+- Play: Places 2 cards face down.
+- Declaration: "2 Tens"
+- Reality: [10-Spades, 10-Clubs] -> (Truth)
+- Action: Rohan suspects an early bluff and calls: "JHUTH! (Bluff!)"
+- Resolution: Rohan flips Priya's 2 cards -> [10-Spades, 10-Clubs]. Honest!
+- Penalty: Rohan must take the entire center pot (5 cards total).
+- Hands: Aarav: 15, Priya: 15, Rohan: 22. Pot reset to 0.
+
+[Turn 3] Rohan
+- Hand: 22 cards | Pot: 0 cards
+- Play: Places 4 cards face down.
+- Declaration: "4 Jacks (Ghulams)"
+- Reality: [J-Hearts, J-Spades, 4-Diamonds, 6-Clubs] -> (Bluff)
+- Action: Aarav holds 2 Jacks in his own hand. Aarav calculates: "There are only 4 Jacks
+  in a deck, I hold 2, Rohan cannot possibly play 4!"
+- Aarav calls: "JHUTH!"
+- Resolution: Aarav inspects the cards -> Reveals 4-Diamonds and 6-Clubs.
+- Penalty: Rohan caught red-handed! Rohan retrieves all 4 cards back into hand.
+- Hands: Aarav: 15, Priya: 15, Rohan: 22. Pot: 0.
+
+... [Mid-game progression: Priya plays consistently honest; Aarav alternates small bluffs;
+     Rohan absorbs two large pots of 8 and 12 cards] ...
+
+[Endgame Phase - Turn 28]
+- Standings: Priya: 2 cards, Aarav: 3 cards, Rohan: 16 cards.
+- Priya's Turn:
+  * Plays 2 cards face down.
+  * Declaration: "2 Kings (Badshahs)" (Final play to empty hand)
+  * Reality: [K-Hearts, K-Diamonds] -> (Truth)
+  * Aarav considers challenging. Pot has 6 cards. If he fails, he picks up 8 cards.
+  * Aarav says: "Pass." Rohan says: "Pass."
+  * PRIYA IS SAFE! (1st Place Winner - Hand empty).
+
+[Turn 29] Aarav vs Rohan
+- Standings: Aarav: 3 cards, Rohan: 16 cards. Pot: 8 cards.
+- Aarav plays 3 cards face down: "3 Aces" (Empties hand).
+- Reality: [A-Spades, A-Clubs, 3-Diamonds] -> (Bluff!)
+- Rohan must challenge: "JHUTH! You wouldn't have 3 Aces left!"
+- Resolution: Rohan flips Aarav's cards -> 3-Diamonds revealed!
+- Penalty: Aarav is CAUGHT! Aarav picks up the 8 pot cards + his 3 cards = 11 cards.
+- Aarav is back to 11 cards.
+
+[Turn 30 - 34]
+- Aarav plays strategically with single-card discards.
+- Aarav successfully unloads honest pairs.
+- Rohan attempts a 3-card bluff on 7s, Aarav calls "JHUTH" and catches Rohan.
+- Aarav finishes his last card honestly: "1 Seven." Rohan passes.
+- AARAV IS SAFE!
+- FINAL RESULT:
+  * 1st Place: Priya
+  * 2nd Place: Aarav
+  * LOSER: Rohan (Left with 19 cards).
+
+
+================================================================================
+GAME SIMULATION #2: 4-Player Tactical Bluffing (Kabir, Meera, Dev, Neha)
+================================================================================
+Setup: 52 cards dealt evenly. 13 cards per player.
+Pot Starts: Empty.
+
+[Turn 1] Kabir
+- Hand: 13 cards | Pot: 0
+- Play: 3 cards face down. "3 Begams (Queens)"
+- Reality: [Q-Hearts, Q-Diamonds, Q-Spades] -> (Truth)
+- Meera passes, Dev passes, Neha passes.
+- Pot: 3 cards. Kabir: 10 cards.
+
+[Turn 2] Meera
+- Hand: 13 cards | Pot: 3
+- Play: 2 cards face down. "2 Begams (Queens)"
+- Reality: [7-Diamonds, 8-Clubs] -> (Bluff)
+- Action: Kabir knows he just played 3 Queens. For Meera to have 2 Queens, there would
+  have to be 5 Queens in the deck!
+- Kabir immediately calls: "JHUTH!"
+- Resolution: Kabir flips Meera's top card -> 7 of Diamonds.
+- Penalty: Meera takes the entire pot (3 + 2 = 5 cards).
+- Hands: Kabir: 10, Meera: 16, Dev: 13, Neha: 13. Pot: 0.
+
+[Turn 3] Dev
+- Hand: 13 cards | Pot: 0
+- Play: 1 card face down. "1 Ace"
+- Reality: [A-Hearts] -> (Truth)
+- Neha passes, Kabir passes, Meera passes.
+- Pot: 1 card. Dev: 12 cards.
+
+[Turn 4] Neha
+- Hand: 13 cards | Pot: 1
+- Play: 2 cards face down. "2 Aces"
+- Reality: [2-Spades, 5-Hearts] -> (Bluff)
+- Action: Dev has two Aces in hand. Dev calculates: 1 Ace played by him, 2 Aces in his
+  hand = 3 Aces accounted for. Neha claiming 2 Aces means 5 Aces total!
+- Dev calls: "JHUTH!"
+- Resolution: Dev flips Neha's card -> 2 of Spades.
+- Penalty: Neha takes pot (1 + 2 = 3 cards).
+- Hands: Kabir: 10, Dev: 12, Neha: 14, Meera: 16. Pot: 0.
+
+[Endgame Phase - Turn 22]
+- Standings: Kabir: 1 card, Dev: 2 cards, Neha: 6 cards, Meera: 11 cards. Pot: 4 cards.
+- Kabir's Turn:
+  * Plays 1 card: "1 Ten" (Final card)
+  * Reality: [10-Clubs] -> (Truth)
+  * Meera calls: "JHUTH! You are trying to sneak out!"
+  * Resolution: Card revealed -> 10-Clubs!
+  * Penalty: Meera picks up the 5 cards in pot.
+  * KABIR IS SAFE! (1st Place).
+
+[Turn 25] Dev plays final 2 cards: "2 Fours". Unchallenged.
+- DEV IS SAFE! (2nd Place).
+
+[Turn 29] Battle between Neha (3 cards) and Meera (14 cards).
+- Neha plays 3 cards: "3 Nines".
+- Meera passes out of fear of taking more cards.
+- NEHA IS SAFE! (3rd Place).
+- FINAL RESULT:
+  * 1st Place: Kabir
+  * 2nd Place: Dev
+  * 3rd Place: Neha
+  * LOSER: Meera (Holds 17 cards).
+
+
+================================================================================
+GAME SIMULATION #3: High-Stakes Double Bluff (5 Players)
+================================================================================
+Players: Arjun, Sara, Vikram, Ananya, Zain (10-11 cards each).
+
+[Key Highlight - The Massive Pot Swing]
+- State: Round 14. Center pot has grown to 18 cards due to consecutive skips.
+- Vikram places 3 cards face down: "3 Kings"
+- Reality: [K-Hearts, K-Spades, K-Clubs] (Honest move under immense pressure)
+- Ananya has zero Kings. She bets Vikram is desperate to dump garbage into the huge pot.
+- Ananya calls: "JHUTH!" with supreme confidence.
+- Resolution: Ananya flips the first card: King of Hearts. Flips second: King of Spades.
+- Outcome: Vikram told the absolute truth!
+- Penalty: Ananya must pick up all 21 cards from the center pot!
+- Ananya's hand surges from 4 cards to 25 cards in a single catastrophic challenge.
+
+[Endgame Summary]
+- Sara eliminates first through stealth single-card drops.
+- Arjun eliminates second after successfully passing an honest 2-card claim.
+- Vikram eliminates third.
+- Zain manages to bluff his final 2 cards past a demoralized Ananya.
+- FINAL RESULT:
+  * Safe: Sara, Arjun, Vikram, Zain.
+  * LOSER: Ananya.
+
+
+--------------------------------------------------------------------------------
+SECTION 3: LLM & GAME DEVELOPER PROMPT
+--------------------------------------------------------------------------------
+Copy and paste the prompt below into an AI code assistant (Claude, ChatGPT, Gemini)
+or hand it to a software engineer to build the complete digital game:
+
+```text
+Build a robust, modular, turn-based multiplayer card game engine in Python 3.10+ for the traditional Indian card game "Jhuthaniya" (also known as Bluff / Cheat / I Doubt It).
+
+1. Core Game Mechanics:
+   - Support 2 to 7 players (human player vs. configurable AI bots).
+   - Standard 52-card deck (suits: Hearts, Diamonds, Clubs, Spades; ranks: 2-10, J, Q, K, A).
+   - Deal cards evenly among all active players.
+   - Maintain private hands for all players and a central hidden discard pile (`center_pot`).
+
+2. Turn Protocol & Actions:
+   - Active player selects 1 to 4 cards from their hand to place face down into `center_pot`.
+   - Active player declares a claim: `(claimed_count: int, claimed_rank: str)` (e.g., 3 "Q").
+   - Challenge Phase:
+     * Clockwise rotation allows other players to either call "JHUTH" (Challenge) or "PASS".
+     * If challenged: Reveal the played cards.
+       - If ANY card does not match the claimed rank -> BLUFF DETECTED: Claimant picks up all cards in `center_pot`.
+       - If ALL cards match the claimed rank -> TRUTH PROVEN: Challenger picks up all cards in `center_pot`.
+     * If all players pass: Cards remain face down in `center_pot`. Turn moves to the next player.
+
+3. Win & Elimination Logic:
+   - When a player places their last card, they must survive the Challenge Phase.
+   - If challenged and bluffing: They take the pot and remain in the game.
+   - If unchallenged or truthful: They are marked 'SAFE' (exited) and removed from turn order.
+   - The game continues until exactly ONE player remains with cards. That player is declared the 'LOSER' (Jhuthaniya).
+
+4. AI Bot Heuristics:
+   - Honest Preference: If the bot holds cards of the target/desired rank, it plays them truthfully.
+   - Bluff Generator: If the bot lacks the desired rank, it picks its lowest/useless cards to bluff.
+   - Challenge Evaluator (Card Counting & Probability):
+     * Calculate impossibility: If Bot holds X cards of Rank R, and Opponent claims Y cards of Rank R, where X + Y > 4, Challenge Probability = 100%.
+     * Risk tolerance: If the `center_pot` has > 10 cards, challenge only on high certainty. If the pot has < 3 cards, challenge more aggressively.
+     * Endgame suspicion: Increase challenge rate by 70% if an opponent claims to play their final cards.
+
+5. Deliverables:
+   - Clean, object-oriented design (`Card`, `Deck`, `Player`, `AIBot`, `JhuthaniyaGame`).
+   - Rich CLI interface with ANSI color codes or clear ASCII tables showing player card counts, pot size, turn history, and challenge verdicts.
+   - Unit tests covering: honest verification, caught bluffs, win-state transitions, and last-card exit edge cases.
+```
+================================================================================

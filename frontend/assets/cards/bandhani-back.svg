@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 140" width="100%" height="100%">
+  <defs>
+    <!-- Bandhani Tie-Dye Dot Cluster Pattern -->
+    <pattern id="bandhaniPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+      <!-- Dark Jodhpur Indigo Background -->
+      <rect width="16" height="16" fill="#142c44"/>
+      <!-- Outer White Ring of Bandhani Dot -->
+      <circle cx="8" cy="8" r="3.2" fill="#e2e8f0" opacity="0.85"/>
+      <!-- Inner Saffron/Golden Core -->
+      <circle cx="8" cy="8" r="1.8" fill="#f59e0b"/>
+      <!-- Center Indigo Pinpoint -->
+      <circle cx="8" cy="8" r="0.8" fill="#142c44"/>
+
+      <!-- Corner Half-Dots for Diagonal Diamond Grid -->
+      <circle cx="0" cy="0" r="2.2" fill="#e2e8f0" opacity="0.6"/>
+      <circle cx="16" cy="0" r="2.2" fill="#e2e8f0" opacity="0.6"/>
+      <circle cx="0" cy="16" r="2.2" fill="#e2e8f0" opacity="0.6"/>
+      <circle cx="16" cy="16" r="2.2" fill="#e2e8f0" opacity="0.6"/>
+
+      <circle cx="0" cy="0" r="1.2" fill="#f59e0b"/>
+      <circle cx="16" cy="0" r="1.2" fill="#f59e0b"/>
+      <circle cx="0" cy="16" r="1.2" fill="#f59e0b"/>
+      <circle cx="16" cy="16" r="1.2" fill="#f59e0b"/>
+    </pattern>
+  </defs>
+
+  <!-- Card Base -->
+  <rect x="2" y="2" width="96" height="136" rx="8" fill="#0b1726" stroke="#ca8a04" stroke-width="2"/>
+
+  <!-- Bandhani Field -->
+  <rect x="6" y="6" width="88" height="128" rx="6" fill="url(#bandhaniPattern)"/>
+
+  <!-- Inner Gold Inset Frame with Henna Dash -->
+  <rect x="9" y="9" width="82" height="122" rx="5" fill="none" stroke="#facc15" stroke-width="1.2"/>
+  <rect x="11.5" y="11.5" width="77" height="117" rx="4" fill="none" stroke="#dc2626" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <!-- Central Royal Medallion -->
+  <circle cx="50" cy="70" r="24" fill="#0f172a" stroke="#facc15" stroke-width="2"/>
+  <circle cx="50" cy="70" r="21" fill="#1b4965" stroke="#ca8a04" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Central Rajasthani Spade / Crown Crest -->
+  <!-- Golden Crown -->
+  <path d="M 40 60 L 43 53 L 47 57 L 50 50 L 53 57 L 57 53 L 60 60 Z" fill="#facc15" stroke="#b45309" stroke-width="0.8"/>
+  <circle cx="43" cy="53" r="1" fill="#dc2626"/>
+  <circle cx="50" cy="50" r="1.2" fill="#dc2626"/>
+  <circle cx="57" cy="53" r="1" fill="#dc2626"/>
+
+  <!-- Royal Spade -->
+  <path d="M 50 63 C 45 70, 39 74, 42 80 C 45 84, 49 82, 50 78 C 51 82, 55 84, 58 80 C 61 74, 55 70, 50 63 Z" fill="#facc15"/>
+  <path d="M 48 78 L 47 84 L 53 84 L 52 78 Z" fill="#facc15"/>
+  <circle cx="50" cy="74" r="1.6" fill="#1b4965"/>
+
+  <!-- BIKKAD Brand Inscription -->
+  <text x="50" y="91" font-family="'Cinzel', 'Georgia', serif" font-size="6.5" font-weight="900" fill="#fef08a" text-anchor="middle" letter-spacing="1.5">BIKKAD</text>
+</svg>

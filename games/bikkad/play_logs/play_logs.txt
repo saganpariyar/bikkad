@@ -1,0 +1,267 @@
+====================================================================================================
+                              BIKKAD MASTER MATCH LOG (10 ROUNDS)
+====================================================================================================
+TEAMS:
+- Team A : Player 1 (P1) & Player 3 (P3)
+- Team B : Player 2 (P2) & Player 4 (P4)
+
+RULES SUMMARY:
+1. Standard Trick Collection (Double Sir): A team must win 2 consecutive tricks to collect the pot.
+   Must follow lead suit. Off-suit without trump = 0 value. Last trick winner sweeps remaining pot.
+2. Modes & Targets:
+   - Regular     : Lead Team needs >=9 tricks (+9 to dealer). Dealer Team needs >=5 tricks (-18 to dealer).
+   - Tera        : Declarer + Partner must win all 13 tricks. 
+                   Success = 13 pts in declarer's favor. Fail (opponents win >=1 trick) = 26 pts to opponents.
+                   Trump is chosen in runtime by declarer.
+   - Double Tera : Declarer plays completely solo (partner sits out). Must win all 13 tricks.
+                   Success = 26 pts in declarer's favor. Fail (opponents win >=1 trick) = 52 pts to opponents.
+                   Trump is chosen in runtime by declarer.
+3. Tug-of-War Ladder & Dealer Rotation:
+   - Reach <= 0  : Dealer is FREE. Deal passes to OPPONENT at 9 points.
+   - Cross >= 52 : Dealer DEFEATED (Coat). Deal passes to PARTNER at remainder (Score - 52).
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+ROUND 1 | MODE: Regular | Dealer: P1 (Team A, Score: 0) | Leader: P2 (Team B)
+Hidden Trump: P2 places [7D] face-down
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [S Lead]: P2: KS* | P3: 8S  | P4: 9S  | P1: 3S  --> P2 wins (Win 1)           | Pot: 4 cards
+T02 [H Lead]: P2: 6H  | P3: AH* | P4: 10H | P1: 2H  --> P3 wins (Win 1; B reset)  | Pot: 8 cards
+T03 [D Lead]: P3: KD* | P4: 5D  | P1: 7D  | P2: 4D  --> P3 wins (Win 2)           ==> Team A collects 12 cards (3 trk)
+T04 [C Lead]: P3: 6C  | P4: 10C | P1: 2C  | P2: AC* --> P2 wins (Win 1)           | Pot: 4 cards
+T05 [C Lead]: P2: 8C  | P3: 3C  | P4: KC* | P1: 4C  --> P4 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T06 [S Lead]: P4: 6S  | P1: 2S  | P2: AS* | P3: [4H]--> P2 wins (Win 1)           | Pot: 4 cards
+T07 [S Lead]: P2: 8S  | P3: [6H]| P4: QS* | P1: 5S  --> P4 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T08 [D Lead]: P4: 2D  | P1: 9D  | P2: AD* | P3: [Ask Trump! P2 reveals D] -> Plays 3D --> P2 wins (Win 1) | Pot: 4 cards
+T09 [D Lead]: P2: QD* | P3: [5H]| P4: JD  | P1: 10D --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T10 [H Lead]: P2: 8H  | P3: KH* | P4: 3H  | P1: 4H  --> P3 wins (Win 1)           | Pot: 4 cards
+T11 [H Lead]: P3: JH* | P4: 7H  | P1: 9H  | P2: [3D# Cut] --> P2 wins (Win 1; A reset)| Pot: 8 cards
+T12 [C Lead]: P2: QC* | P3: 5C  | P4: 9C  | P1: 7C  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T13 [S Lead]: P2: JS* | P3: 10S | P4: [JD]| P1: [JC]--> P2 wins (Sweeps remaining)==> Team B collects 4 cards (1 trk)
+
+Round Result: Team B = 9 tricks (36 cards) [Target 9 Met!] | Team A = 4 tricks (16 cards)
+Math        : Dealer P1 Score: 0 + 9 = 9
+Status      : P1 remains Dealer at 9 points.
+
+----------------------------------------------------------------------------------------------------
+ROUND 2 | MODE: Regular | Dealer: P1 (Team A, Score: 9) | Leader: P2 (Team B)
+Hidden Trump: P2 places [KH] face-down
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [C Lead]: P2: AC* | P3: 4C  | P4: 8C  | P1: 2C  --> P2 wins (Win 1)           | Pot: 4 cards
+T02 [C Lead]: P2: KC* | P3: 5C  | P4: 10C | P1: 3C  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T03 [C Lead]: P2: QC* | P3: 7C  | P4: JC  | P1: 6C  --> P2 wins (Win 1)           | Pot: 4 cards
+T04 [C Lead]: P2: 9C* | P3: [2S]| P4: [3D]| P1: [4D]--> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T05 [S Lead]: P2: AS* | P3: 3S  | P4: 8S  | P1: 5S  --> P2 wins (Win 1)           | Pot: 4 cards
+T06 [S Lead]: P2: KS* | P3: 6S  | P4: 10S | P1: 7S  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T07 [S Lead]: P2: QS* | P3: [OPENS TRUMP: H] -> Plays AH# Cut | P4: JS | P1: 9S --> P3 wins (Win 1) | Pot: 4 cards
+T08 [H Lead]: P3: QH* | P4: 4H  | P1: 5H  | P2: 2H  --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T09 [D Lead]: P3: AD* | P4: 6D  | P1: 7D  | P2: 5D  --> P3 wins (Win 1)           | Pot: 4 cards
+T10 [D Lead]: P3: KD* | P4: 8D  | P1: 9D  | P2: 10D --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T11 [D Lead]: P3: QD* | P4: JD  | P1: [6H]| P2: [8H]--> P3 wins (Win 1)           | Pot: 4 cards
+T12 [H Lead]: P3: JH* | P4: 7H  | P1: 9H  | P2: 3H  --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T13 [H Lead]: P3: 10H*| P4: [9S]| P1: [JS]| P2: KH  --> P3 wins (Sweeps remaining)==> Team A collects 4 cards (1 trk)
+
+Round Result: Team A = 7 tricks (28 cards) [Target 5 Met!] | Team B = 6 tricks (24 cards)
+Math        : Dealer P1 Score: 9 - 18 <= 0 --> 0 (FREE!)
+Status      : P1 is FREE! Deal passes to Opponent P2 at 9 points.
+
+----------------------------------------------------------------------------------------------------
+ROUND 3 | MODE: Regular | Dealer: P2 (Team B, Score: 9) | Leader: P3 (Team A)
+Hidden Trump: P3 places [JS] face-down
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [S Lead]: P3: AS* | P4: 4S  | P1: 8S  | P2: 2S  --> P3 wins (Win 1)           | Pot: 4 cards
+T02 [S Lead]: P3: KS* | P4: 5S  | P1: 9S  | P2: 3S  --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T03 [S Lead]: P3: QS* | P4: 7S  | P1: 10S | P2: 6S  --> P3 wins (Win 1)           | Pot: 4 cards
+T04 [S Lead]: P3: [OPENS TRUMP: S (Self-revealed)] -> JS* | P4: [2H] | P1: [3H] | P2: [4H] --> P3 wins (Win 2) ==> Team A collects 8 cards (2 trk)
+T05 [H Lead]: P3: AH* | P4: 5H  | P1: 8H  | P2: 6H  --> P3 wins (Win 1)           | Pot: 4 cards
+T06 [H Lead]: P3: KH* | P4: 7H  | P1: 9H  | P2: 10H --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T07 [H Lead]: P3: QH* | P4: JH  | P1: [2C]| P2: [3C]--> P3 wins (Win 1)           | Pot: 4 cards
+T08 [D Lead]: P3: AD* | P4: 4D  | P1: 8D  | P2: 2D  --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T09 [D Lead]: P3: KD* | P4: 6D  | P1: 9D  | P2: 3D  --> P3 wins (Win 1)           | Pot: 4 cards
+T10 [D Lead]: P3: QD* | P4: 7D  | P1: 10D | P2: 5D  --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T11 [C Lead]: P3: 7C  | P4: AC* | P1: 4C  | P2: 5C  --> P4 wins (Win 1)           | Pot: 4 cards
+T12 [C Lead]: P4: KC* | P1: 6C  | P2: 8C  | P3: 9C  --> P4 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T13 [C Lead]: P4: QC* | P1: JC  | P2: 10C | P3: [JD]--> P4 wins (Sweeps remaining)==> Team B collects 4 cards (1 trk)
+
+Round Result: Team A = 10 tricks (40 cards) [Target 9 Met as Lead!] | Team B = 3 tricks (12 cards)
+Math        : Dealer P2 Score: 9 + 9 = 18
+Status      : P2 burdened, remains Dealer at 18 points.
+
+----------------------------------------------------------------------------------------------------
+ROUND 4 | MODE: Tera (Declared by Leader P3) | Dealer: P2 (Team B, Score: 18)
+Challenge   : Team A (P3 + P1) attempts all 13 tricks. Trump selected at runtime.
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [S Lead]: P3: AS* | P4: 6S  | P1: 8S  | P2: 2S  --> P3 wins
+T02 [S Lead]: P3: KS* | P4: 7S  | P1: 9S  | P2: 3S  --> P3 wins
+T03 [S Lead]: P3: QS* | P4: 10S | P1: JS  | P2: 4S  --> P3 wins
+T04 [H Lead]: P3: AH* | P4: 5H  | P1: 8H  | P2: 2H  --> P3 wins
+T05 [H Lead]: P3: KH* | P4: 6H  | P1: 9H  | P2: 3H  --> P3 wins
+T06 [H Lead]: P3: QH* | P4: 7H  | P1: 10H | P2: 4H  --> P3 wins
+T07 [D Lead]: P3: AD* | P4: 5D  | P1: 7D  | P2: 2D  --> P3 wins
+T08 [D Lead]: P3: KD* | P4: 6D  | P1: 8D  | P2: 3D  --> P3 wins
+T09 [D Lead]: P3: QD* | P4: 8D  | P1: 9D  | P2: 4D  --> P3 wins
+T10 [C Lead]: P3: AC* | P4: 6C  | P1: 8C  | P2: 2C  --> P3 wins
+T11 [C Lead]: P3: KC* | P4: 7C  | P1: 9C  | P2: 3C  --> P3 wins
+T12 [C Lead]: P3: QC* | P4: [Void - Asks Trump! Declarer P3 sets CLUBS] -> P4 has no Trump -> Plays [5S] | P1: 10C | P2: 4C --> P3 wins
+T13 [C Lead]: P3: JC* | P4: [JD]| P1: [JH]| P2: 5C  --> P3 wins
+
+Round Result: Team A wins 13/13 tricks! --> TERA SUCCESS!
+Math        : Team A earns 13 pts against dealer debt. Dealer P2 Score: 18 + 13 = 31
+Status      : P2 remains Dealer at 31 points.
+
+----------------------------------------------------------------------------------------------------
+ROUND 5 | MODE: Double Tera (Declared by Dealer P2) | Dealer: P2 (Team B, Score: 31)
+Challenge   : P2 plays completely SOLO against P1 and P3. Partner P4 sits out.
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [S Lead]: P2: AS* | P3: 4S  | P1: 7S  --> P2 wins
+T02 [S Lead]: P2: KS* | P3: 5S  | P1: 8S  --> P2 wins
+T03 [S Lead]: P2: QS* | P3: 6S  | P1: 9S  --> P2 wins
+T04 [H Lead]: P2: AH* | P3: 2H  | P1: 7H  --> P2 wins
+T05 [H Lead]: P2: KH* | P3: 4H  | P1: 8H  --> P2 wins
+T06 [D Lead]: P2: AD* | P3: 3D  | P1: 6D  --> P2 wins
+T07 [D Lead]: P2: KD* | P3: 5D  | P1: 8D  --> P2 wins
+T08 [C Lead]: P2: AC* | P3: 2C  | P1: 6C  --> P2 wins
+T09 [C Lead]: P2: KC* | P3: 5C  | P1: 7C  --> P2 wins
+T10 [C Lead]: P2: QC* | P3: 9C  | P1: 8C  --> P2 wins
+T11 [C Lead]: P2: JC* | P3: [Void - Asks Trump! Declarer P2 sets CLUBS] -> P3 has no Club Trump -> Plays [2D] | P1: 10C --> P2 wins
+T12 [H Lead]: P2: 10H | P3: [Void - Demands Trump (C)] -> P3 plays 4C# (CUT TRUMP)! --> P3 WINS TRICK!
+                      *** DOUBLE TERA FAILED INSTANTLY ON TRICK 12 ***
+
+Round Result: Opponents win >=1 trick --> DOUBLE TERA FAILED!
+Math        : Opponents earn 52 points. Applied to Dealer P2: 31 + 52 = 83 (Exceeds 52 Cap!)
+Rollover    : 83 - 52 = 31 points remainder.
+Status      : P2 is DEFEATED (Coat). Deal passes directly to Partner P4 starting at 31 points!
+
+----------------------------------------------------------------------------------------------------
+ROUND 6 | MODE: Regular | Dealer: P4 (Team B, Score: 31) | Leader: P1 (Team A)
+Hidden Trump: P1 places [9H] face-down
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [S Lead]: P1: AS* | P2: 3S  | P3: 8S  | P4: 2S  --> P1 wins (Win 1)           | Pot: 4 cards
+T02 [S Lead]: P1: KS* | P2: 5S  | P3: 9S  | P4: 4S  --> P1 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T03 [S Lead]: P1: QS* | P2: 7S  | P3: 10S | P4: 6S  --> P1 wins (Win 1)           | Pot: 4 cards
+T04 [S Lead]: P1: JS* | P2: [2D]| P3: [3D]| P4: [4D]--> P1 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T05 [H Lead]: P1: AH* | P2: 4H  | P3: 8H  | P4: 2H  --> P1 wins (Win 1)           | Pot: 4 cards
+T06 [H Lead]: P1: KH* | P2: 5H  | P3: 10H | P4: 3H  --> P1 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T07 [H Lead]: P1: QH* | P2: 6H  | P3: JH  | P4: 7H  --> P1 wins (Win 1)           | Pot: 4 cards
+T08 [D Lead]: P1: AD* | P2: 8D  | P3: JD  | P4: 5D  --> P1 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T09 [D Lead]: P1: KD* | P2: 9D  | P3: QD  | P4: 7D  --> P1 wins (Win 1)           | Pot: 4 cards
+T10 [C Lead]: P1: AC* | P2: 4C  | P3: 8C  | P4: 2C  --> P1 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T11 [C Lead]: P1: KC* | P2: 6C  | P3: 9C  | P4: 3C  --> P1 wins (Win 1)           | Pot: 4 cards
+T12 [C Lead]: P1: QC* | P2: 7C  | P3: 10C | P4: 5C  --> P1 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T13 [D Lead]: P1: 10D | P2: [OPENS TRUMP: H] -> Plays 8H# Cut | P3: [JH]| P4: [9C]--> P2 wins (Sweeps remaining)==> Team B collects 4 cards (1 trk)
+
+Round Result: Team A = 12 tricks (48 cards) [Target 9 Met as Lead!] | Team B = 1 trick (4 cards)
+Math        : Dealer P4 Score: 31 + 9 = 40
+Status      : P4 burdened, remains Dealer at 40 points.
+
+----------------------------------------------------------------------------------------------------
+ROUND 7 | MODE: Tera (Declared by Dealer Team: P4) | Dealer: P4 (Team B, Score: 40)
+Challenge   : Team B (P4 + P2) attempts all 13 tricks. Trump selected at runtime.
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [C Lead]: P1: 5C  | P2: AC* | P3: 3C  | P4: 2C  --> P2 wins
+T02 [C Lead]: P2: KC* | P3: 4C  | P4: 6C  | P1: 7C  --> P2 wins
+T03 [C Lead]: P2: QC* | P3: 8C  | P4: 9C  | P1: JC  --> P2 wins
+T04 [S Lead]: P2: AS* | P3: 2S  | P4: 6S  | P1: 8S  --> P2 wins
+T05 [S Lead]: P2: KS* | P3: 3S  | P4: 7S  | P1: 9S  --> P2 wins
+T06 [D Lead]: P2: AD* | P3: 2D  | P4: 5D  | P1: 7D  --> P2 wins
+T07 [D Lead]: P2: KD* | P3: 4D  | P4: 6D  | P1: 8D  --> P2 wins
+T08 [D Lead]: P2: QD* | P3: 9D  | P4: 10D | P1: [Void - Asks Trump! Declarer P4 sets SPADES] -> Plays 4S# Cut --> P1 WINS TRICK!
+                      *** TERA FAILED INSTANTLY ON TRICK 8 ***
+
+Round Result: Opponents win >=1 trick --> TERA FAILED!
+Math        : Opponents earn 26 points. Applied to Dealer P4: 40 + 26 = 66 (Exceeds 52 Cap!)
+Rollover    : 66 - 52 = 14 points remainder.
+Status      : P4 is DEFEATED (Coat). Deal passes directly to Partner P2 starting at 14 points!
+
+----------------------------------------------------------------------------------------------------
+ROUND 8 | MODE: Double Tera (Declared by Leader P3) | Dealer: P2 (Team B, Score: 14)
+Challenge   : P3 plays completely SOLO against P2 and P4. Partner P1 sits out.
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [S Lead]: P3: AS* | P4: 2S  | P2: 5S  --> P3 wins
+T02 [S Lead]: P3: KS* | P4: 3S  | P2: 6S  --> P3 wins
+T03 [S Lead]: P3: QS* | P4: 4S  | P2: 7S  --> P3 wins
+T04 [S Lead]: P3: JS* | P4: 8S  | P2: 9S  --> P3 wins
+T05 [H Lead]: P3: AH* | P4: 2H  | P2: 5H  --> P3 wins
+T06 [H Lead]: P3: KH* | P4: 3H  | P2: 6H  --> P3 wins
+T07 [H Lead]: P3: QH* | P4: 4H  | P2: 7H  --> P3 wins
+T08 [D Lead]: P3: AD* | P4: 3D  | P2: 6D  --> P3 wins
+T09 [D Lead]: P3: KD* | P4: 4D  | P2: 7D  --> P3 wins
+T10 [D Lead]: P3: QD* | P4: 5D  | P2: 8D  --> P3 wins
+T11 [C Lead]: P3: AC* | P4: 2C  | P2: 4C  --> P3 wins
+T12 [C Lead]: P3: KC* | P4: 3C  | P2: 6C  --> P3 wins
+T13 [C Lead]: P3: QC* | P4: [Void - Asks Trump! Declarer P3 sets DIAMONDS] -> P4 has no Diamond -> Plays [8H] | P2: [9H] --> P3 wins
+
+Round Result: P3 wins 13/13 tricks solo! --> DOUBLE TERA SUCCESS!
+Math        : Declarer earns 26 points against dealer. Dealer P2 Score: 14 + 26 = 40
+Status      : P2 remains Dealer at 40 points.
+
+----------------------------------------------------------------------------------------------------
+ROUND 9 | MODE: Regular | Dealer: P2 (Team B, Score: 40) | Leader: P3 (Team A)
+Hidden Trump: P3 places [10C] face-down
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [S Lead]: P3: 4S  | P4: 8S  | P1: 2S  | P2: AS* --> P2 wins (Win 1)           | Pot: 4 cards
+T02 [S Lead]: P2: KS* | P3: 6S  | P4: 9S  | P1: 3S  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T03 [S Lead]: P2: QS* | P3: 7S  | P4: 10S | P1: 5S  --> P2 wins (Win 1)           | Pot: 4 cards
+T04 [H Lead]: P2: AH* | P3: 3H  | P4: 8H  | P1: 2H  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T05 [H Lead]: P2: KH* | P3: 5H  | P4: 9H  | P1: 4H  --> P2 wins (Win 1)           | Pot: 4 cards
+T06 [D Lead]: P2: AD* | P3: 2D  | P4: 6D  | P1: 3D  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T07 [D Lead]: P2: KD* | P3: 5D  | P4: 8D  | P1: 4D  --> P2 wins (Win 1)           | Pot: 4 cards
+T08 [C Lead]: P2: AC* | P3: 2C  | P4: 5C  | P1: 3C  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T09 [C Lead]: P2: KC* | P3: 6C  | P4: 7C  | P1: 4C  --> P2 wins (Win 1)           | Pot: 4 cards
+T10 [C Lead]: P2: QC* | P3: 8C  | P4: JC  | P1: 9C  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T11 [D Lead]: P2: QD* | P3: 7D  | P4: 10D | P1: 8D  --> P2 wins (Win 1)           | Pot: 4 cards
+T12 [H Lead]: P2: QH* | P3: 7H  | P4: 10H | P1: 6H  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T13 [D Lead]: P2: JD* | P3: [OPENS TRUMP: C] -> Plays 10C# | P4: [JH]| P1: [AH]--> P3 wins (Sweeps remaining)==> Team A collects 4 cards (1 trk)
+
+Round Result: Team B = 12 tricks (48 cards) [Target 5 Met as Dealer!] | Team A = 1 trick (4 cards)
+Math        : Dealer P2 Score: 40 - 18 = 22
+Status      : P2 recovers, remains Dealer at 22 points.
+
+----------------------------------------------------------------------------------------------------
+ROUND 10 | MODE: Regular | Dealer: P2 (Team B, Score: 22) | Leader: P3 (Team A)
+Hidden Trump: P3 places [AD] face-down
+----------------------------------------------------------------------------------------------------
+Trick Log:
+T01 [C Lead]: P3: 3C  | P4: 8C  | P1: 2C  | P2: AC* --> P2 wins (Win 1)           | Pot: 4 cards
+T02 [C Lead]: P2: KC* | P3: 5C  | P4: 9C  | P1: 4C  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T03 [C Lead]: P2: QC* | P3: 7C  | P4: 10C | P1: 6C  --> P2 wins (Win 1)           | Pot: 4 cards
+T04 [S Lead]: P2: AS* | P3: 4S  | P4: 8S  | P1: 2S  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T05 [S Lead]: P2: KS* | P3: 6S  | P4: 9S  | P1: 3S  --> P2 wins (Win 1)           | Pot: 4 cards
+T06 [H Lead]: P2: AH* | P3: 3H  | P4: 7H  | P1: 2H  --> P2 wins (Win 2)           ==> Team B collects 8 cards (2 trk)
+T07 [H Lead]: P2: KH* | P3: 5H  | P4: 8H  | P1: 4H  --> P2 wins (Win 1)           | Pot: 4 cards
+T08 [D Lead]: P2: KD* | P3: [OPENS TRUMP: D] -> Plays AD# | P4: 3D | P1: 2D --> P3 wins (Win 1; B reset)| Pot: 8 cards
+T09 [D Lead]: P3: QD* | P4: 5D  | P1: 4D  | P2: 6D  --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T10 [H Lead]: P3: QH* | P4: 9H  | P1: 6H  | P2: 10H --> P3 wins (Win 1)           | Pot: 4 cards
+T11 [D Lead]: P3: JD* | P4: 7D  | P1: 8D  | P2: 9D  --> P3 wins (Win 2)           ==> Team A collects 8 cards (2 trk)
+T12 [D Lead]: P3: 10D*| P4: [2H]| P1: [5S]| P2: [JS]--> P3 wins (Win 1)           | Pot: 4 cards
+T13 [C Lead]: P3: JC* | P4: [JH]| P1: [7S]| P2: [QS]--> P3 wins (Sweeps remaining)==> Team A collects 8 cards (2 trk)
+
+Round Result: Team A = 7 tricks (28 cards) [Target 9 Missed!] | Team B = 6 tricks (24 cards) [Target 5 Met!]
+Math        : Dealer P2 Score: 22 - 18 = 4
+Status      : P2 defends successfully, remains Dealer at 4 points (Needs 1 more win to get FREE).
+
+====================================================================================================
+                               FINAL MATCH SCOREBOARD SUMMARY
+====================================================================================================
+Round | Mode        | Dealer | Start | Event / Winner          | Point Change | End | Next Dealer / Status
+------|-------------|--------|-------|-------------------------|--------------|-----|----------------------
+R01   | Regular     | P1     | 0     | Team B wins (9 trk)     | +9           | 9   | P1 burdened
+R02   | Regular     | P1     | 9     | Team A wins (7 trk)     | -18 (<=0)    | 0   | P1 FREE -> Pass to P2 @ 9
+R03   | Regular     | P2     | 9     | Team A wins (10 trk)    | +9           | 18  | P2 burdened
+R04   | Tera        | P2     | 18    | Team A (P3) 13/13 Win   | +13          | 31  | P2 pushed
+R05   | Double Tera | P2     | 31    | P2 Solo Fail (T12 cut)  | +52 (>=52)   | 83  | P2 CAP OUT -> Pass to P4 @ 31
+R06   | Regular     | P4     | 31    | Team A wins (12 trk)    | +9           | 40  | P4 burdened
+R07   | Tera        | P4     | 40    | Team B (P4) Fail (T8)   | +26 (>=52)   | 66  | P4 CAP OUT -> Pass to P2 @ 14
+R08   | Double Tera | P2     | 14    | Team A (P3) 13/13 Win   | +26          | 40  | P2 pushed
+R09   | Regular     | P2     | 40    | Team B wins (12 trk)    | -18          | 22  | P2 recovers
+R10   | Regular     | P2     | 22    | Team B wins (6 trk def) | -18          | 4   | P2 near FREE (Score: 4)
+====================================================================================================

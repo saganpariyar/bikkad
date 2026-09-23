@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Desi Card Games - Traditional Indian &amp; Rajasthani Card Games Hub</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=24">
+    <!-- Google Fonts: Cinzel & Outfit for Royal Rajput Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- PWA & Mobile Web App Meta Tags -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Desi Card Games">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <div id="app" class="app-container">
+
+        <!-- ==================== VIEW 1: HOME LANDING & NEW GAME SETUP ==================== -->
+        <div id="view-home" class="view-container">
+            <header class="home-navbar">
+                <div class="brand">
+                    <span class="logo-icon">🂠</span>
+                    <div class="brand-titles">
+                        <h1 id="home-brand-title">DESI CARD GAMES</h1>
+                        <span class="subtitle" id="home-brand-sub">Traditional Indian &amp; Rajasthani Card Games Hub</span>
+                    </div>
+                </div>
+                <div class="home-nav-actions">
+                    <div class="creator-badge-top" onclick="openAboutDeveloperPage()" style="cursor: pointer;" title="About Owner: Sobha IT Solutions (Sagan &amp; Anita Parihariya)">
+                        <span class="creator-icon">👑</span>
+                        <span>Owned by <strong>Sobha IT Solutions</strong></span>
+                    </div>
+                    <!-- Direct link to dedicated About Developer page -->
+                    <a href="about.html" class="btn btn-sm btn-about-nav" title="Know About Developer Sagan Parihariya &amp; Sobha IT Solutions">
+                        👑 About Developer
+                    </a>
+                    <!-- PWA Install Button (Shown on installable browsers) -->
+                    <button id="btn-install-pwa" class="btn btn-sm btn-install-pwa hidden" title="Install App on your device">
+                        📲 Install App
+                    </button>
+                    <!-- Backend Server Connection Status & Settings -->
+                    <button id="btn-server-settings" class="btn btn-sm btn-server-pill" title="Server Connection Status &amp; Settings">
+                        <span class="server-status-dot" id="server-status-dot"></span>
+                        <span id="server-status-label">Server</span>
+                    </button>
+                    <!-- Playing Card Deck Theme Switcher (Royal Desert / Classic) -->
+                    <button id="btn-deck-theme-toggle" class="btn btn-sm btn-deck-pill" title="Switch Playing Card Deck Style (Royal Desert / Classic Vector)">
+                        <span id="deck-theme-icon">🏜️</span>
+                        <span id="deck-theme-label">Royal Deck</span>
+                    </button>
+                    <button id="btn-home-lang-toggle" class="btn btn-sm btn-lang-toggle" title="Switch Language (English / Hinglish)">
+                        🌐 HI
+                    </button>
+                    <a href="#" class="btn btn-secondary btn-sm" id="nav-rules-link" onclick="openRulesPage((typeof activeSelectedGame !== 'undefined' ? activeSelectedGame : 'bikkad'));return false;">📖 How to Play</a>
+                </div>
+            </header>
+
+
+            <div class="home-main-layout">
+                <!-- 1. Majestic Centered Hero Section -->
+                <section class="home-hero-section">
+                    <div class="hero-badge">🏜️ TRADITIONAL DESI &amp; RAJASTHANI CARD GAMES HUB</div>
+                    <h2 class="hero-title">Play Classic Desi Card Games <span class="highlight-gold">Online with Friends</span></h2>
+                    <div class="hero-dev-credit">
+                        <span class="dev-sparkle">✨</span>
+                        <span>Owned &amp; Developed by <strong>Sobha IT Solutions</strong> · Founded by <strong>Sagan &amp; Anita Parihariya</strong></span>
+                        <a href="about.html" class="hero-dev-link">👑 Read Developer Journey →</a>
+                    </div>
+                    <p class="hero-lead">
+                        Apne Rajasthan aur Bharat ke sabse lokpriya aur shandar traditional card games ka digital adda! Experience authentic regional rules preserved faithfully, royal court cards, smart bots, and private rooms with friends. Start playing <strong>Bikkad</strong> right now, or explore our other live games like <strong>Jhuthaniya</strong>, <strong>Bindi Coat</strong>, and <strong>Tikdi</strong>!
+                    </p>
+                </section>
+
+                <!-- 2. Full-Width Horizontal Arena Shelf -->
+                <section class="home-shelf-section">
+                    <div class="game-selector-header">
+                        <div class="game-selector-header-left">
+                            <span class="game-selector-title">🎴 CHOOSE YOUR GAME ARENA</span>
+                            <span class="game-selector-sub">Select an authentic Desi card game to launch or join a table</span>
+                        </div>
+                        <a href="about.html" class="shelf-dev-hint">👑 Built by Sobha IT Solutions</a>
+                    </div>
+
+                    <div class="game-selector-strip" id="game-selector-strip">
+
+                        <!-- Bikkad (Live & Featured) -->
+                        <div class="gsel-card gsel-active" id="gsel-bikkad" data-game="bikkad" onclick="switchActiveGame('bikkad')">
+                            <div class="gsel-top">
+                                <span class="gsel-icon">🂠</span>
+                                <span class="gsel-live">🟢 LIVE</span>
+                            </div>
+                            <div class="gsel-name">Bikkad</div>
+                            <div class="gsel-genre">Pot Sweep · 4 Players</div>
+                            <p class="gsel-desc">Apna Rajasthan ka premier hidden trump cut, ladder burden scoring &amp; solo Tera contracts.</p>
+                            <div class="gsel-actions">
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bikkad')">📖 How to Play</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bikkad')">▶ Select</button>
+                            </div>
+                        </div>
+
+                        <!-- Jhuthaniya (Live) -->
+                        <div class="gsel-card" id="gsel-jhuthaniya" data-game="jhuthaniya" onclick="switchActiveGame('jhuthaniya')">
+                            <div class="gsel-top">
+                                <span class="gsel-icon">🃏</span>
+                                <span class="gsel-live">🟢 LIVE</span>
+                            </div>
+                            <div class="gsel-name">Jhuthaniya</div>
+                            <div class="gsel-genre">Bluff · 2–7 Players</div>
+                            <p class="gsel-desc">Play cards face-down and bluff your friends. Call "JHUTH!" to catch liars or trick the table!</p>
+                            <div class="gsel-actions">
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('jhuthaniya')">📖 How to Play</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('jhuthaniya')">▶ Select</button>
+                            </div>
+                        </div>
+
+                        <!-- Bindi Coat (Live) -->
+                        <div class="gsel-card" id="gsel-bindicoat" data-game="bindicoat" onclick="switchActiveGame('bindicoat')">
+                            <div class="gsel-top">
+                                <span class="gsel-icon">🔴</span>
+                                <span class="gsel-live">🟢 LIVE</span>
+                            </div>
+                            <div class="gsel-name">Bindi Coat</div>
+                            <div class="gsel-genre">Partnership · 4 Players</div>
+                            <p class="gsel-desc">Mendikot 2v2 clash. Capture the four 10s (Bindis) and score the Coat against opponents!</p>
+                            <div class="gsel-actions">
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bindicoat')">📖 How to Play</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bindicoat')">▶ Select</button>
+                            </div>
+                        </div>
+
+                        <!-- Tikdi (Live) -->
+                        <div class="gsel-card" id="gsel-tikdi" data-game="tikdi" onclick="switchActiveGame('tikdi')">
+                            <div class="gsel-top">
+                                <span class="gsel-icon">🔺</span>
+                                <span class="gsel-live">🟢 LIVE</span>
+                            </div>
+                            <div class="gsel-name">Tikdi (3-2-5)</div>
+                            <div class="gsel-genre">Trick Quota · 3 Players</div>
+                            <p class="gsel-desc">Classic 30-card quota game: 5-3-2 targets with authentic Tash Khinchai card pulling penalties.</p>
+                            <div class="gsel-actions">
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('tikdi')">📖 How to Play</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('tikdi')">▶ Select</button>
+                            </div>
+                        </div>
+
+                        <!-- Coming Soon: Gadha Baji -->
+                        <div class="gsel-card gsel-soon">
+                            <div class="gsel-top">
+                                <span class="gsel-icon">🐴</span>
+                                <span class="gsel-soon-pill">🔒 Soon</span>
+                            </div>
+                            <div class="gsel-name">Gadha Baji</div>
+                            <div class="gsel-genre">Elimination · 3–6P</div>
+                            <p class="gsel-desc">Discard matching pairs and don't get stuck holding the unmatchable Queen donkey card!</p>
+                        </div>
+
+                        <!-- Coming Soon: Sarkari -->
+                        <div class="gsel-card gsel-soon">
+                            <div class="gsel-top">
+                                <span class="gsel-icon">⚖️</span>
+                                <span class="gsel-soon-pill">🔒 Soon</span>
+                            </div>
+                            <div class="gsel-name">Sarkari</div>
+                            <div class="gsel-genre">Trump Clash · 4P</div>
+                            <p class="gsel-desc">High stakes government trump showdown with royal scoring and strategic partners.</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 3. Centered Match Setup Console Card -->
+                <section class="home-setup-card" id="home-setup-card">
+
+                    <!-- Active Game Indicator Banner -->
+                    <div class="selected-game-banner">
+                        <div class="selected-game-badge">
+                            <span class="badge-dot"></span>
+                            <span class="badge-text" id="active-game-banner-badge">NOW PLAYING: BIKKAD (LIVE)</span>
+                        </div>
+                        <div class="selected-game-desc" id="active-game-banner-desc">Set up your match below — Play Solo vs BOTs or invite friends using a simple 4-digit Room Code!</div>
+                    </div>
+
+                    <!-- Step 1: Your Player Name -->
+                    <div class="user-identity-box">
+                        <label for="input-your-name" class="identity-label">👤 Your Player Name:</label>
+                        <div class="identity-input-row">
+                            <input type="text" id="input-your-name" value="Sagan" class="home-input identity-input" placeholder="Enter your name">
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Tabs for Create vs Join -->
+                    <div class="entry-mode-tabs">
+                        <button id="tab-btn-create" class="tab-btn active">🎮 Create New Game</button>
+                        <button id="tab-btn-join" class="tab-btn">🔗 Join Game with Code</button>
+                    </div>
+
+                    <!-- Tab 1: Create Game Content -->
+                    <div id="tab-content-create" class="tab-content active">
+                        <!-- Quick Game Setup -->
+                        <div class="setup-form-grid">
+                            <div class="form-group-home">
+                                <label for="input-game-name">Game Name:</label>
+                                <input type="text" id="input-game-name" value="game1" class="home-input" placeholder="e.g. game1">
+                            </div>
+                            <div class="form-group-home setup-grid-full">
+                                <label for="select-trump-hider">🃏 Who Hides Trump &amp; Leads First Deal:</label>
+                                <select id="select-trump-hider" class="home-input home-select">
+                                    <option value="P1" selected>Player 1 (Me / South) — I hide trump &amp; lead Trick 1</option>
+                                    <option value="P2">Player 2 (West) — Hides trump &amp; leads Trick 1</option>
+                                    <option value="P3">Player 3 (North / Partner) — Hides trump &amp; leads Trick 1</option>
+                                    <option value="P4">Player 4 (East) — Hides trump &amp; leads Trick 1</option>
+                                    <option value="random">🎲 Random (Player 1, 2, 3, or 4 chosen randomly)</option>
+                                </select>
+                            </div>
+                            <div id="group-tikdi-penalty-mode" class="form-group-home setup-grid-full hidden">
+                                <label for="select-tikdi-penalty-mode">⚖️ Debt &amp; Penalty Settlement Option:</label>
+                                <select id="select-tikdi-penalty-mode" class="home-input home-select">
+                                    <option value="choice" selected>⚖️ Per-Debtor Choice — Each player with less tricks picks Tash Khinchai or Extra Tricks</option>
+                                    <option value="card_swap">🃏 Force Tash Khinchai — Pull blind cards from debtor &amp; return unwanted</option>
+                                    <option value="quota_adjustment">🎯 Force Extra Tricks — Debtor promises &amp; gives extra tricks</option>
+                                </select>
+                            </div>
+                            <div id="group-jhuthaniya-player-count" class="form-group-home setup-grid-full hidden">
+                                <label for="select-jhuthaniya-player-count">👥 Total Players (2 to 7 Players):</label>
+                                <select id="select-jhuthaniya-player-count" class="home-input home-select">
+                                    <option value="2">2 Players (Head-to-Head Duel — 26 cards each)</option>
+                                    <option value="3">3 Players (Trio Challenge — 17-18 cards each)</option>
+                                    <option value="4" selected>4 Players (Classic Table — 13 cards each)</option>
+                                    <option value="5">5 Players (High Stakes — 10-11 cards each)</option>
+                                    <option value="6">6 Players (Double Deck 104 Cards — 17-18 cards each)</option>
+                                    <option value="7">7 Players (Double Deck 104 Cards — 14-15 cards each)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Unique Room ID Display Banner -->
+                        <div class="room-id-banner">
+                            <div class="room-id-info">
+                                <span class="room-id-label">ROOM ID / CODE:</span>
+                                <span class="room-id-val" id="display-room-id">7842</span>
+                            </div>
+                            <button id="btn-copy-room-id" class="btn btn-secondary btn-sm" title="Copy Room ID to share with friends">📋 Copy Code</button>
+                            <span class="room-id-hint">Share this code with friends so they can join!</span>
+                        </div>
+
+                        <!-- Seat Setup: 2-Step Flow -->
+                        <div class="seat-allocation-header">
+                            <h4>👥 Player Setup</h4>
+                        </div>
+
+                        <!-- Step 1: How many humans? -->
+                        <div class="human-count-row">
+                            <span class="human-count-label">How many human players?</span>
+                            <div class="human-count-btns">
+                                <button class="hcount-btn active" id="hcount-1" onclick="setHumanCount(1)">1<br><small>Solo</small></button>
+                                <button class="hcount-btn" id="hcount-2" onclick="setHumanCount(2)">2<br><small>+ 1 Friend</small></button>
+                                <button class="hcount-btn" id="hcount-3" onclick="setHumanCount(3)">3<br><small>+ 2 Friends</small></button>
+                                <button class="hcount-btn" id="hcount-4" onclick="setHumanCount(4)">4<br><small>All Human</small></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Which seat(s) are human? (shown only when count > 1) -->
+                        <div id="seat-picker-box" class="seat-picker-box hidden">
+                            <span class="seat-picker-label">Which seat(s) for human friend(s)?</span>
+                            <div class="seat-picker-btns">
+                                <button class="spick-btn" id="spick-P3" onclick="toggleSeatPick('P3')">
+                                    🔼 North<br><small>P3 · Partner</small>
+                                </button>
+                                <button class="spick-btn" id="spick-P2" onclick="toggleSeatPick('P2')">
+                                    ◀ West<br><small>P2 · Opp 1</small>
+                                </button>
+                                <button class="spick-btn" id="spick-P4" onclick="toggleSeatPick('P4')">
+                                    ▶ East<br><small>P4 · Opp 2</small>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Hidden inputs for backend (still used by handleStartNewGame) -->
+                        <input type="hidden" id="select-type-p2" value="ai">
+                        <input type="hidden" id="select-type-p3" value="ai">
+                        <input type="hidden" id="select-type-p4" value="ai">
+
+                        <!-- Name inputs (shown inline below seat-picker) -->
+                        <div id="seat-names-box" class="seat-names-box hidden">
+                            <div class="seat-name-row" id="name-row-P3">
+                                <span class="seat-name-lbl">🔼 P3 (North/Partner):</span>
+                                <input type="text" id="input-name-p3" class="home-input seat-name-input" placeholder="Friend name or leave blank">
+                            </div>
+                            <div class="seat-name-row" id="name-row-P2">
+                                <span class="seat-name-lbl">◀ P2 (West):</span>
+                                <input type="text" id="input-name-p2" class="home-input seat-name-input" placeholder="Friend name or leave blank">
+                            </div>
+                            <div class="seat-name-row" id="name-row-P4">
+                                <span class="seat-name-lbl">▶ P4 (East):</span>
+                                <input type="text" id="input-name-p4" class="home-input seat-name-input" placeholder="Friend name or leave blank">
+                            </div>
+                        </div>
+
+                        <!-- Waiting Players Notification Area -->
+                        <div id="lobby-waiting-box" class="lobby-waiting-box hidden">
+                            <span class="waiting-title">Friends in Room Lobby:</span>
+                            <div id="waiting-players-chips" class="waiting-chips"></div>
+                        </div>
+
+                        <div class="setup-actions-row">
+                            <button id="btn-start-game" class="btn btn-primary btn-xl pulse-btn">🚀 Start Match</button>
+                        </div>
+
+                    </div>
+
+                    <!-- Tab 2: Join Game Content -->
+                    <div id="tab-content-join" class="tab-content hidden">
+                        <div class="join-form-box">
+                            <div class="join-icon">🔑</div>
+                            <h3>Join an Existing Game</h3>
+                            <p class="join-sub">Enter the Unique Game ID provided by the host:</p>
+                            <div class="form-group-home join-input-group">
+                                <label for="input-join-id">Game ID / Code:</label>
+                                <input type="text" id="input-join-id" class="home-input join-code-input" placeholder="e.g. 7842" maxlength="6">
+                            </div>
+                            <div id="join-status-msg" class="join-status-msg"></div>
+                            <div class="setup-actions-row">
+                                <button id="btn-submit-join" class="btn btn-primary btn-xl">🔗 Join Game Room</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Cultural & Platform Pillars Grid -->
+                <section class="home-pillars-section">
+                    <div class="rules-highlight-grid" id="rules-section">
+                        <div class="rule-card">
+                            <span class="rule-icon">👑</span>
+                            <h4>Authentic Regional Rules</h4>
+                            <p>Traditional rules, scoring ladders, and trick formats preserved faithfully from real village card traditions.</p>
+                        </div>
+                        <div class="rule-card">
+                            <span class="rule-icon">🎴</span>
+                            <h4>Classic Royal Playing Cards</h4>
+                            <p>High-resolution vector cards with traditional reversible Jack, Queen, and King royal artwork.</p>
+                        </div>
+                        <div class="rule-card">
+                            <span class="rule-icon">👥</span>
+                            <h4>Multiplayer &amp; Smart BOTs</h4>
+                            <p>Create instant 4-digit code rooms to play with friends, or enjoy smart solo play against adaptive bots.</p>
+                        </div>
+                        <div class="rule-card">
+                            <span class="rule-icon">🏜️</span>
+                            <h4>Cultural Heritage Mission</h4>
+                            <p>Crafted with love by Sobha IT Solutions to preserve, celebrate, and digitize Rajasthan and India's traditional card games.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Developer & Studio Showcase Card (Links to dedicated about.html) -->
+                <section class="home-about-teaser" id="home-about-teaser">
+                    <div class="about-teaser-card" onclick="window.location.href='about.html'" title="Click to view full developer story, achievements &amp; journey">
+                        <div class="teaser-photo-wrap">
+                            <img src="assets/sagan-profile.png" alt="Sagan Pariyar - Principal Data Engineer" class="teaser-dev-img">
+                        </div>
+                        <div class="about-teaser-left">
+                            <div class="about-teaser-badge">
+                                <span class="teaser-crown">👑</span>
+                                <span>Firm Owner: <strong>Sobha IT Solutions</strong></span>
+                                <span class="teaser-verified-pill">✔ Principal Data Engineer @ Itron</span>
+                                <span class="teaser-rajasthan-pill">🏜️ Born &amp; Rooted in Rajasthan</span>
+                            </div>
+                            <h3 class="about-teaser-name">Crafted by Sagan Pariyar &amp; Anita Parihariya</h3>
+                            <div class="about-teaser-sub">Principal Data Engineer @ Itron · Founders of <strong>Sobha IT Solutions</strong></div>
+                            <p class="about-teaser-desc about-en-text">
+                                Architected by Sagan Pariyar (Principal Data Engineer @ Itron, Enterprise Lakehouse &amp; MLOps Architect) and Anita Parihariya to elevate India and Rajasthan's beloved traditional card games into zero-latency digital masterpieces.
+                            </p>
+                            <p class="about-teaser-desc about-hi-text">
+                                सगन परिहारिया (Itron में प्रिंसिपल डेटा इंजीनियर, एंटरप्राइज लेकहाउस एवं एमएलऑप्स आर्किटेक्ट) एवं अनिता परिहारिया द्वारा राजस्थान और भारत के पारंपरिक खेलों को सहेजने का आधुनिक प्रयास।
+                            </p>
+                            <div class="about-teaser-tags">
+                                <span class="teaser-pill">🏛️ Principal Data Engineer @ Itron</span>
+                                <span class="teaser-pill">☁️ Databricks &amp; AWS Lakehouse</span>
+                                <span class="teaser-pill">🤖 Enterprise GenAI &amp; MLOps</span>
+                                <span class="teaser-pill">🎓 B.Tech (VJTI) · 95% Polytechnic Honors</span>
+                            </div>
+                        </div>
+                        <div class="about-teaser-right">
+                            <a href="about.html" class="btn btn-warning btn-md about-teaser-btn">
+                                👑 Developer Journey &amp; Achievements →
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Home Footer Attribution -->
+            <footer class="home-footer">
+                <div class="footer-content">
+                    <span class="footer-state" id="home-footer-brand">🏜️ <strong>Desi Card Games Hub</strong> · Traditional Indian &amp; Rajasthani Card Games Collection</span>
+                    <span class="footer-sep">•</span>
+                    <span class="footer-dev" id="home-footer-dev">Owned &amp; Developed with passion by <strong>Sobha IT Solutions</strong> (Sagan &amp; Anita Parihariya)</span>
+                    <span class="footer-sep">•</span>
+                    <button class="footer-about-btn" id="footer-about-btn" onclick="openAboutDeveloperPage()" title="Know About Sobha IT Solutions">
+                        👑 About: <strong>Sobha IT Solutions</strong>
+                    </button>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ==================== VIEW 3: GAME RULES PAGE ==================== -->
+        <div id="view-rules" class="view-container hidden">
+            <header class="rules-navbar">
+                <button id="btn-rules-back" class="btn btn-secondary btn-sm" onclick="closeRulesPage()">← Back</button>
+                <div class="rules-nav-title">
+                    <span id="rules-game-icon" class="rules-game-icon-nav">🂠</span>
+                    <span id="rules-game-name-nav">Bikkad</span>
+                    <span id="rules-subtitle-nav" class="rules-subtitle-nav">Rules &amp; How to Play</span>
+                </div>
+                <div class="rules-nav-right">
+                    <button id="btn-rules-lang" class="btn btn-sm btn-lang-toggle" onclick="toggleRulesLang()">🌐 HI</button>
+                    <button id="btn-rules-play" class="btn btn-primary btn-sm" onclick="closeRulesPage();switchActiveGame(currentRulesGame)">▶ Play Now</button>
+                </div>
+            </header>
+
+            <!-- Rules Content Area -->
+            <div class="rules-body">
+                <!-- Game Banner -->
+                <div class="rules-game-banner" id="rules-game-banner">
+                    <div class="rules-banner-icon" id="rules-banner-icon">🂠</div>
+                    <div class="rules-banner-info">
+                        <div class="rules-banner-name" id="rules-banner-name">Bikkad</div>
+                        <div class="rules-banner-tagline" id="rules-banner-tagline">Apna Rajasthan ka traditional pot-sweep card game</div>
+                        <div class="rules-banner-meta" id="rules-banner-meta">4 Players · 52 Cards · Hidden Trump</div>
+                    </div>
+                </div>
+
+                <!-- Rules Tabs -->
+                <div class="rules-tab-bar">
+                    <button class="rules-tab-btn active" id="rtab-objective" onclick="switchRulesTab('objective')">🎯 Objective</button>
+                    <button class="rules-tab-btn" id="rtab-rules" onclick="switchRulesTab('rules')">📋 Game Rules</button>
+                    <button class="rules-tab-btn" id="rtab-explore" onclick="switchRulesTab('explore')">🖼️ Explore App</button>
+                    <button class="rules-tab-btn" id="rtab-howtoplay" onclick="switchRulesTab('howtoplay')">🎮 How to Play</button>
+                    <button class="rules-tab-btn" id="rtab-tips" onclick="switchRulesTab('tips')">💡 Tips</button>
+                </div>
+
+                <!-- Rules Content -->
+                <div class="rules-content-area" id="rules-content-area">
+                    <!-- Dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== VIEW 4: ABOUT DEVELOPER & FIRM PAGE (SOBHA IT SOLUTIONS) ==================== -->
+        <div id="view-about" class="view-container hidden">
+            <header class="about-navbar">
+                <button id="btn-about-back" class="btn btn-secondary btn-sm" onclick="closeAboutDeveloperPage()">← Back</button>
+                <div class="about-nav-title">
+                    <span class="about-nav-icon">👑</span>
+                    <span class="about-nav-name">Sobha IT Solutions</span>
+                    <span class="about-subtitle-nav">Owned by Sagan &amp; Anita Parihariya</span>
+                </div>
+                <div class="about-nav-right">
+                    <button id="btn-about-lang" class="btn btn-sm btn-lang-toggle" onclick="toggleAboutLang()">🌐 HI</button>
+                    <button class="btn btn-primary btn-sm" onclick="closeAboutDeveloperPage()">▶ Play Games</button>
+                </div>
+            </header>
+
+            <div class="about-body">
+                <!-- Hero Profile Card -->
+                <div class="about-hero-card">
+                    <div class="about-avatar-emblem">
+                        <span class="about-avatar-crown">👑</span>
+                        <span class="about-avatar-initials">SIS</span>
+                    </div>
+                    <div class="about-hero-info">
+                        <h2 class="about-hero-name">
+                            <span>Sobha IT Solutions</span>
+                            <span class="about-pill pill-gold">Owner &amp; Technology Firm</span>
+                        </h2>
+                        <div class="about-hero-title">Owned &amp; Founded by <strong>Sagan Parihariya &amp; Anita Parihariya</strong></div>
+                        <div class="about-hero-tagline about-en-text">
+                            "Preserving, digitizing, and elevating India's traditional card games into high-performance, real-time multiplayer digital experiences."
+                        </div>
+                        <div class="about-hero-tagline about-hi-text">
+                            "शोभा आईटी सॉल्यूशंस (स्वामित्व: सगन एवं अनिता परिहारिया) — भारत और राजस्थान के पारंपरिक पत्तों के खेलों को सहेजना और उन्हें आधुनिक रियल-टाइम डिजिटल मंच पर जीवंत करना।"
+                        </div>
+                        <div class="about-pills-row">
+                            <span class="about-pill pill-gold">👑 Owned by Sagan &amp; Anita Parihariya</span>
+                            <span class="about-pill pill-gold">🏜️ Born &amp; Rooted in Rajasthan</span>
+                            <span class="about-pill">🏛️ Cultural Heritage Champion</span>
+                            <span class="about-pill">⚡ Distributed Systems &amp; IT Solutions</span>
+                            <span class="about-pill">♠️ Game Theory &amp; Algorithmic Engines</span>
+                            <span class="about-pill pill-gold">👑 Made for Desi Gamers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story & Cultural Heritage Card -->
+                <div class="about-card">
+                    <h3 class="about-card-title">
+                        <span>🏜️</span>
+                        <span class="about-en-text">Firm Ownership, Rajasthani Roots &amp; Cultural Mission</span>
+                        <span class="about-hi-text">फर्म स्वामित्व, राजस्थानी जड़ें एवं सांस्कृतिक प्रेरणा</span>
+                    </h3>
+                    <div class="about-en-text">
+                        <p>
+                            <strong>Sobha IT Solutions</strong> is a premier technology and software solutions firm founded and owned by <strong>Sagan Parihariya and Anita Parihariya</strong>. Grounded in the heart and timeless heritage of <strong>Rajasthan</strong>, Sagan and Anita established Sobha IT Solutions with a proud cultural and technical vision: delivering high-craftsmanship distributed systems while actively preserving India's rich regional heritage.
+                        </p>
+                        <p>
+                            Growing up surrounded by the lively evening baithaks, monsoon courtyard gatherings, and village choupals of Rajasthan, Sagan and Anita experienced firsthand the electric thrill, sharp intellect, and profound community bonding that traditional Indian card games generate.
+                        </p>
+                        <p>
+                            Recognizing that in an era dominated by imported Western digital card games, India's own brilliant, centuries-old games—such as <strong>Bikkad (Double Sir)</strong>, <strong>Tikdi (3-2-5)</strong>, <strong>Bindi Coat (Mendikot / Dehla Pakad)</strong>, and <strong>Jhuthaniya (Bluff)</strong>—were at risk of digital neglect, Sobha IT Solutions embarked on this passionate engineering endeavor: to preserve every regional nuance, mathematical ladder, and authentic Rajasthani terminology into an uncompromising, zero-friction, real-time multiplayer digital gaming platform.
+                        </p>
+                        <p>
+                            Combining deep engineering craftsmanship with an abiding love for their native soil, Sagan and Anita Parihariya architected every module of this platform under Sobha IT Solutions with zero external bloat, sub-millisecond responsiveness, and authentic local art, ensuring that players whether in Jaipur, Jodhpur, rural villages, or across the global diaspora can relive the joyful camaraderie of Rajasthan's traditional card tables.
+                        </p>
+                    </div>
+                    <div class="about-hi-text">
+                        <p>
+                            <strong>शोभा आईटी सॉल्यूशंस (Sobha IT Solutions)</strong> एक प्रतिष्ठित आईटी एवं सॉफ्टवेयर सॉल्यूशंस फर्म है, जिसका पूर्ण स्वामित्व और संचालन <strong>सगन परिहारिया एवं अनिता परिहारिया (Sagan and Anita Parihariya)</strong> द्वारा किया जाता है। वीरधरा <strong>राजस्थान</strong> की समृद्ध संस्कृति और माटी से गहराई से जुड़े सगन और अनिता परिहारिया ने आधुनिक तकनीकी कौशल और अपनी सांस्कृतिक जड़ों को सहेजने के पावन संकल्प के साथ इस फर्म की स्थापना की।
+                        </p>
+                        <p>
+                            राजस्थान के गांवों, चौपालों और त्योहारों की बैठकों में पत्तों के खेल केवल समय बिताने का साधन नहीं, बल्कि तीव्र बुद्धि, रणनीति और आपसी स्नेह का महापर्व हुआ करते थे।
+                        </p>
+                        <p>
+                            आधुनिक डिजिटल युग में जब विदेशी खेलों का बोलबाला हो रहा था, तब शोभा आईटी सॉल्यूशंस के माध्यम से सगन एवं अनिता परिहारिया ने संकल्प लिया कि हमारे राजस्थान और भारत के प्राचीन खेल—जैसे <strong>बिक्कड़</strong>, <strong>तिकड़ी (3-2-5)</strong>, <strong>मेंदीकोट / बिंदी कोट (देहला पकड़)</strong> और <strong>झूठणिया (Bluff)</strong>—को अत्याधुनिक तकनीक के साथ सहेजा जाए।
+                        </p>
+                        <p>
+                            उन्होंने अपनी तकनीकी विशेषज्ञता और अपनी मिट्टी के प्रति निष्ठा को मिलाकर इस डिजिटल हब का निर्माण किया—ताकि राजस्थान से लेकर दुनिया के किसी भी कोने में बैठे लोग अपनी जड़ों और चौपाल की मिठास को उसी उत्साह और शुद्धता के साथ जी सकें।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Technical Craftsmanship & Architecture Card -->
+                <div class="about-card">
+                    <h3 class="about-card-title">
+                        <span>⚡</span>
+                        <span class="about-en-text">Engineering &amp; System Architecture</span>
+                        <span class="about-hi-text">तकनीकी वास्तुकला एवं इंजीनियरिंग</span>
+                    </h3>
+                    <div class="about-en-text">
+                        <p>
+                            Built with an uncompromising standard for engineering craftsmanship, the platform prioritizes real-time responsiveness, modular game state isolation, and zero-dependency client execution:
+                        </p>
+                    </div>
+                    <div class="about-hi-text">
+                        <p>
+                            इस प्लेटफार्म को आधुनिक सॉफ्टवेयर इंजीनियरिंग के सर्वोच्च मानकों पर तैयार किया गया है—जहां तेज गति, डेटा की सुरक्षा और किसी भी डिवाइस पर बिना रुकावट चलने की क्षमता सर्वोपरि है:
+                        </p>
+                    </div>
+
+                    <div class="about-tech-grid">
+                        <div class="about-tech-box">
+                            <span class="about-tech-icon">🌐</span>
+                            <div class="about-tech-name">Real-Time WebSocket Core</div>
+                            <p class="about-tech-desc about-en-text">High-concurrency asynchronous room coordination powered by Python and FastAPI. Features automatic heartbeats, reconnect recovery, and sub-millisecond card broadcast latency.</p>
+                            <p class="about-tech-desc about-hi-text">पायथन और फास्टएपीआई (FastAPI) पर आधारित हाई-परफॉर्मेंस वेबसॉकेट्स। ऑटो-रीकनेक्ट और बिना किसी लैग के लाइव मल्टीप्लेयर गेमप्ले।</p>
+                        </div>
+                        <div class="about-tech-box">
+                            <span class="about-tech-icon">🧠</span>
+                            <div class="about-tech-name">Algorithmic Bot Intelligence</div>
+                            <p class="about-tech-desc about-en-text">Heuristic decision trees custom-modeled for each Indian game: pot sweep calculations in Bikkad, trick ladder debt management in Tikdi, team 10s defense in Mendikot, and probabilistic bluffing in Jhuthaniya.</p>
+                            <p class="about-tech-desc about-hi-text">प्रत्येक खेल के नियमों के अनुसार तैयार की गई स्मार्ट बॉट AI—ताकि सोलो खेलते समय भी असली इंसान जैसी रणनीति और चुनौती का अनुभव हो।</p>
+                        </div>
+                        <div class="about-tech-box">
+                            <span class="about-tech-icon">🎨</span>
+                            <div class="about-tech-name">Handcrafted Vector Graphics</div>
+                            <p class="about-tech-desc about-en-text">Custom scalable SVG playing card deck with authentic Rajasthani Bandhani textile patterns, high-contrast red/black suits, reversible court cards, and 60fps hardware-accelerated animations.</p>
+                            <p class="about-tech-desc about-hi-text">पारंपरिक राजस्थानी बंधेज और शाही दरबारी शैली में हाथ से तैयार किए गए वेक्टर कार्ड्स, जो किसी भी स्क्रीन पर एकदम साफ और खूबसूरत दिखते हैं।</p>
+                        </div>
+                        <div class="about-tech-box">
+                            <span class="about-tech-icon">📱</span>
+                            <div class="about-tech-name">Zero-Bloat PWA Architecture</div>
+                            <p class="about-tech-desc about-en-text">Lightweight vanilla ES6+ architecture without bulky frontend frameworks. Installable Progressive Web App with offline service workers, responsive touch controls, and zero installation friction.</p>
+                            <p class="about-tech-desc about-hi-text">बिना किसी भारी लाइब्रेरी के तैयार किया गया हल्का और तेज वेब ऐप। मोबाइल या कंप्यूटर पर सीधे इंस्टॉल करें और बिना रुकावट खेलें।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Traditional Games Showcase -->
+                <div class="about-card">
+                    <h3 class="about-card-title">
+                        <span>🂠</span>
+                        <span class="about-en-text">Preserved Traditional Games</span>
+                        <span class="about-hi-text">सहेजे गए पारंपरिक खेल संग्रह</span>
+                    </h3>
+                    <div class="about-games-grid">
+                        <div class="about-game-box">
+                            <div class="about-game-header">
+                                <span class="about-game-icon">🂠</span>
+                                <span class="about-game-name">Bikkad (बिक्कड़)</span>
+                            </div>
+                            <div class="about-game-sub about-en-text">Rajasthan's legendary pot-sweep game. 4 players, 52 cards, hidden trump, carryover pot sweeps, and the daring 13-trick solo Tera contract.</div>
+                            <div class="about-game-sub about-hi-text">राजस्थान का प्रसिद्ध पोट-स्वीप खेल। 4 खिलाड़ी, 52 पत्ते, छुपा हुआ हुकुम और रोमांचक 13-हाथ का तेरा कॉन्ट्रैक्ट।</div>
+                        </div>
+                        <div class="about-game-box">
+                            <div class="about-game-header">
+                                <span class="about-game-icon">🃏</span>
+                                <span class="about-game-name">Tikdi / 3-2-5 (तिकड़ी)</span>
+                            </div>
+                            <div class="about-game-sub about-en-text">Strategic 3-player 30-card classic. Inspect your first 5 cards to choose Trump, master the 3-2-5 target ladder, and draw cards from indebted rivals.</div>
+                            <div class="about-game-sub about-hi-text">3 खिलाड़ियों का रणनीतिक 30 पत्तों का खेल। पहले 5 पत्ते देखकर हुकुम चुनें और 3-2-5 के स्कोरिंग लैडर पर जीत हासिल करें।</div>
+                        </div>
+                        <div class="about-game-box">
+                            <div class="about-game-header">
+                                <span class="about-game-icon">👑</span>
+                                <span class="about-game-name">Bindi Coat (मेंदीकोट)</span>
+                            </div>
+                            <div class="about-game-sub about-en-text">India's premier 4-player team trick clash (Dehla Pakad). Work with your partner to capture all four 10s (Dehla) to execute an honorable White Coat sweep.</div>
+                            <div class="about-game-sub about-hi-text">4 खिलाड़ियों का 2v2 टीम खेल (देहला पकड़)। अपने साथी के साथ मिलकर चारों 10 (देहले) जीतें और ऐतिहासिक सफेद कोट बनाएं।</div>
+                        </div>
+                        <div class="about-game-box">
+                            <div class="about-game-header">
+                                <span class="about-game-icon">🎭</span>
+                                <span class="about-game-name">Jhuthaniya (झूठणिया)</span>
+                            </div>
+                            <div class="about-game-sub about-en-text">High-stakes psychological bluff and challenge gameplay. Discard cards face-down, bluff your way to an empty hand, or challenge rivals at the right moment.</div>
+                            <div class="about-game-sub about-hi-text">मनोवैज्ञानिक दांव-पेंच और ब्लफ का रोमांचक खेल। अपने पत्ते उलटे फेंकें, चाल चलें और सामने वाले का झूठ पकड़कर खेल पलटें।</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Philosophy & Values Card -->
+                <div class="about-card">
+                    <h3 class="about-card-title">
+                        <span>🌟</span>
+                        <span class="about-en-text">Philosophy &amp; Guiding Principles</span>
+                        <span class="about-hi-text">मूल सिद्धांत और प्रतिबद्धता</span>
+                    </h3>
+                    <div class="about-values-list">
+                        <div class="about-value-item">
+                            <span class="about-value-icon">🛡️</span>
+                            <div class="about-value-content">
+                                <div class="about-value-title about-en-text">100% Free, Ad-Free &amp; Community-Focused</div>
+                                <div class="about-value-title about-hi-text">100% नि:शुल्क, विज्ञापन-रहित और शुद्ध अनुभव</div>
+                                <p class="about-value-desc about-en-text">Built purely for the love of traditional gaming and cultural heritage. Zero intrusive popups, zero microtransactions, and zero tracking.</p>
+                                <p class="about-value-desc about-hi-text">यह मंच खेल भावना और संस्कृति के सम्मान में बनाया गया है। बिना किसी विज्ञापन, बिना किसी शुल्क और बिना किसी रुकावट के पूरी तरह मुफ्त।</p>
+                            </div>
+                        </div>
+                        <div class="about-value-item">
+                            <span class="about-value-icon">🏛️</span>
+                            <div class="about-value-content">
+                                <div class="about-value-title about-en-text">Uncompromising Rule Fidelity</div>
+                                <div class="about-value-title about-hi-text">प्रामाणिक और असली नियमों का पालन</div>
+                                <p class="about-value-desc about-en-text">Every game logic module is vetted against authentic village rules, preserving regional terminology and traditional scoring ladders faithfully.</p>
+                                <p class="about-value-desc about-hi-text">प्रत्येक खेल के नियम वास्तविक गांव-देहात के बुजुर्गों और पारंपरिक खिलाड़ियों के नियमों के अनुरूप बारीकी से लिखे गए हैं।</p>
+                            </div>
+                        </div>
+                        <div class="about-value-item">
+                            <span class="about-value-icon">🤝</span>
+                            <div class="about-value-content">
+                                <div class="about-value-title about-en-text">Inclusive, Accessible &amp; Seamless</div>
+                                <div class="about-value-title about-hi-text">सरल, सहज और हर डिवाइस के अनुकूल</div>
+                                <p class="about-value-desc about-en-text">Designed to run flawlessly on basic smartphones as well as ultra-wide monitors with low data consumption and instant 4-digit room sharing.</p>
+                                <p class="about-value-desc about-hi-text">चाहे छोटा मोबाइल हो या बड़ा लैपटॉप, कम इंटरनेट में भी तुरंत 4 अंकों के रूम कोड से दोस्तों के साथ खेलने की पूरी सुविधा।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote Box -->
+                    <div class="about-quote-box">
+                        <span class="about-en-text">"Preserving our cultural games is not just about writing code; it is about keeping the warmth, laughter, and camaraderie of our traditional village baithaks alive in the digital era."</span>
+                        <span class="about-hi-text">"हमारे पारंपरिक खेलों को सहेजना सिर्फ कोड लिखना नहीं है; यह हमारे चौपालों और बैठकों की मिठास, हंसी और आपसी भाईचारे को नए युग में जिंदा रखने की एक कोशिश है।"</span>
+                        <span class="about-quote-author">— Sagan &amp; Anita Parihariya (Sobha IT Solutions)</span>
+                    </div>
+                </div>
+
+                <!-- Bottom Back / Play Button -->
+                <div class="about-actions-bottom">
+                    <button class="btn btn-primary btn-lg" onclick="closeAboutDeveloperPage()">
+                        🎮 Play Desi Card Games Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== VIEW 2: CASINO TABLE GAME ARENA ==================== -->
+        <div id="view-table" class="view-container hidden">
+            <!-- Standardized In-Game Header Navbar -->
+            <header class="navbar" id="table-navbar">
+                <!-- Zone 1: Brand & Active Game Identity -->
+                <div class="brand">
+                    <span class="logo-icon" id="header-game-icon">🂠</span>
+                    <div class="brand-titles">
+                        <h1 id="header-game-title">BIKKAD</h1>
+                        <span class="subtitle" id="header-game-sub">Apna Rajasthan Ka Bikkad</span>
+                    </div>
+                    <div class="badge game-badge" id="game-name-badge" title="Room & Match Info">🏷️ game1</div>
+                </div>
+                
+                <!-- Zone 2: Standardized Center Status Pills -->
+                <div class="header-status">
+                    <div class="badge dealer-badge" id="dealer-badge" title="Dealer Info">🃏 Dealer: Sagan (0 pts)</div>
+                    <div class="badge mode-badge hidden" id="mode-badge" title="Game Context">Contract: 🃏 Regular</div>
+                    <div class="badge turn-badge" id="turn-badge" title="Active Turn / Phase">Turn: Sagan</div>
+                </div>
+
+                <!-- Zone 3: Standardized Action & Options Group -->
+                <div class="header-actions">
+                    <!-- Contextual Next Deal Button (Appears prominently when deal completes) -->
+                    <button id="btn-next-deal" class="btn btn-header-icon btn-next-deal-header hidden" title="Next Deal (Proceed to next round)">
+                        <span class="btn-icon">⏭</span> <span class="btn-label">Next Deal</span>
+                    </button>
+
+                    <!-- Core Quick Utilities -->
+                    <button id="btn-go-home" class="btn btn-header-icon btn-secondary" title="Exit to Games Hub">
+                        <span class="btn-icon">🏠</span> <span class="btn-label">Home</span>
+                    </button>
+                    <button id="btn-toggle-scoreboard" class="btn btn-header-icon btn-secondary btn-score-toggle" title="View Scoreboard & Match Logs">
+                        <span class="btn-icon">📊</span> <span class="btn-label" id="mobile-score-pill">Score</span>
+                    </button>
+                    <button id="btn-table-how-to-play" class="btn btn-header-icon btn-secondary" onclick="openRulesPage((typeof currentGameType !== 'undefined' ? currentGameType : activeSelectedGame));return false;" title="How to Play & Rules">
+                        <span class="btn-icon">📖</span> <span class="btn-label">Rules</span>
+                    </button>
+                    <button id="btn-lang-toggle" class="btn btn-header-icon btn-lang-toggle" title="Switch Language (English / Hinglish)">
+                        🌐 HI
+                    </button>
+                    <button id="btn-sound" class="btn btn-header-icon btn-secondary" title="Toggle Sound">
+                        <span class="btn-icon" id="sound-icon">🔊</span>
+                    </button>
+
+                    <!-- Standardized Game Options Dropdown -->
+                    <div class="header-menu-wrap">
+                        <button id="btn-game-options-toggle" class="btn btn-header-icon btn-options-toggle" title="Game Options & Settings">
+                            <span class="btn-icon">⚙</span> <span class="btn-label">Options</span> <span class="menu-caret">▾</span>
+                        </button>
+                        <div id="game-options-dropdown" class="game-options-dropdown hidden">
+                            <div class="dropdown-header-title">Game Options</div>
+                            <button id="btn-restart-deal" class="dropdown-menu-item" title="Restart Deal (Redeal current hand)">
+                                <span class="d-icon">🔁</span>
+                                <div class="d-text">
+                                    <span class="d-title btn-label">Restart Deal</span>
+                                    <span class="d-sub">Redeal current hand from scratch</span>
+                                </div>
+                            </button>
+                            <button id="btn-header-new-game" class="dropdown-menu-item" title="New Game (Start fresh from 0 pts)">
+                                <span class="d-icon">🔄</span>
+                                <div class="d-text">
+                                    <span class="d-title btn-label">New Game</span>
+                                    <span class="d-sub">Reset scores and setup new room</span>
+                                </div>
+                            </button>
+                            <div class="dropdown-sep"></div>
+                            <button id="btn-menu-deck-toggle" class="dropdown-menu-item" title="Switch Playing Card Style">
+                                <span class="d-icon" id="menu-deck-icon">🏜️</span>
+                                <div class="d-text">
+                                    <span class="d-title" id="menu-deck-title">Deck Style: Royal Desert</span>
+                                    <span class="d-sub">Toggle between Royal Rajasthani &amp; Classic Vector</span>
+                                </div>
+                            </button>
+                            <div class="dropdown-sep"></div>
+                            <button id="btn-config" class="dropdown-menu-item" title="Lobby & Bot Settings">
+                                <span class="d-icon">🛠️</span>
+                                <div class="d-text">
+                                    <span class="d-title">Bot & AI Settings</span>
+                                    <span class="d-sub">Configure Ollama AI & speeds</span>
+                                </div>
+                            </button>
+                            <div class="dropdown-sep"></div>
+                            <button id="btn-menu-about-dev" class="dropdown-menu-item" onclick="openAboutDeveloperPage()" title="About Sobha IT Solutions (Sagan &amp; Anita Parihariya)">
+                                <span class="d-icon">👑</span>
+                                <div class="d-text">
+                                    <span class="d-title">About Sobha IT Solutions</span>
+                                    <span class="d-sub">Owned by Sagan &amp; Anita Parihariya</span>
+                                </div>
+                            </button>
+                            <div class="dropdown-sep"></div>
+                            <button id="btn-menu-exit-home" class="dropdown-menu-item item-danger" title="Return to Home Screen" onclick="document.getElementById('btn-go-home').click();">
+                                <span class="d-icon">🚪</span>
+                                <div class="d-text">
+                                    <span class="d-title">Leave Game</span>
+                                    <span class="d-sub">Exit table and return to lobby</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hidden Trump Selector Notification Banner (Phase 1: 5 Cards) -->
+            <div id="trump-hide-banner" class="trump-hide-banner hidden">
+                <span class="banner-title">🃏 YOU ARE ELDEST HAND:</span>
+                <span class="banner-sub">First 5 cards dealt! Click 1 card below to hide as the Trump Card.</span>
+            </div>
+
+            <!-- Game Announcement Banner (Toast / Alert for Tera declarations, etc.) -->
+            <div id="game-announcement-banner" class="game-announcement-banner hidden" title="Click to dismiss">
+                <div class="announcement-content">
+                    <span class="announcement-icon">📢</span>
+                    <div class="announcement-text">
+                        <div class="announcement-title" id="announcement-title">Kabir declared TERA!</div>
+                        <div class="announcement-sub" id="announcement-sub">Played cards returned to hands. Kabir leads the first card!</div>
+                    </div>
+                </div>
+                <button id="btn-close-announcement" class="btn-close-banner" aria-label="Close Announcement">✕</button>
+            </div>
+
+            <!-- Trump Reveal Flash Announcement Toast -->
+            <div id="trump-reveal-toast" class="trump-reveal-toast hidden" title="Click to dismiss">
+                <div class="trump-reveal-content">
+                    <div class="trump-reveal-icon-box">
+                        <span class="trump-horn">🎺</span>
+                    </div>
+                    <div class="trump-reveal-details">
+                        <div class="trump-reveal-tag">RANG KHUL GAYA • TRUMP REVEALED</div>
+                        <div class="trump-reveal-caller" id="trump-reveal-caller">G. Dinesh demanded Trump Show!</div>
+                        <div class="trump-reveal-suit-row">
+                            <span class="trump-reveal-suit-lbl">Active Trump:</span>
+                            <span class="trump-reveal-suit-val" id="trump-reveal-suit-val">♦ DIAMONDS</span>
+                        </div>
+                    </div>
+                    <div class="trump-reveal-card-box" id="trump-reveal-card-box"></div>
+                    <button id="btn-close-trump-reveal" class="btn-close-reveal" aria-label="Dismiss">✕</button>
+                </div>
+            </div>
+
+            <!-- Main Body: Table + Sidebar -->
+            <main class="main-content">
+                <!-- Casino Felt Table View -->
+                <div class="felt-table-wrapper">
+                <div class="felt-table">
+                    <!-- Top-Left Corner: Hidden Trump Card Slot -->
+                    <div class="trump-slot-box" id="trump-slot">
+                        <div class="slot-label" id="trump-slot-label">HIDDEN TRUMP</div>
+                        <div class="card-slot" id="trump-card-container">
+                            <!-- Card SVG placed here -->
+                        </div>
+                        <div id="trump-revealed-caller-badge" class="trump-caller-badge hidden">
+                            <span class="caller-icon">🔓</span>
+                            <span id="trump-caller-name">Show: G. Dinesh</span>
+                        </div>
+                        <button id="btn-demand-cut" class="btn btn-warning btn-sm hidden">🔓 Open Trump</button>
+                        <button id="btn-declare-runtime-trump" class="btn btn-primary btn-sm hidden">🎯 Pick Trump</button>
+                        <button id="btn-ask-trump" class="btn btn-warning btn-sm hidden">🎺 Ask Trump</button>
+                    </div>
+
+                    <!-- Top-Right Corner: Center Pot Accumulator (Sized Identically to Trump Slot) -->
+                    <div class="pot-accumulator-box" id="pot-accumulator-box">
+                        <div class="slot-label pot-title">POT</div>
+                        <div class="pot-slot-card">
+                            <div class="pot-cards-metric">
+                                <span class="pot-val" id="pot-cards-val">0</span>
+                                <span class="pot-lbl">Cards</span>
+                            </div>
+                            <div class="pot-sub-metric">
+                                <span id="pot-tricks-val">0</span> Trk
+                            </div>
+                        </div>
+                        <div class="pot-count-legacy" id="pot-count" style="display:none;">0 CARDS</div>
+                        <div class="pot-streak-pill hidden" id="pot-streak"></div>
+                    </div>
+                    
+                    <!-- North Seat (P3 - Team A) -->
+                    <div class="seat seat-north" id="seat-P3">
+                        <div class="player-info" id="player-info-P3">
+                            <div class="seat-role-tags" id="role-P3"></div>
+                            <span class="player-name" id="name-P3">P3 (North - Team A)</span>
+                            <span class="card-count" id="count-P3">13 cards</span>
+                        </div>
+                        <div class="hand-container hand-hidden" id="hand-P3"></div>
+                    </div>
+
+                    <!-- West Seat (P2 - Team B) -->
+                    <div class="seat seat-west" id="seat-P2">
+                        <div class="player-info" id="player-info-P2">
+                            <div class="seat-role-tags" id="role-P2"></div>
+                            <span class="player-name" id="name-P2">P2 (West - Team B)</span>
+                            <span class="card-count" id="count-P2">13 cards</span>
+                        </div>
+                        <div class="hand-container hand-hidden" id="hand-P2"></div>
+                    </div>
+
+                    <!-- Center Play Arena -->
+                    <div class="center-arena" id="center-area">
+                        <!-- Played Cards in Trick (4 visible table slots) -->
+                        <div class="trick-arena">
+                            <div class="trick-card-slot slot-north" id="trick-P3"></div>
+                            <div class="trick-card-slot slot-west" id="trick-P2"></div>
+                            <div class="trick-card-slot slot-east" id="trick-P4"></div>
+                            <div class="trick-card-slot slot-south" id="trick-P1"></div>
+                        </div>
+
+                        <!-- Dedicated Jhuthaniya Arena (Bluff / Cheat Game) -->
+                        <div id="jhuthaniya-arena" class="jhuthaniya-arena hidden">
+                            <!-- Players Roster Bar for 2-7 players -->
+                            <div id="jhuthaniya-roster" class="jhuthaniya-roster"></div>
+
+                            <!-- Center Pot & Action Controls -->
+                            <div class="jhuthaniya-center-board">
+                                <!-- Center Pot Card Pile -->
+                                <div class="jh-pot-wrapper">
+                                    <div id="jh-pot-card-stack" class="jh-pot-stack">
+                                        <img src="assets/cards/bandhani-back.svg" class="jh-pot-img jh-img-1" alt="Pot Card">
+                                        <img src="assets/cards/bandhani-back.svg" class="jh-pot-img jh-img-2" alt="Pot Card">
+                                        <img src="assets/cards/bandhani-back.svg" class="jh-pot-img jh-img-3" alt="Pot Card">
+                                    </div>
+                                    <div class="jh-pot-badge" id="jh-pot-badge">🃏 0 Cards in Pot</div>
+                                </div>
+
+                                <!-- Active Claim Display -->
+                                <div id="jh-claim-display" class="jh-claim-display hidden">
+                                    <div class="jh-claim-speaker" id="jh-claim-speaker">📢 Last Claim</div>
+                                    <div class="jh-claim-text" id="jh-claim-text">Waiting for claim...</div>
+                                </div>
+
+                                <!-- Challenge Action Bar (when someone made a claim and you can challenge) -->
+                                <div id="jh-challenge-bar" class="jh-challenge-bar hidden">
+                                    <div class="jh-challenge-prompt" id="jh-challenge-prompt">Do you believe this claim or want to inspect a card?</div>
+                                    <div id="jh-inspect-container" class="jh-inspect-container" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 8px 0;"></div>
+                                    <div class="jh-challenge-actions">
+                                        <button id="btn-jh-challenge" class="btn btn-danger btn-lg pulse-btn">🔥 JHUTH! (Inspect Card #1)</button>
+                                        <button id="btn-jh-pass" class="btn btn-secondary btn-lg">⏩ PASS (Take No Risk)</button>
+                                    </div>
+                                </div>
+
+                                <!-- Play Controls (when it is human's turn to play cards) -->
+                                <div id="jh-play-bar" class="jh-play-bar hidden">
+                                    <div class="jh-play-instructions">
+                                        <span class="jh-step">1. Select 1 to 4 cards below</span>
+                                        <span class="jh-step-sep">•</span>
+                                        <span class="jh-step" id="jh-rank-step-title">2. Pick Claimed Rank:</span>
+                                    </div>
+                                    <div id="jh-locked-rank-badge" class="jh-locked-rank-badge hidden"></div>
+                                    <div id="jh-rank-pills" class="jh-rank-pills"></div>
+                                    <button id="btn-jh-play-submit" class="btn btn-primary btn-lg pulse-btn" disabled>
+                                        🚀 Place Cards &amp; Claim
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- East Seat (P4 - Team B) -->
+                    <div class="seat seat-east" id="seat-P4">
+                        <div class="player-info" id="player-info-P4">
+                            <div class="seat-role-tags" id="role-P4"></div>
+                            <span class="player-name" id="name-P4">P4 (East - Team B)</span>
+                            <span class="card-count" id="count-P4">13 cards</span>
+                        </div>
+                        <div class="hand-container hand-hidden" id="hand-P4"></div>
+                    </div>
+
+                    <!-- South Seat (P1 - Team A - Human/Active Player) -->
+                    <div class="seat seat-south" id="seat-P1">
+                        <div class="hand-container hand-interactive" id="hand-P1"></div>
+                        <div class="south-bottom-bar">
+                            <div class="player-info" id="player-info-P1">
+                                <div class="seat-role-tags" id="role-P1"></div>
+                                <span class="player-name" id="name-P1">P1 (South - Team A)</span>
+                                <span class="card-count" id="count-P1">13 cards</span>
+                            </div>
+                            <!-- In-Hand Contract Action Bar beside user name -->
+                            <div id="player-contract-bar" class="player-contract-bar hidden">
+                                <span class="contract-prompt">🏆 Declare Contract:</span>
+                                <button id="btn-bid-tera" class="btn btn-warning btn-sm">🔥 Tera</button>
+                                <button id="btn-bid-double-tera" class="btn btn-danger btn-sm">⚡ Double Tera</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Control Bar -->
+                <div class="table-controls">
+                    <div class="bot-auto-badge">
+                        <span class="bot-indicator-dot"></span>
+                        <span id="bot-status-text">🤖 BOTs: Auto-Playing</span>
+                    </div>
+                    
+                    <button id="btn-pause-bots" class="btn btn-action">⏸ Pause BOTs</button>
+                    <div class="speed-control">
+                        <label>Speed:</label>
+                        <input type="range" id="speed-slider" min="100" max="1500" value="500" step="100">
+                        <span id="speed-value">500ms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Scoreboard & Log Ledger -->
+            <aside class="sidebar" id="sidebar-drawer">
+                <!-- Mobile Drawer Header -->
+                <div class="drawer-header-mobile">
+                    <span class="drawer-title">📊 Scoreboard & Ledger</span>
+                    <button id="btn-close-sidebar" class="btn-close-drawer" aria-label="Close">✕</button>
+                </div>
+
+                <!-- Tug-of-War Scoreboard -->
+                <div class="sidebar-card scoreboard-card">
+                    <h3 id="scoreboard-title">🏆 Scoreboard & Ladder</h3>
+
+                    <!-- BIKKAD SCOREBOARD PANEL -->
+                    <div id="bikkad-scoreboard-panel">
+                        <div class="score-team-grid">
+                            <div class="team-score-box team-a">
+                                <span class="team-title" id="title-team-a">Team A (Rajesh + Dev)</span>
+                                <div class="score-num" id="tricks-team-a">Tricks: 0</div>
+                                <div class="cards-num" id="cards-team-a">Cards: 0</div>
+                            </div>
+                            <div class="team-score-box team-b">
+                                <span class="team-title" id="title-team-b">Team B (Arjun + Aarav)</span>
+                                <div class="score-num" id="tricks-team-b">Tricks: 0</div>
+                                <div class="cards-num" id="cards-team-b">Cards: 0</div>
+                            </div>
+                        </div>
+
+                        <div class="ladder-info-box">
+                            <div class="ladder-row">
+                                <span>Active Dealer:</span>
+                                <strong id="ladder-dealer">P1 (Team A)</strong>
+                            </div>
+                            <div class="ladder-row">
+                                <span>Dealer Burden Score:</span>
+                                <strong id="ladder-score" class="text-warning">0 / 52</strong>
+                            </div>
+                            <div class="ladder-progress-bar">
+                                <div class="ladder-progress-fill" id="ladder-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TIKDI (3-PLAYER) SCOREBOARD PANEL -->
+                    <div id="tikdi-scoreboard-panel" class="hidden">
+                        <div class="tikdi-scoreboard-players" id="tikdi-scoreboard-players">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+
+                        <div class="tikdi-status-box">
+                            <div class="tikdi-status-row">
+                                <span>Round / Deal:</span>
+                                <strong id="tikdi-status-round" class="text-warning">Round 1</strong>
+                            </div>
+                            <div class="tikdi-status-row">
+                                <span>Active Dealer:</span>
+                                <strong id="tikdi-status-dealer">P3 (G. Bhimaram)</strong>
+                            </div>
+                            <div class="tikdi-status-row">
+                                <span>Trump Suit:</span>
+                                <strong id="tikdi-status-trump" class="text-info">♠ Spades</strong>
+                            </div>
+                            <div class="tikdi-status-row">
+                                <span>Tricks Completed:</span>
+                                <strong id="tikdi-status-tricks">0 / 10</strong>
+                            </div>
+                            <div class="ladder-progress-bar">
+                                <div class="ladder-progress-fill" id="tikdi-ladder-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Round Match Ledger Logs -->
+                <div class="sidebar-card logs-card">
+                    <h3>📜 Round Match Ledger</h3>
+                    <div class="log-box" id="log-box"></div>
+                </div>
+
+                <!-- Sidebar Bottom: Developer Attribution -->
+                <div class="sidebar-dev-footer">
+                    <button class="sidebar-about-btn" id="sidebar-about-btn" onclick="openAboutDeveloperPage()" title="About Sobha IT Solutions (Sagan &amp; Anita Parihariya)">
+                        👑 About: <strong>Sobha IT Solutions</strong>
+                    </button>
+                </div>
+            </aside>
+            <div id="sidebar-backdrop" class="sidebar-backdrop hidden"></div>
+        </main>
+    </div>
+
+    <!-- Modal: Trump Selection (Tikdi 5-Card Inspection & Bikkad Void Selection) -->
+    <div id="modal-trump-select" class="modal-overlay hidden">
+        <div class="modal-content text-center trump-selection-modal-content">
+            <h2 id="trump-select-title">🎺 CHOOSE TRUMP SUIT</h2>
+            <p id="trump-select-desc">Inspect your first 5 cards below and pick the Trump Suit for this round:</p>
+
+            <!-- 5-Card Inspection Tray -->
+            <div id="trump-hand-preview" class="trump-hand-preview"></div>
+
+            <div class="suit-picker-grid">
+                <button class="suit-btn suit-spades" data-suit="S">♠ SPADES</button>
+                <button class="suit-btn suit-hearts" data-suit="H">♥ HEARTS</button>
+                <button class="suit-btn suit-diamonds" data-suit="D">♦ DIAMONDS</button>
+                <button class="suit-btn suit-clubs" data-suit="C">♣ CLUBS</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Lobby Settings -->
+    <div id="modal-config" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>⚙ Lobby & Player Settings</h2>
+            
+            <div class="form-group">
+                <label>Match Type Setup:</label>
+                <select id="select-match-type">
+                    <option value="1h3ai">1 Human (South P1) vs 3 AI Bots</option>
+                    <option value="2h2ai">2 Humans (Team A P1+P3) vs 2 AI Bots</option>
+                    <option value="4ai">4 AI Bots (Spectator / Auto-Simulation)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="chk-ollama"> Enable Local Ollama AI (Fallback to Heuristic if offline)
+                </label>
+            </div>
+
+            <div class="modal-actions">
+                <button id="btn-save-config" class="btn btn-primary">Save Settings</button>
+                <button id="btn-close-config" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Tikdi Debt Settlement Choice (Per-Debtor Choice: Tash Khinchai or Extra Tricks) -->
+    <div id="modal-tikdi-debt-choice" class="modal-overlay hidden">
+        <div class="modal-content text-center debt-choice-modal-content">
+            <div class="debt-choice-icon">⚖️</div>
+            <h2 id="debt-choice-title">DEBT SETTLEMENT CHOICE</h2>
+            <p id="debt-choice-desc">You took less tricks last round! Choose how you want to settle your debt:</p>
+            <div id="debt-choice-info-box" class="debt-choice-info-box">
+                <span id="debt-choice-info-text">You owe 1 trick to Opponent.</span>
+            </div>
+            
+            <div id="debt-choice-actions" class="debt-choice-options-grid">
+                <button id="btn-debt-choice-swap" class="debt-choice-btn btn-swap">
+                    <span class="d-opt-icon">🃏</span>
+                    <div class="d-opt-text">
+                        <span class="d-opt-title">Option 1: Tash Khinchai (Card Pull)</span>
+                        <span class="d-opt-desc" id="debt-choice-swap-desc">Creditor pulls cards blindly from your hand and returns unwanted cards.</span>
+                    </div>
+                </button>
+                <button id="btn-debt-choice-tricks" class="debt-choice-btn btn-tricks">
+                    <span class="d-opt-icon">🎯</span>
+                    <div class="d-opt-text">
+                        <span class="d-opt-title">Option 2: Give Extra Tricks (Quota Adjustment)</span>
+                        <span class="d-opt-desc" id="debt-choice-tricks-desc">I don't want Tash Khinchai! I will give extra tricks in the contract instead.</span>
+                    </div>
+                </button>
+            </div>
+            <div id="debt-choice-waiting" class="debt-choice-waiting hidden">
+                <span id="debt-choice-waiting-msg">Waiting for player to choose settlement option...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Tikdi Penalty Settlement (Blind Card Pulling / Card Return) -->
+    <div id="modal-tikdi-penalty" class="modal-overlay hidden">
+        <div class="modal-content text-center penalty-modal-content">
+            <div class="penalty-icon">⚖️</div>
+            <h2 id="tikdi-penalty-title">PENALTY SETTLEMENT</h2>
+            <p id="tikdi-penalty-desc">Debts from previous round must be settled before Trick 1.</p>
+            <div id="tikdi-penalty-cards-container" class="tikdi-penalty-cards-container"></div>
+            <div id="tikdi-penalty-status" class="tikdi-penalty-status"></div>
+            <div id="tikdi-penalty-switch-box" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.15);">
+                <button id="btn-tikdi-switch-to-tricks" class="btn btn-secondary btn-sm" title="Debtor promises extra tricks in the contract instead of swapping cards">
+                    🎯 Option 2: Give Extra Tricks Instead (Promise Tricks)
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Tikdi Quota Adjustment (Extra Tricks / Debt Settlement) -->
+    <div id="modal-tikdi-quota-adjustment" class="modal-overlay hidden">
+        <div class="modal-content text-center quota-adjustment-modal-content">
+            <div class="quota-adj-icon">⚖️</div>
+            <h2 id="quota-adj-title">QUOTA ADJUSTMENT</h2>
+            <p id="quota-adj-desc" class="quota-adj-desc">Debts from last round will adjust trick quotas for this round.</p>
+            <div id="quota-adj-details" class="quota-adj-details"></div>
+            <div id="quota-adj-summary" class="quota-adj-summary"></div>
+            <button id="btn-quota-adj-continue" class="btn btn-primary btn-highlight-pulse" style="margin-top: 18px; font-size: 1.1rem; padding: 12px 36px;">
+                ✅ Continue to Trick Play
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal: Deal Over / Round Complete -->
+    <div id="modal-deal-complete" class="modal-overlay hidden">
+        <div class="modal-content text-center deal-complete-card">
+            <div class="deal-complete-trophy" id="deal-complete-trophy">🏆</div>
+            <h2 id="deal-complete-title">DEAL OVER!</h2>
+            <div id="deal-complete-winner" class="deal-complete-winner">Team B Wins!</div>
+            <p id="deal-complete-desc" class="deal-complete-desc">Tera Failed: Opponents took a trick!</p>
+            
+            <div class="deal-score-summary">
+                <div class="summary-box">
+                    <span class="summary-label" id="summary-lbl-a">Team A</span>
+                    <span class="summary-val" id="summary-val-a">0 Tricks</span>
+                </div>
+                <div class="summary-divider">VS</div>
+                <div class="summary-box">
+                    <span class="summary-label" id="summary-lbl-b">Team B</span>
+                    <span class="summary-val" id="summary-val-b">1 Trick</span>
+                </div>
+            </div>
+
+            <div class="ladder-impact" id="deal-complete-ladder">
+                Dealer Kabir (Team A) remains Dealer at 26 points.
+            </div>
+
+            <div class="deal-complete-actions">
+                <button id="btn-modal-next-deal" class="btn btn-primary btn-lg pulse-btn">⏭ Start Next Deal</button>
+                <button id="btn-modal-new-game" class="btn btn-warning btn-lg">🔄 New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Jhuthaniya Bluff Game Round Summary -->
+    <div id="modal-jhuthaniya-summary" class="modal-overlay hidden">
+        <div class="modal-content text-center deal-complete-card">
+            <div class="deal-complete-trophy" id="jhuthaniya-summary-icon">🃏</div>
+            <h2 id="jhuthaniya-summary-title">GAME OVER!</h2>
+            <div id="jhuthaniya-summary-loser" class="deal-complete-winner" style="color:#ff6b6b;"></div>
+            <div id="jhuthaniya-summary-rankings" class="deal-score-summary" style="flex-direction:column;gap:6px;"></div>
+            <div class="deal-complete-actions">
+                <button id="btn-jhuthaniya-new-game" class="btn btn-primary btn-lg pulse-btn">🔄 Play Again</button>
+                <button id="btn-jhuthaniya-go-home" class="btn btn-secondary btn-lg">🏠 Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Jhuthaniya Challenge Window -->
+    <div id="modal-jhuthaniya-challenge" class="modal-overlay hidden">
+        <div class="modal-content text-center">
+            <div style="font-size:2rem;margin-bottom:4px;">🚨</div>
+            <h2 style="color:#ffd700;margin-bottom:6px;">JHUTH?</h2>
+            <div id="jh-challenge-claim" style="font-size:1.05rem;margin-bottom:12px;color:#fff;"></div>
+            <div id="jh-challenge-status" style="margin-bottom:12px;font-size:0.85rem;color:#aaa;"></div>
+            <div class="deal-complete-actions">
+                <button id="btn-jh-call-bluff" class="btn btn-lg" style="background:linear-gradient(135deg,#ff4444,#cc0000);color:#fff;font-weight:700;font-size:1.05rem;">🚨 JHUTH! (Call Bluff)</button>
+                <button id="btn-jh-pass" class="btn btn-secondary btn-lg">✓ Pass (Trust it)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Bindi Coat Round Summary (Mindikot) -->
+    <div id="modal-bindicoat-summary" class="modal-overlay hidden">
+        <div class="modal-content text-center deal-complete-card">
+            <div class="deal-complete-trophy" id="bindicoat-summary-icon">🔴</div>
+            <h2 id="bindicoat-summary-title">ROUND OVER!</h2>
+            <div id="bindicoat-summary-winner" class="deal-complete-winner"></div>
+            <div id="bindicoat-summary-details" class="deal-score-summary"></div>
+            <div class="deal-complete-actions">
+                <button id="btn-bindicoat-next-round" class="btn btn-primary btn-lg pulse-btn">⏭ Next Round</button>
+                <button id="btn-bindicoat-go-home" class="btn btn-secondary btn-lg">🏠 Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Bindi Coat Bandh Hukum Selection -->
+    <div id="modal-bandh-hukum" class="modal-overlay hidden">
+        <div class="modal-content text-center bandh-hukum-modal-content">
+            <div style="font-size:2rem;margin-bottom:4px;line-height:1;">🔒</div>
+            <h2 style="color:#ffd700;margin-bottom:6px;font-size:1.25rem;letter-spacing:0.5px;">Place Bandh Hukum (Blind)</h2>
+            <p id="bandh-hukum-desc" style="color:#cbd5e1;font-size:0.85rem;margin-bottom:12px;line-height:1.4;">
+                In Bandh Hukum mode, your first 5 cards are face-down. Pick 1 card blindly to place face-down as the secret Trump.
+            </p>
+            <div id="bandh-hukum-hand" style="display:flex;justify-content:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;"></div>
+            <div id="bandh-hukum-selected" style="color:#38bdf8;font-weight:600;font-size:0.85rem;min-height:20px;">Tap any face-down card to hide it as Bandh Hukum</div>
+        </div>
+    </div>
+
+    <!-- Modal: Render Cloud Cold-Start / Waking Up Server -->
+    <div id="modal-server-wakeup" class="modal-overlay hidden">
+        <div class="modal-content text-center server-wakeup-card">
+            <div class="server-wakeup-icon-box">
+                <span class="server-wakeup-cloud">☁️</span>
+                <span class="server-wakeup-pulse">⚡</span>
+            </div>
+            <h2 id="server-wakeup-title">Connecting to Game Server...</h2>
+            <p id="server-wakeup-desc" class="server-wakeup-desc">
+                Free cloud servers sleep after inactivity. Waking up backend, please hold on (~30–50s)...
+            </p>
+            <div class="server-progress-bar-wrap">
+                <div id="server-progress-bar" class="server-progress-bar"></div>
+            </div>
+            <div class="server-timer-row">
+                <span id="server-elapsed-text">⏱ Elapsed: 0s</span>
+                <span id="server-ping-status" class="server-ping-pill">Pinging Server...</span>
+            </div>
+            <div class="server-active-url-row">
+                <span>Active Server:</span>
+                <code id="server-wakeup-url-display">https://sagan-czyf.onrender.com</code>
+            </div>
+            <div class="server-wakeup-actions">
+                <button id="btn-open-server-settings-from-wakeup" class="btn btn-secondary btn-sm">⚙️ Change Server URL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Backend Server URL Settings -->
+    <div id="modal-server-settings" class="modal-overlay hidden">
+        <div class="modal-content server-settings-card">
+            <div class="modal-header-row">
+                <h3>⚙️ Backend Server Connection</h3>
+                <button id="btn-close-server-settings" class="btn-close-drawer">✕</button>
+            </div>
+            <p class="server-settings-sub">Choose where your game backend is hosted. Changes apply immediately.</p>
+            
+            <div class="form-group-home">
+                <label for="input-custom-backend-url">Backend Server URL:</label>
+                <input type="text" id="input-custom-backend-url" class="home-input" placeholder="https://sagan-czyf.onrender.com">
+            </div>
+
+            <div class="quick-server-presets">
+                <span class="presets-label">Quick Presets:</span>
+                <button type="button" class="preset-btn" id="btn-preset-render">☁️ Render Cloud</button>
+                <button type="button" class="preset-btn" id="btn-preset-local">💻 Localhost (8000)</button>
+            </div>
+
+            <div id="server-test-result" class="server-test-result hidden"></div>
+
+            <div class="server-settings-actions">
+                <button id="btn-test-backend-connection" class="btn btn-secondary btn-md">🔌 Test Ping</button>
+                <button id="btn-save-backend-url" class="btn btn-primary btn-md">💾 Save &amp; Connect</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Games Hub Toast Notification for Coming Soon Games -->
+    <div id="hub-toast" class="hub-toast hidden"></div>
+
+    <script src="config.js?v=26"></script>
+    <script src="i18n.js?v=26"></script>
+    <script src="cards.js?v=26"></script>
+    <script src="audio.js?v=26"></script>
+    <script src="app.js?v=26"></script>
+    <script src="rules.js?v=26"></script>
+    <script src="pwa.js?v=26"></script>
+</body>
+</html>

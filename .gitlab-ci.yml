@@ -1,0 +1,24 @@
+# GitLab Pages CI/CD configuration for Desi Card Games PWA
+# Automatically deploys the frontend directory to GitLab Pages
+# The game backend is hosted remotely on Render (https://sagan-czyf.onrender.com)
+
+image: alpine:latest
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+    - echo "Packaging Desi Card Games PWA for GitLab Pages..."
+    - mkdir -p public
+    - cp -r frontend/* public/
+    - echo "Deployment ready in public/ directory:"
+    - ls -la public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "master"

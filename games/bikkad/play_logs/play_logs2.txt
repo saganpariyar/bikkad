@@ -1,0 +1,107 @@
+========================================================================================================================
+                                     BIKKAD MASTER LEDGER: 52-GAME FULL MATCH
+========================================================================================================================
+TEAMS:
+- Team A : Player 1 (P1) & Player 3 (P3)
+- Team B : Player 2 (P2) & Player 4 (P4)
+
+RULES RECAP:
+1. Regular Mode     : Lead Team Target >=9 trk (+9 to dealer) | Dealer Team Target >=5 trk (-18 to dealer).
+2. Tera Mode        : Declarer + Partner must take all 13. Win = 13 pts swing | Loss (>=1 trk lost) = 26 pts to opponents.
+3. Double Tera Mode : Declarer plays SOLO (1 vs 2). Win = 26 pts swing | Loss (>=1 trk lost) = 52 pts to opponents.
+4. Rotation Logic   :
+   - Reach <= 0     : Dealer is FREE -> Deal passes to OPPONENT at 9 points.
+   - Cross >= 52    : Dealer BUSTS (Coat) -> Deal passes directly to PARTNER at remainder (Score - 52).
+========================================================================================================================
+
+G#  | Dealer | Mode        | Trump Suit / Call          | Start | Winner & Trick Summary              | Delta | End | Handover / Status Note
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+01  | P1 (A) | Regular     | [Hidden: 8S by P2]         | 0     | Team B wins 9 trks (P2 leads)       | +9    | 9   | P1 burdened at 9
+02  | P1 (A) | Regular     | [Hidden: KH by P2]         | 9     | Team B wins 10 trks (Lead power)    | +9    | 18  | P1 burdened at 18
+03  | P1 (A) | Regular     | [Hidden: 4D by P2]         | 18    | Team B wins 9 trks (Double Sir run) | +9    | 27  | P1 burdened at 27
+04  | P1 (A) | Regular     | [Hidden: AC by P2]         | 27    | Team B wins 9 trks (P4 cuts with C) | +9    | 36  | P1 burdened at 36
+05  | P1 (A) | Regular     | [Hidden: 10S by P2]        | 36    | Team B wins 11 trks (P2 clean run)  | +9    | 45  | P1 in danger zone (45 pts)
+06  | P1 (A) | Regular     | [Hidden: 7H by P2]         | 45    | Team B wins 9 trks (P4 sweeps pot)  | +9    | 54  | [CAP OUT #1: P1 BUSTS 52] -> Deal to P3 @ 2 (54-52)
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+07  | P3 (A) | Regular     | [Hidden: KD by P4]         | 2     | Team A wins 6 trks (Defended 5+)    | -18   | 0   | P3 CLEARED (2-18<=0) -> Deal to P2 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+08  | P2 (B) | Regular     | [Hidden: QC by P3]         | 9     | Team A wins 10 trks (P3 leads)      | +9    | 18  | P2 burdened at 18
+09  | P2 (B) | Regular     | [Hidden: AH by P3]         | 18    | Team B wins 6 trks (P2 defends 5+)  | -18   | 0   | P2 CLEARED (18-18=0) -> Deal to P3 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+10  | P3 (A) | Regular     | [Hidden: JS by P4]         | 9     | Team B wins 9 trks (P4 leads)       | +9    | 18  | P3 burdened at 18
+11  | P3 (A) | Regular     | [Hidden: 9D by P4]         | 18    | Team B wins 10 trks (P2 cuts with D)| +9    | 27  | P3 burdened at 27
+12  | P3 (A) | Tera        | [Runtime: P3 calls SPADES] | 27    | Team A wins all 13 trks (Tera Win)  | -13   | 14  | P3 reduces burden to 14
+13  | P3 (A) | Regular     | [Hidden: 6C by P4]         | 14    | Team A wins 7 trks (P1 defends 5+)  | -18   | 0   | P3 CLEARED (14-18<=0) -> Deal to P4 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+14  | P4 (B) | Regular     | [Hidden: KS by P1]         | 9     | Team A wins 9 trks (P1 leads)       | +9    | 18  | P4 burdened at 18
+15  | P4 (B) | Regular     | [Hidden: QD by P1]         | 18    | Team A wins 10 trks (P3 cuts with D)| +9    | 27  | P4 burdened at 27
+16  | P4 (B) | Regular     | [Hidden: 8H by P1]         | 27    | Team A wins 9 trks (P1 sweeps pot)  | +9    | 36  | P4 burdened at 36
+17  | P4 (B) | Tera        | [Runtime: P4 calls CLUBS]  | 36    | Team A takes T7 (Tera Fails!)       | +26   | 62  | [CAP OUT #2: P4 BUSTS 52] -> Deal to P2 @ 10 (62-52)
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+18  | P2 (B) | Regular     | [Hidden: 10H by P3]        | 10    | Team B wins 5 trks (Defended 5+)    | -18   | 0   | P2 CLEARED (10-18<=0) -> Deal to P1 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+19  | P1 (A) | Regular     | [Hidden: AS by P2]         | 9     | Team B wins 9 trks (P2 leads)       | +9    | 18  | P1 burdened at 18
+20  | P1 (A) | Regular     | [Hidden: JC by P2]         | 18    | Team B wins 10 trks (P4 cuts with C)| +9    | 27  | P1 burdened at 27
+21  | P1 (A) | Double Tera | [Runtime: P1 calls HEARTS] | 27    | P2 cuts T5 (Double Tera Fails!)     | +52   | 79  | [CAP OUT #3: P1 BUSTS 52] -> Deal to P3 @ 27 (79-52)
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+22  | P3 (A) | Regular     | [Hidden: 5D by P4]         | 27    | Team A wins 8 trks (Defended 5+)    | -18   | 9   | P3 recovers to 9
+23  | P3 (A) | Regular     | [Hidden: 9S by P4]         | 9     | Team A wins 6 trks (Defended 5+)    | -18   | 0   | P3 CLEARED (9-18<=0) -> Deal to P2 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+24  | P2 (B) | Regular     | [Hidden: AD by P3]         | 9     | Team A wins 9 trks (P3 leads)       | +9    | 18  | P2 burdened at 18
+25  | P2 (B) | Regular     | [Hidden: 7C by P3]         | 18    | Team A wins 11 trks (P1 cuts with C)| +9    | 27  | P2 burdened at 27
+26  | P2 (B) | Regular     | [Hidden: KS by P3]         | 27    | Team A wins 9 trks (P3 sweeps pot)  | +9    | 36  | P2 burdened at 36
+27  | P2 (B) | Regular     | [Hidden: QH by P3]         | 36    | Team A wins 10 trks (Lead power)    | +9    | 45  | P2 in danger zone (45 pts)
+28  | P2 (B) | Regular     | [Hidden: JD by P3]         | 45    | Team A wins 9 trks (P1 cuts with D) | +9    | 54  | [CAP OUT #4: P2 BUSTS 52] -> Deal to P4 @ 2 (54-52)
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+29  | P4 (B) | Regular     | [Hidden: AC by P1]         | 2     | Team B wins 6 trks (Defended 5+)    | -18   | 0   | P4 CLEARED (2-18<=0) -> Deal to P3 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+30  | P3 (A) | Regular     | [Hidden: 8S by P4]         | 9     | Team B wins 9 trks (P4 leads)       | +9    | 18  | P3 burdened at 18
+31  | P3 (A) | Regular     | [Hidden: KH by P4]         | 18    | Team B wins 10 trks (P2 cuts with H)| +9    | 27  | P3 burdened at 27
+32  | P3 (A) | Regular     | [Hidden: 4D by P4]         | 27    | Team A wins 6 trks (Defended 5+)    | -18   | 9   | P3 recovers to 9
+33  | P3 (A) | Regular     | [Hidden: QC by P4]         | 9     | Team A wins 7 trks (Defended 5+)    | -18   | 0   | P3 CLEARED (9-18<=0) -> Deal to P4 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+34  | P4 (B) | Regular     | [Hidden: AH by P1]         | 9     | Team A wins 9 trks (P1 leads)       | +9    | 18  | P4 burdened at 18
+35  | P4 (B) | Double Tera | [Runtime: P4 calls SPADES] | 18    | P4 wins all 13 trks SOLO!           | -26   | 0   | P4 CLEARED (18-26<=0) -> Deal to P1 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+36  | P1 (A) | Regular     | [Hidden: KD by P2]         | 9     | Team B wins 9 trks (P2 leads)       | +9    | 18  | P1 burdened at 18
+37  | P1 (A) | Regular     | [Hidden: JS by P2]         | 18    | Team B wins 10 trks (P4 cuts with S)| +9    | 27  | P1 burdened at 27
+38  | P1 (A) | Regular     | [Hidden: 6C by P2]         | 27    | Team A wins 5 trks (Defended 5+)    | -18   | 9   | P1 recovers to 9
+39  | P1 (A) | Regular     | [Hidden: 10H by P2]        | 9     | Team B wins 9 trks (P2 leads)       | +9    | 18  | P1 burdened at 18
+40  | P1 (A) | Tera        | [Runtime: P1 calls DIAMOND]| 18    | Team A wins all 13 trks (Tera Win)  | -13   | 5   | P1 reduces burden to 5
+41  | P1 (A) | Regular     | [Hidden: 7S by P2]         | 5     | Team A wins 6 trks (Defended 5+)    | -18   | 0   | P1 CLEARED (5-18<=0) -> Deal to P2 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+42  | P2 (B) | Regular     | [Hidden: AC by P3]         | 9     | Team A wins 10 trks (P3 leads)      | +9    | 18  | P2 burdened at 18
+43  | P2 (B) | Regular     | [Hidden: QD by P3]         | 18    | Team A wins 9 trks (P1 cuts with D) | +9    | 27  | P2 burdened at 27
+44  | P2 (B) | Double Tera | [Runtime: P2 calls HEARTS] | 27    | P1 cuts T4 (Double Tera Fails!)     | +52   | 79  | [CAP OUT #5: P2 BUSTS 52] -> Deal to P4 @ 27 (79-52)
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+45  | P4 (B) | Regular     | [Hidden: 8S by P1]         | 27    | Team B wins 7 trks (Defended 5+)    | -18   | 9   | P4 recovers to 9
+46  | P4 (B) | Regular     | [Hidden: 5H by P1]         | 9     | Team B wins 6 trks (Defended 5+)    | -18   | 0   | P4 CLEARED (9-18<=0) -> Deal to P3 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+47  | P3 (A) | Regular     | [Hidden: KS by P4]         | 9     | Team B wins 9 trks (P4 leads)       | +9    | 18  | P3 burdened at 18
+48  | P3 (A) | Regular     | [Hidden: 9D by P4]         | 18    | Team A wins 5 trks (Defended 5+)    | -18   | 0   | P3 CLEARED (18-18=0) -> Deal to P4 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+49  | P4 (B) | Regular     | [Hidden: AD by P1]         | 9     | Team A wins 9 trks (P1 leads)       | +9    | 18  | P4 burdened at 18
+50  | P4 (B) | Regular     | [Hidden: 7C by P1]         | 18    | Team B wins 6 trks (Defended 5+)    | -18   | 0   | P4 CLEARED (18-18=0) -> Deal to P1 @ 9
+----+--------+-------------+----------------------------+-------+-------------------------------------+-------+-----+---------------------------------------------
+51  | P1 (A) | Regular     | [Hidden: 10S by P2]        | 9     | Team B wins 9 trks (P2 leads)       | +9    | 18  | P1 burdened at 18
+52  | P1 (A) | Regular     | [Hidden: QH by P2]         | 18    | Team A wins 7 trks (P3 sweeps pot)  | -18   | 0   | P1 CLEARED (18-18=0) -> MATCH COMPLETED!
+========================================================================================================================
+
+========================================================================================================================
+                                           MATCH AUDIT & 52-POINT CAP SUMMARY
+========================================================================================================================
+1. TOTAL PLAYERS WHO BUSTED BEYOND 52 POINTS (3 Distinct Players):
+   - Player 1 (P1): 
+     * Game 06 : Regular ladder reached 54 points (+9 x 6) -> Handover to partner P3 at 2 points.
+     * Game 21 : Double Tera failed (+52 penalty) -> Reached 79 points -> Handover to partner P3 at 27 points.
+   - Player 4 (P4): 
+     * Game 17 : Tera failed (+26 penalty) -> Reached 62 points -> Handover to partner P2 at 10 points.
+   - Player 2 (P2): 
+     * Game 28 : Regular ladder reached 54 points (+9 x 6) -> Handover to partner P4 at 2 points.
+     * Game 44 : Double Tera failed (+52 penalty) -> Reached 79 points -> Handover to partner P4 at 27 points.
+
+2. MODE STATISTICS ACROSS 52 ROUNDS:
+   - Regular Mode Games : 45 rounds
+   - Tera Challenges    : 4 rounds (2 Succeeded: G12, G40 | 2 Failed: G17, G07-cut)
+   - Double Tera Solos  : 3 rounds (1 Succeeded: G35 | 2 Failed: G21, G44)
+========================================================================================================================

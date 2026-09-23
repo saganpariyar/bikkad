@@ -1,0 +1,50 @@
+===============================================================================
+               TIKDI (3-PLAYER / TEEN DO PAANCH / 3-2-5)
+                     AI & ENGINE PROMPT SPECIFICATION
+===============================================================================
+
+1. GAME DOMAIN SPECIFICATION
+-------------------------------------------------------------------------------
+1. Players: Exactly 3 players (1 Human user vs 2 Rule-based/Heuristic AI agents,
+   or multiplayer 2 humans + 1 bot / 3 humans).
+2. Deck Composition: Exactly 30 cards:
+   - Hearts (♥): 7, 8, 9, 10, Jack, Queen, King, Ace (8 cards)
+   - Spades (♠): 7, 8, 9, 10, Jack, Queen, King, Ace (8 cards)
+   - Clubs (♣): 8, 9, 10, Jack, Queen, King, Ace (7 cards)
+   - Diamonds (♦): 8, 9, 10, Jack, Queen, King, Ace (7 cards)
+   - Rank Order: A > K > Q > J > 10 > 9 > 8 > 7 (7s only exist in ♥ and ♠).
+3. Role Quotas (10 tricks total):
+   - Trump Chooser: 5 tricks
+   - Non-Dealer / Bystander: 3 tricks
+   - Dealer: 2 tricks
+4. Dealing Sequence (5-3-2 Batching):
+   - Stage 1: Deal 5 cards each. Play pauses.
+   - Trump Selection: The Trump Chooser inspects their 5 cards and declares Trump.
+   - Stage 2: Deal 3 cards each.
+   - Stage 3: Deal 2 cards each (all players now have 10 cards).
+5. Pre-Round Penalty Resolution (Deficit Mechanism 1 - Blind Card Pulling):
+   - If debts were incurred in the previous hand, the Creditor pulls N cards 
+     randomly from the Debtor's 10-card hand before Trick 1 is led.
+   - The Creditor inspects the pulled card(s) and returns N unwanted card(s) 
+     from their hand back to the Debtor.
+6. Trick-Taking Logic:
+   - Trump Chooser leads Trick 1.
+   - Mandatory Follow Suit: A player must follow the led suit if they have it.
+   - Void Play: If void, player can cut with Trump or discard any non-trump card.
+   - Trick Evaluation: Highest trump played wins; if no trump played, highest 
+     card of the led suit wins.
+   - Winner collects the trick and leads the next trick.
+7. Post-Round Scoring & Rotation:
+   - Net = (Tricks Won) - (Target Quota).
+   - Record surplus/deficit debts into the persistent match ledger.
+   - Rotate dealer role clockwise.
+
+2. AI STRATEGY HEURISTICS
+-------------------------------------------------------------------------------
+- Trump Chooser AI: Analyzes the initial 5 cards, counts suit lengths and high 
+  card points (A=4, K=3, Q=2, J=1), and chooses the strongest suit.
+- Penalty Return AI: Returns the lowest non-trump card when repaying a debtor.
+- Trick Play AI:
+  - If leading: Prefers cash aces, high trumps, or establishes long suits.
+  - If following: Plays lowest winning card if partner doesn't exist; saves high cards.
+  - If void: Cuts with lowest trump if trick is high-value; otherwise discards lowest trash card.

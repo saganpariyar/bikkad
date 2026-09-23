@@ -1,0 +1,118 @@
+====================================================================================================
+                        OFFICIAL RULEBOOK OF BIKKAD (BANDH RANG DOUBLE SIR)
+====================================================================================================
+
+1. PLAYERS, DECK & TABLE SETUP
+----------------------------------------------------------------------------------------------------
+- Players: Exactly 4 players in 2 fixed partnerships sitting across from each other:
+    * Team A: Player 1 (P1) & Player 3 (P3)
+    * Team B: Player 2 (P2) & Player 4 (P4)
+- Deck: Standard 52-card deck (no Jokers).
+- Card Rank Hierarchy (Highest to Lowest):
+    A > K > Q > J > 10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2
+
+
+2. DEALING & HIDDEN TRUMP (BANDH HUKUM)
+----------------------------------------------------------------------------------------------------
+1. Initial Deal: The dealer shuffles and deals 5 cards clockwise to each player.
+2. Setting Hidden Trump: The Eldest Hand (player to the dealer's left, who leads first) examines
+   their 5 cards and selects 1 card to place face-down on the table.
+   * This card is the Hidden Trump (Bandh Rang). Its identity is kept secret from everyone.
+3. Deal Completion: The dealer distributes the remaining cards in batches so each player holds
+   13 cards in total.
+
+
+3. TRICK-PLAY & CUTTING RULES
+----------------------------------------------------------------------------------------------------
+1. Leading: The player to the dealer's left leads the first trick. The winner of any trick leads the next.
+2. Must Follow Suit: Every player MUST follow the suit of the led card if they hold it.
+3. Void Options (When a player has no cards of the led suit):
+   a. Discard (Sluff): Throw any card of another non-trump suit. This card has 0 trick value.
+   b. Demand the Cut (Rang Kholna): Ask to turn over the face-down card.
+      - The hidden card is flipped face-up for the table to see.
+      - The player who demanded the reveal MUST play a card of that trump suit to cut the trick.
+      - From this point forward, the trump suit is active for the remainder of the deal and outranks
+        all standard suits.
+
+
+4. TRICK COLLECTION (DOUBLE SIR ACCUMULATOR)
+----------------------------------------------------------------------------------------------------
+Tricks are not picked up after every individual turn; they accumulate in a center pot.
+1. Consecutive Win by Same Individual Player (Double Sir):
+   * The EXACT SAME PLAYER must win 2 CONSECUTIVE tricks in a row to scoop and collect the accumulated pot for their team.
+   * Alternating wins between partners (e.g., Partner 1 wins Trick 1, Partner 2 wins Trick 2) DOES NOT collect the pot. The pot continues accumulating until one individual player achieves 2 back-to-back trick wins.
+   * Example:
+     - Trick 1: Won by COM Vikram (Vikram Win 1) -> 4 cards in pot.
+     - Trick 2: Won by COM Sneha (Sneha Win 1) -> 8 cards in pot. (Alternating partner, pot stays!)
+     - Trick 3: Won by COM Sneha (Sneha Win 2) -> Team B collects all 12 cards!
+2. Streak Reset: If a different player (opponent or partner) wins the next trick, the previous player's streak resets and the new winner starts at 1 pending win.
+3. 13th Trick Sweep: The winner of the final (13th) trick sweeps all remaining cards left in the pot for their team, even without a consecutive win.
+
+
+5. REGULAR SCORING & TUG-OF-WAR LADDER
+----------------------------------------------------------------------------------------------------
+There is only ONE active burden score on the scoreboard at any given time, tied directly to the dealer.
+
+- Lead / Challenger Team: Target is >= 9 tricks (36+ cards).
+  * If Lead Team wins -> Adds +9 points to the dealer's burden.
+- Dealer / Defending Team: Target is >= 5 tricks (20+ cards).
+  * If Dealer Team wins -> Reduces the dealer's burden by -18 points.
+
+
+6. DEALER ROTATION & THE 52-POINT CAP (COAT)
+----------------------------------------------------------------------------------------------------
+1. Getting Free (Score < 0):
+   * A deal CANNOT pass at 0 points. If the score lands on exactly 0 (e.g. 18 - 18 = 0), the dealer continues dealing at 0 points.
+   * Deal ONLY passes to the next OPPONENT when the score goes strictly less than 0 (< 0):
+     - From 9 points: 9 - 18 = -9 -> deal passes to opponent at 9 points.
+     - From 0 points: 0 - 18 = -18 -> deal passes to opponent at 18 points.
+     - Opponent receives the starting burden equal to the overshoot debt abs(score).
+
+2. Busting / Cap-Out (Score >= 52):
+   * If a dealer suffers repeated losses and crosses 52 points (e.g., 45 + 9 = 54), they take a "Coat".
+   * The shuffle DOES NOT go to the opponents.
+   * Dealing duty passes directly to that dealer's PARTNER (P1 -> P3, or P2 -> P4).
+   * The partner inherits the deal at the exact remainder over 52:
+     Remainder = (Current Score - 52)
+     (Example: 54 - 52 = 2 points starting burden for the partner).
+
+
+7. SPECIAL CONTRACT MODES (TERA & DOUBLE TERA)
+----------------------------------------------------------------------------------------------------
+Before regular play begins, a player holding an exceptional hand can declare a special contract.
+
+A. TERA (13-Trick Team Sweep):
+   - Setup: Standard 4 players (2 vs 2).
+   - Trump Rule: No hidden card. The declarer selects the trump suit at RUNTIME when the first void occurs.
+   - Objective: Declarer + Partner must win ALL 13 tricks (collect all 52 cards).
+   - Failure: An in-between single hand won by opponents does NOT fail Tera, because tricks are only won upon pot collection. Tera fails ONLY if opponents collect tricks (by achieving 2 consecutive wins by the same opponent, or by winning the final 13th trick sweep).
+   - Points:
+     * Success (13/13 tricks collected): 13 points swing in declarer's favor.
+     * Failure (Opponents collect any trick): 26 points penalty awarded to opponents.
+
+B. DOUBLE TERA (13-Trick Solo Challenge):
+   - Setup: Declarer plays completely SOLO. Declarer's partner sits out for the hand (1 vs 2).
+   - Trump Rule: Runtime trump chosen by the solo player.
+   - Objective: Solo declarer must win ALL 13 tricks alone (collect all 52 cards).
+   - Failure: Tera fails ONLY if opponents collect tricks (by achieving 2 consecutive wins by the same opponent, or by winning the final 13th trick sweep).
+   - Points:
+     * Success (13/13 Solo): 26 points swing in declarer's favor.
+     * Failure: 52 points penalty awarded to opponents (triggers an immediate 52-point bust/handover).
+
+
+====================================================================================================
+                                      QUICK REFERENCE SUMMARY
+====================================================================================================
+Mode         | Active Players | Win Target       | Win Reward     | Loss Penalty
+-------------+----------------+------------------+----------------+---------------------------------
+Regular      | 4 (2 vs 2)     | Lead: >= 9 trks  | -18 to dealer  | +9 to dealer
+             |                | Dealer: >= 5 trks| (Dealer Win)   | (Lead Win)
+-------------+----------------+------------------+----------------+---------------------------------
+Tera         | 4 (2 vs 2)     | All 13 Tricks    | 13 pts swing   | 26 pts to opponents
+-------------+----------------+------------------+----------------+---------------------------------
+Double Tera  | 3 (1 vs 2 Solo)| All 13 Tricks    | 26 pts swing   | 52 pts to opponents (Instant Bust)
+====================================================================================================
+Rotations:
+- Score reaches <= 0  ==> Dealer is FREE --> Deal passes to OPPONENT at 9 points.
+- Score crosses >= 52 ==> Dealer BUSTS   --> Deal passes to PARTNER at (Score - 52) points.
+====================================================================================================

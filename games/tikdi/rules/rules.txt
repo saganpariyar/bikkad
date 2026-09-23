@@ -1,0 +1,121 @@
+================================================================================
+          TIKDI (3-PLAYER CARD GAME / 3-2-5 / 5-3-2)
+                   OFFICIAL RULEBOOK
+================================================================================
+
+1. OVERVIEW & OBJECTIVE
+--------------------------------------------------------------------------------
+Tikdi (widely known in South Asia as Teen Do Paanch / 3-2-5 / 5-3-2) is a strategic, 
+trick-taking card game played by exactly 3 players using a specialized 30-card 
+stripped deck.
+
+In every deal, each player is assigned a specific quota of tricks to capture based 
+on their role:
+  - Trump Chooser: 5 tricks
+  - Non-Dealer (Bystander): 3 tricks
+  - Dealer: 2 tricks
+  - Total tricks available in each hand: 10 tricks
+
+The objective of each hand is to win at least your designated quota of tricks. 
+Failing to meet your quota creates a deficit (debt) owed to players who took a 
+surplus (tricks beyond their quota). This debt is collected at the start of the 
+very next deal. The overall match is played either to a set surplus score (e.g., 
+first to reach +5 or +10 net points) or over an agreed number of full rotations.
+
+
+2. DECK COMPOSITION (30 CARDS TOTAL)
+--------------------------------------------------------------------------------
+The game is played using a 30-card custom deck stripped from a standard 52-card 
+deck:
+
+  - Red Hearts (Laal / H):        7, 8, 9, 10, Jack, Queen, King, Ace  (8 cards)
+  - Black Spades (Kaali / S):     7, 8, 9, 10, Jack, Queen, King, Ace  (8 cards)
+  - Black Clubs (Chidi / C):         8, 9, 10, Jack, Queen, King, Ace  (7 cards)
+  - Red Diamonds (Cergat/It / D):    8, 9, 10, Jack, Queen, King, Ace  (7 cards)
+
+Card Rank Hierarchy (Highest to Lowest):
+  - In Hearts and Spades:
+      Ace > King > Queen > Jack > 10 > 9 > 8 > 7
+  - In Clubs and Diamonds:
+      Ace > King > Queen > Jack > 10 > 9 > 8
+  (Note: 2 through 6 of all suits, plus the 7 of Clubs and 7 of Diamonds, are 
+   permanently removed from the deck).
+
+
+3. SEATING, ROLES & ROTATION
+--------------------------------------------------------------------------------
+Three players are seated at the table:
+  - Player 1 (Dealer): Responsible for shuffling and distributing the cards.
+  - Player 2 (Trump Chooser): Sits to the left (clockwise) of the dealer.
+  - Player 3 (Bystander / Non-Dealer): Sits between Trump Chooser and Dealer.
+
+Quotas:
+  - Trump Chooser: 5 tricks
+  - Non-Dealer:    3 tricks
+  - Dealer:        2 tricks
+
+Role Rotation:
+  - After each deal completes, the role of Dealer shifts one position clockwise.
+
+
+4. DEALING PROTOCOL (THE 5 - 3 - 2 SEQUENCE)
+--------------------------------------------------------------------------------
+The dealer thoroughly shuffles the 30-card deck and distributes the cards in 
+three consecutive batches:
+
+  Stage 1 (First 5 Cards):
+    - The dealer deals 5 cards face-down to each player (15 cards total).
+    - Play halts.
+    - The Trump Chooser evaluates their 5 cards and declares the Trump Suit 
+      (Hukum) aloud to all players.
+
+  Stage 2 (Next 3 Cards):
+    - After the trump is announced, the dealer deals 3 cards face-down to each 
+      player (9 cards total).
+
+  Stage 3 (Final 2 Cards):
+    - The dealer deals 2 cards face-down to each player (6 cards total).
+    - All players now hold exactly 10 cards in their hands.
+
+
+5. PRE-ROUND PENALTY RESOLUTION (BLIND CARD PULLING)
+--------------------------------------------------------------------------------
+If debts were incurred in the previous hand, the Creditor (player with surplus) 
+pulls cards blindly from the Debtor (player with deficit) before Trick 1 begins:
+  - The Debtor fans out their 10 cards face-down.
+  - The Creditor blindly pulls 1 card for each trick owed.
+  - The Creditor inspects the pulled card(s) and returns an equal number of 
+    unwanted cards from their hand back to the Debtor.
+
+
+6. TRICK-TAKING RULES
+--------------------------------------------------------------------------------
+  1. Opening Lead: The Trump Chooser always leads the first card of Trick 1.
+  2. Obligation to Follow Suit:
+     - Players must follow the suit of the led card if they hold any card of that 
+       suit.
+  3. Trumping and Discarding:
+     - If a player holds NO cards of the led suit (they are void), they may:
+       a) Play any Trump card to cut (trump) the trick.
+       b) Play any off-suit non-trump card (discard / pass).
+  4. Determining the Trick Winner:
+     - If one or more Trump cards are played, the HIGHEST rank Trump card wins.
+     - If no Trump cards are played, the HIGHEST rank card of the led suit wins.
+     - Off-suit non-trump cards have zero winning power.
+  5. Subsequent Leads:
+     - The winner of a trick gathers the 3 cards into their won-tricks pile, and 
+       leads any card from their hand for the next trick.
+  6. Play continues until all 10 tricks are played out.
+
+
+7. SCORING & DEFICIT SETTLEMENT
+--------------------------------------------------------------------------------
+At the conclusion of the 10 tricks, each player calculates their net result:
+  Net Score = (Tricks Won) - (Target Quota)
+
+  - Net Score > 0: Player has a SURPLUS (Creditor).
+  - Net Score < 0: Player has a DEFICIT (Debtor).
+  - Net Score = 0: Player broke even.
+
+Total surplus across the table always equals total deficit. Debts carry over to 
+the very next round for penalty card pulling.
