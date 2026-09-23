@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Desi Card Games - Traditional Indian &amp; Rajasthani Card Games Hub</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=27">
+    <link rel="stylesheet" href="style.css?v=28">
     <!-- Google Fonts: Cinzel & Outfit for Royal Rajput Aesthetics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,91 +63,48 @@
                 </div>
             </header>
 
-            <!-- 2nd Horizontal Menu Bar: Games Selector Strip -->
+            <!-- 2nd Horizontal Menu Bar: Clean, Simple Game Tabs -->
             <nav class="home-games-subnav" id="home-games-subnav">
                 <div class="games-subnav-container">
-                    <div class="games-subnav-heading">
-                        <span class="subnav-heading-icon">🎴</span>
-                        <span class="subnav-heading-text">GAMES ARENA:</span>
+                    <div class="games-subnav-tabs" id="game-selector-strip">
+                        <button class="game-nav-tab gsel-card gsel-active" id="gsel-bikkad" data-game="bikkad" onclick="switchActiveGame('bikkad')">
+                            <span class="tab-icon">🂠</span>
+                            <span class="tab-label">Bikkad</span>
+                            <span class="tab-live-pill">LIVE</span>
+                        </button>
+                        <button class="game-nav-tab gsel-card" id="gsel-jhuthaniya" data-game="jhuthaniya" onclick="switchActiveGame('jhuthaniya')">
+                            <span class="tab-icon">🃏</span>
+                            <span class="tab-label">Jhuthaniya</span>
+                            <span class="tab-live-pill">LIVE</span>
+                        </button>
+                        <button class="game-nav-tab gsel-card" id="gsel-bindicoat" data-game="bindicoat" onclick="switchActiveGame('bindicoat')">
+                            <span class="tab-icon">🔴</span>
+                            <span class="tab-label">Bindi Coat</span>
+                            <span class="tab-live-pill">LIVE</span>
+                        </button>
+                        <button class="game-nav-tab gsel-card" id="gsel-tikdi" data-game="tikdi" onclick="switchActiveGame('tikdi')">
+                            <span class="tab-icon">🔺</span>
+                            <span class="tab-label">Tikdi</span>
+                            <span class="tab-live-pill">LIVE</span>
+                        </button>
+                        <button class="game-nav-tab gsel-card gsel-soon" id="gsel-gadhabaji" title="Coming Soon" onclick="showGameToast('Gadha Baji')">
+                            <span class="tab-icon">🐴</span>
+                            <span class="tab-label">Gadha Baji</span>
+                            <span class="tab-soon-pill">Soon</span>
+                        </button>
+                        <button class="game-nav-tab gsel-card gsel-soon" id="gsel-sarkari" title="Coming Soon" onclick="showGameToast('Sarkari')">
+                            <span class="tab-icon">⚖️</span>
+                            <span class="tab-label">Sarkari</span>
+                            <span class="tab-soon-pill">Soon</span>
+                        </button>
                     </div>
-                    <div class="game-selector-strip" id="game-selector-strip">
-
-                        <!-- Bikkad (Live & Featured) -->
-                        <div class="gsel-card gsel-active" id="gsel-bikkad" data-game="bikkad" onclick="switchActiveGame('bikkad')">
-                            <div class="gsel-top">
-                                <span class="gsel-icon">🂠</span>
-                                <span class="gsel-live">🟢 LIVE</span>
-                            </div>
-                            <div class="gsel-name">Bikkad</div>
-                            <div class="gsel-genre">Pot Sweep · 4 Players</div>
-                            <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bikkad')">📖 Rules</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bikkad')">▶ Play</button>
-                            </div>
-                        </div>
-
-                        <!-- Jhuthaniya (Live) -->
-                        <div class="gsel-card" id="gsel-jhuthaniya" data-game="jhuthaniya" onclick="switchActiveGame('jhuthaniya')">
-                            <div class="gsel-top">
-                                <span class="gsel-icon">🃏</span>
-                                <span class="gsel-live">🟢 LIVE</span>
-                            </div>
-                            <div class="gsel-name">Jhuthaniya</div>
-                            <div class="gsel-genre">Bluff · 2–7 Players</div>
-                            <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('jhuthaniya')">📖 Rules</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('jhuthaniya')">▶ Play</button>
-                            </div>
-                        </div>
-
-                        <!-- Bindi Coat (Live) -->
-                        <div class="gsel-card" id="gsel-bindicoat" data-game="bindicoat" onclick="switchActiveGame('bindicoat')">
-                            <div class="gsel-top">
-                                <span class="gsel-icon">🔴</span>
-                                <span class="gsel-live">🟢 LIVE</span>
-                            </div>
-                            <div class="gsel-name">Bindi Coat</div>
-                            <div class="gsel-genre">Partnership · 4 Players</div>
-                            <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bindicoat')">📖 Rules</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bindicoat')">▶ Play</button>
-                            </div>
-                        </div>
-
-                        <!-- Tikdi (Live) -->
-                        <div class="gsel-card" id="gsel-tikdi" data-game="tikdi" onclick="switchActiveGame('tikdi')">
-                            <div class="gsel-top">
-                                <span class="gsel-icon">🔺</span>
-                                <span class="gsel-live">🟢 LIVE</span>
-                            </div>
-                            <div class="gsel-name">Tikdi (3-2-5)</div>
-                            <div class="gsel-genre">Trick Quota · 3 Players</div>
-                            <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('tikdi')">📖 Rules</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('tikdi')">▶ Play</button>
-                            </div>
-                        </div>
-
-                        <!-- Coming Soon: Gadha Baji -->
-                        <div class="gsel-card gsel-soon" title="Coming Soon">
-                            <div class="gsel-top">
-                                <span class="gsel-icon">🐴</span>
-                                <span class="gsel-soon-pill">🔒 Soon</span>
-                            </div>
-                            <div class="gsel-name">Gadha Baji</div>
-                            <div class="gsel-genre">Elimination · 3–6P</div>
-                        </div>
-
-                        <!-- Coming Soon: Sarkari -->
-                        <div class="gsel-card gsel-soon" title="Coming Soon">
-                            <div class="gsel-top">
-                                <span class="gsel-icon">⚖️</span>
-                                <span class="gsel-soon-pill">🔒 Soon</span>
-                            </div>
-                            <div class="gsel-name">Sarkari</div>
-                            <div class="gsel-genre">Trump Clash · 4P</div>
-                        </div>
-
+                    <div class="games-subnav-actions">
+                        <button class="btn-subnav-rules" id="btn-subnav-rules" onclick="openRulesPage(typeof activeSelectedGame !== 'undefined' ? activeSelectedGame : 'bikkad')">
+                            📖 Rules
+                        </button>
+                        <button class="btn-subnav-play" id="btn-subnav-play" onclick="startActiveGame()">
+                            🚀 Play Now
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -414,7 +371,7 @@
                 </div>
                 <div class="rules-nav-right">
                     <button id="btn-rules-lang" class="btn btn-sm btn-lang-toggle" onclick="toggleRulesLang()">🌐 HI</button>
-                    <button id="btn-rules-play" class="btn btn-primary btn-sm" onclick="closeRulesPage();switchActiveGame(currentRulesGame)">▶ Play Now</button>
+                    <button id="btn-rules-play" class="btn btn-primary btn-sm" onclick="closeRulesPage();if(typeof startActiveGame==='function'){startActiveGame();}else{switchActiveGame(currentRulesGame);}">▶ Play Now</button>
                 </div>
             </header>
 
@@ -1314,12 +1271,12 @@
     <!-- Games Hub Toast Notification for Coming Soon Games -->
     <div id="hub-toast" class="hub-toast hidden"></div>
 
-    <script src="config.js?v=26"></script>
-    <script src="i18n.js?v=26"></script>
-    <script src="cards.js?v=26"></script>
-    <script src="audio.js?v=26"></script>
-    <script src="app.js?v=26"></script>
-    <script src="rules.js?v=26"></script>
-    <script src="pwa.js?v=26"></script>
+    <script src="config.js?v=28"></script>
+    <script src="i18n.js?v=28"></script>
+    <script src="cards.js?v=28"></script>
+    <script src="audio.js?v=28"></script>
+    <script src="app.js?v=28"></script>
+    <script src="rules.js?v=28"></script>
+    <script src="pwa.js?v=28"></script>
 </body>
 </html>

@@ -788,6 +788,7 @@ function openRulesPage(gameKey, lang) {
     const bName = document.getElementById("rules-banner-name");
     const bTag = document.getElementById("rules-banner-tagline");
     const bMeta = document.getElementById("rules-banner-meta");
+    const btnPlay = document.getElementById("btn-rules-play");
 
     if (bIcon) bIcon.textContent = data.icon;
     if (gIcon) gIcon.textContent = data.icon;
@@ -795,11 +796,13 @@ function openRulesPage(gameKey, lang) {
     if (bName) bName.textContent = data.name;
     if (bTag) bTag.textContent = currentRulesLang === "hi" ? data.tagline_hi : data.tagline_en;
     if (bMeta) bMeta.textContent = data.meta;
+    if (btnPlay) btnPlay.textContent = "▶ Play " + data.name;
 
     // Set language class on body
     const contentArea = document.getElementById("rules-content-area");
     if (contentArea) {
         contentArea.className = "rules-content-area rules-lang-" + currentRulesLang;
+        contentArea.scrollTop = 0;
     }
 
     // Update lang button
@@ -812,7 +815,10 @@ function openRulesPage(gameKey, lang) {
     // Switch to rules view
     document.querySelectorAll(".view-container").forEach(v => v.classList.add("hidden"));
     const viewRules = document.getElementById("view-rules");
-    if (viewRules) viewRules.classList.remove("hidden");
+    if (viewRules) {
+        viewRules.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "instant" });
+    }
 }
 window.openRulesPage = openRulesPage;
 
@@ -825,6 +831,7 @@ function closeRulesPage() {
         const viewHome = document.getElementById("view-home");
         if (viewHome) viewHome.classList.remove("hidden");
     }
+    window.scrollTo({ top: 0, behavior: "instant" });
 }
 window.closeRulesPage = closeRulesPage;
 

@@ -3753,8 +3753,46 @@ function switchActiveGame(gameKey) {
 
     if (displayRoomId) displayRoomId.textContent = currentRoomId;
     updateTrumpHiderOptionLabels();
+
+    // Update subnav action buttons
+    const btnSubnavRules = document.getElementById("btn-subnav-rules");
+    const btnSubnavPlay = document.getElementById("btn-subnav-play");
+    const gameDisplayNames = {
+        bikkad: "Bikkad",
+        jhuthaniya: "Jhuthaniya",
+        bindicoat: "Bindi Coat",
+        tikdi: "Tikdi"
+    };
+    const gn = gameDisplayNames[gameKey] || "Match";
+    if (btnSubnavRules) btnSubnavRules.textContent = `📖 Rules`;
+    if (btnSubnavPlay) btnSubnavPlay.textContent = `🚀 Play ${gn}`;
 }
 window.switchActiveGame = switchActiveGame;
+
+async function startActiveGame() {
+    if (!isServerAwake) {
+        const ok = await checkAndWakeBackend(true);
+        if (!ok) return;
+    }
+    const g = (typeof activeSelectedGame !== "undefined" && activeSelectedGame) ? activeSelectedGame : (typeof currentGameType !== "undefined" ? currentGameType : "bikkad");
+    if (g === "tikdi") {
+        handleStartTikdiGame();
+    } else if (g === "jhuthaniya") {
+        handleStartJhuthaniyaGame();
+    } else if (g === "bindicoat") {
+        handleStartBindiCoatGame();
+    } else {
+        handleStartNewGame();
+    }
+}
+window.startActiveGame = startActiveGame;
+
+function showGameToast(gameName) {
+    if (typeof showHubToast === "function") {
+        showHubToast(`${gameName} is coming soon to Desi Card Arena!`);
+    }
+}
+window.showGameToast = showGameToast;
 
 // ── Jhuthaniya: Start ──────────────────────────────────────────────────────
 async function handleStartJhuthaniyaGame() {
