@@ -41,7 +41,7 @@ const translations = {
         rulePlatformTitle4: "Featured Game: Bikkad (Live)",
         rulePlatformDesc4: "Apna Rajasthan ka premier 4-player pot sweep, hidden trump cut, ladder burden scoring, and solo Tera contracts!",
 
-        activeGameBannerBadge: "NOW PLAYING: BIKKAD (LIVE)",
+        activeGameBannerBadge: "Now playing Bikkad:",
         activeGameBannerDesc: "Set up your match below — Play Solo vs BOTs or invite friends using a simple 4-digit Room Code!",
         footerBrandText: "🏜️ <strong>Desi Card Games Hub</strong> · Traditional Indian & Rajasthani Card Games Collection",
 
@@ -241,7 +241,7 @@ const translations = {
         rulePlatformTitle4: "Featured Khel: Bikkad (Live)",
         rulePlatformDesc4: "Apna Rajasthan ka 4-khiladi pot sweep, bandh hukum, 52-point seedi, aur akele Tera daav!",
 
-        activeGameBannerBadge: "ABHI CHALU KHEL: BIKKAD (LIVE)",
+        activeGameBannerBadge: "Abhi chalu khel: Bikkad:",
         activeGameBannerDesc: "Neeche apna match set karein — BOTs ke saath akele khelein ya 4-digit Room Code se dosto ko bulayein!",
         footerBrandText: "🏜️ <strong>Desi Taas Khel Hub</strong> · Traditional Indian & Rajasthani Taas Collection",
 

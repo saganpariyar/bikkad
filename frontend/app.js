@@ -3676,11 +3676,11 @@ function switchActiveGame(gameKey) {
             if (gameKey === "gadhabaji") {
                 if (wipIcon) wipIcon.textContent = "🐴";
                 if (wipTitle) wipTitle.textContent = "Gadha Baji — Work in Progress";
-                if (wipDesc) wipDesc.innerHTML = "Gadha Baji (Donkey / Get Away) is currently in development with authentic Rajasthani card rules, custom AI bots, and online multiplayer.<br>Enjoy our live desi card games below in the meantime!";
+                if (wipDesc) wipDesc.innerHTML = "Gadha Baji (Donkey / Get Away) is currently in development with authentic Rajasthani card rules, custom AI bots, and online multiplayer.<br>Enjoy other games like Bikkad, Jhuthaniya, or Tikdi below in the meantime!";
             } else {
                 if (wipIcon) wipIcon.textContent = "⚖️";
                 if (wipTitle) wipTitle.textContent = "Sarkari — Work in Progress";
-                if (wipDesc) wipDesc.innerHTML = "Sarkari (Sarkari Hukam) is a high-stakes 4-player trump trick-taking clash currently in development.<br>Enjoy our live desi card games below in the meantime!";
+                if (wipDesc) wipDesc.innerHTML = "Sarkari (Sarkari Hukam) is a high-stakes 4-player trump trick-taking clash currently in development.<br>Enjoy other games like Bikkad, Jhuthaniya, or Tikdi below in the meantime!";
             }
         }
         return;
