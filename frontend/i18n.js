@@ -38,8 +38,8 @@ const translations = {
         rulePlatformDesc2: "High-resolution vector cards with traditional reversible Jack, Queen, and King royal artwork.",
         rulePlatformTitle3: "Multiplayer & Smart BOTs",
         rulePlatformDesc3: "Create instant 4-digit code rooms to play with friends, or enjoy smart solo play against adaptive bots.",
-        rulePlatformTitle4: "Featured Game: Bikkad (Live)",
-        rulePlatformDesc4: "Apna Rajasthan ka premier 4-player pot sweep, hidden trump cut, ladder burden scoring, and solo Tera contracts!",
+        rulePlatformTitle4: "Cultural Heritage Mission",
+        rulePlatformDesc4: "Crafted with love by Sobha IT Solutions to preserve, celebrate, and digitize traditional desi card games.",
 
         activeGameBannerBadge: "Now playing Bikkad:",
         activeGameBannerDesc: "Set up your match below — Play Solo vs BOTs or invite friends using a simple 4-digit Room Code!",
@@ -238,8 +238,8 @@ const translations = {
         rulePlatformDesc2: "High-definition vector patte asli Raja, Rani, aur Gulaam ki classic kala ke saath.",
         rulePlatformTitle3: "Multiplayer aur Smart BOTs",
         rulePlatformDesc3: "Aasan 4-digit room code se dosto ke saath khelein ya smart BOTs ke khilaf solo daav lagayein.",
-        rulePlatformTitle4: "Featured Khel: Bikkad (Live)",
-        rulePlatformDesc4: "Apna Rajasthan ka 4-khiladi pot sweep, bandh hukum, 52-point seedi, aur akele Tera daav!",
+        rulePlatformTitle4: "सांस्कृतिक विरासत मिशन",
+        rulePlatformDesc4: "राजस्थान और भारत के पारंपरिक ताश के खेलों को डिजिटल रूप में सहेजने का आधुनिक प्रयास।",
 
         activeGameBannerBadge: "Abhi chalu khel: Bikkad:",
         activeGameBannerDesc: "Neeche apna match set karein — BOTs ke saath akele khelein ya 4-digit Room Code se dosto ko bulayein!",
