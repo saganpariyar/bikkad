@@ -3657,10 +3657,38 @@ var jhuthaniyaCurrentState = null;
 function switchActiveGame(gameKey) {
     activeSelectedGame = gameKey;
 
-    // Highlight the new game selector strip cards
+    // Highlight the game selector tab
     document.querySelectorAll(".gsel-card").forEach(card => {
         card.classList.toggle("gsel-active", card.dataset.game === gameKey);
     });
+
+    const homeSetupCard = document.getElementById("home-setup-card");
+    const homeWipCard = document.getElementById("home-wip-card");
+
+    // Handle coming soon / WIP games
+    if (gameKey === "gadhabaji" || gameKey === "sarkari") {
+        if (homeSetupCard) homeSetupCard.classList.add("hidden");
+        if (homeWipCard) {
+            homeWipCard.classList.remove("hidden");
+            const wipIcon = document.getElementById("wip-game-icon");
+            const wipTitle = document.getElementById("wip-game-title");
+            const wipDesc = document.getElementById("wip-game-desc");
+            if (gameKey === "gadhabaji") {
+                if (wipIcon) wipIcon.textContent = "🐴";
+                if (wipTitle) wipTitle.textContent = "Gadha Baji — Work in Progress";
+                if (wipDesc) wipDesc.innerHTML = "Gadha Baji (Donkey / Get Away) is currently in development with authentic Rajasthani card rules, custom AI bots, and online multiplayer.<br>Enjoy our live desi card games below in the meantime!";
+            } else {
+                if (wipIcon) wipIcon.textContent = "⚖️";
+                if (wipTitle) wipTitle.textContent = "Sarkari — Work in Progress";
+                if (wipDesc) wipDesc.innerHTML = "Sarkari (Sarkari Hukam) is a high-stakes 4-player trump trick-taking clash currently in development.<br>Enjoy our live desi card games below in the meantime!";
+            }
+        }
+        return;
+    }
+
+    // For live games:
+    if (homeSetupCard) homeSetupCard.classList.remove("hidden");
+    if (homeWipCard) homeWipCard.classList.add("hidden");
 
     // Legacy tab support (if old buttons still exist anywhere)
     ["bikkad","jhuthaniya","bindicoat","tikdi"].forEach(k => {
@@ -3670,6 +3698,7 @@ function switchActiveGame(gameKey) {
 
     const bannerBadge = document.getElementById("active-game-banner-badge");
     const bannerDesc = document.getElementById("active-game-banner-desc");
+    const btnHowToPlay = document.getElementById("btn-how-to-play-inline");
     const hcount4 = document.getElementById("hcount-4");
     const spickP4 = document.getElementById("spick-P4");
     const selectHider = document.getElementById("select-trump-hider");
@@ -3704,8 +3733,9 @@ function switchActiveGame(gameKey) {
 
     if (gameKey === "tikdi") {
         currentGameType = "tikdi";
-        if (bannerBadge) bannerBadge.textContent = "NOW PLAYING: TIKDI (3-2-5 / TEEN DO PAANCH)";
-        if (bannerDesc) bannerDesc.textContent = "3-Player Classic: Trump Chooser (Quota 5), Bystander (Quota 3), Dealer (Quota 2)";
+        if (bannerBadge) bannerBadge.textContent = "Now playing Tikdi (3-2-5):";
+        if (bannerDesc) bannerDesc.innerHTML = "3-Player Quota Classic (5-3-2). Click on <strong>How to Play</strong> above to know more!";
+        if (btnHowToPlay) btnHowToPlay.textContent = "📖 How to Play →";
         if (feltTable) feltTable.classList.add("tikdi-mode");
         if (typeof currentHumanCount !== "undefined" && currentHumanCount === 4) setHumanCount(1);
         currentRoomId = "TK-" + Math.floor(1000 + Math.random() * 9000);
@@ -3717,8 +3747,9 @@ function switchActiveGame(gameKey) {
 
     } else if (gameKey === "jhuthaniya") {
         currentGameType = "jhuthaniya";
-        if (bannerBadge) bannerBadge.textContent = "NOW PLAYING: JHUTHANIYA (BLUFF / CHEAT)";
-        if (bannerDesc) bannerDesc.textContent = "2-7 Player Bluff Game — Play cards face-down and declare a rank. Call 'JHUTH!' to catch bluffs!";
+        if (bannerBadge) bannerBadge.textContent = "Now playing Jhuthaniya (Bluff):";
+        if (bannerDesc) bannerDesc.innerHTML = "2–7 Player Bluff Game. Play cards face-down &amp; catch bluffs! Click on <strong>How to Play</strong> above to know more!";
+        if (btnHowToPlay) btnHowToPlay.textContent = "📖 How to Play →";
         if (feltTable) feltTable.classList.add("jhuthaniya-mode");
         currentRoomId = "JH-" + Math.floor(1000 + Math.random() * 9000);
         const p2Btn = document.getElementById("spick-P2");
@@ -3729,8 +3760,9 @@ function switchActiveGame(gameKey) {
 
     } else if (gameKey === "bindicoat") {
         currentGameType = "bindicoat";
-        if (bannerBadge) bannerBadge.textContent = "NOW PLAYING: BINDI COAT (MINDIKOT / BANDH HUKUM)";
-        if (bannerDesc) bannerDesc.textContent = "4-Player Partnership: NS (P1+P3) vs EW (P2+P4). Capture the four Mindis (10s)!";
+        if (bannerBadge) bannerBadge.textContent = "Now playing Bindi Coat:";
+        if (bannerDesc) bannerDesc.innerHTML = "4-Player Partnership. Capture the four 10s (Mindis)! Click on <strong>How to Play</strong> above to know more!";
+        if (btnHowToPlay) btnHowToPlay.textContent = "📖 How to Play →";
         if (feltTable) feltTable.classList.add("bindicoat-mode");
         currentRoomId = "BC-" + Math.floor(1000 + Math.random() * 9000);
         const p2Btn = document.getElementById("spick-P2");
@@ -3741,8 +3773,9 @@ function switchActiveGame(gameKey) {
 
     } else {
         currentGameType = "bikkad";
-        if (bannerBadge) bannerBadge.textContent = "NOW PLAYING: BIKKAD (LIVE)";
-        if (bannerDesc) bannerDesc.textContent = "Set up your match below — Play Solo vs BOTs or invite friends using a simple 4-digit Room Code!";
+        if (bannerBadge) bannerBadge.textContent = "Now playing Bikkad:";
+        if (bannerDesc) bannerDesc.innerHTML = "Apna Rajasthan ka traditional pot-sweep card game. Click on <strong>How to Play</strong> above to know more!";
+        if (btnHowToPlay) btnHowToPlay.textContent = "📖 How to Play →";
         currentRoomId = String(Math.floor(1000 + Math.random() * 9000));
         const p2Btn = document.getElementById("spick-P2");
         const p3Btn = document.getElementById("spick-P3");
@@ -3753,19 +3786,6 @@ function switchActiveGame(gameKey) {
 
     if (displayRoomId) displayRoomId.textContent = currentRoomId;
     updateTrumpHiderOptionLabels();
-
-    // Update subnav action buttons
-    const btnSubnavRules = document.getElementById("btn-subnav-rules");
-    const btnSubnavPlay = document.getElementById("btn-subnav-play");
-    const gameDisplayNames = {
-        bikkad: "Bikkad",
-        jhuthaniya: "Jhuthaniya",
-        bindicoat: "Bindi Coat",
-        tikdi: "Tikdi"
-    };
-    const gn = gameDisplayNames[gameKey] || "Match";
-    if (btnSubnavRules) btnSubnavRules.textContent = `📖 Rules`;
-    if (btnSubnavPlay) btnSubnavPlay.textContent = `🚀 Play ${gn}`;
 }
 window.switchActiveGame = switchActiveGame;
 

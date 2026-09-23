@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Desi Card Games - Traditional Indian &amp; Rajasthani Card Games Hub</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=28">
+    <link rel="stylesheet" href="style.css?v=29">
     <!-- Google Fonts: Cinzel & Outfit for Royal Rajput Aesthetics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,47 +63,33 @@
                 </div>
             </header>
 
-            <!-- 2nd Horizontal Menu Bar: Clean, Simple Game Tabs -->
-            <nav class="home-games-subnav" id="home-games-subnav">
+            <!-- 2nd Horizontal Menu Bar: Small & Minimal Game Tabs -->
+            <nav class="home-games-subnav" id="home-games-subnav" aria-label="Game Selector Navigation">
                 <div class="games-subnav-container">
                     <div class="games-subnav-tabs" id="game-selector-strip">
                         <button class="game-nav-tab gsel-card gsel-active" id="gsel-bikkad" data-game="bikkad" onclick="switchActiveGame('bikkad')">
                             <span class="tab-icon">🂠</span>
                             <span class="tab-label">Bikkad</span>
-                            <span class="tab-live-pill">LIVE</span>
                         </button>
                         <button class="game-nav-tab gsel-card" id="gsel-jhuthaniya" data-game="jhuthaniya" onclick="switchActiveGame('jhuthaniya')">
                             <span class="tab-icon">🃏</span>
                             <span class="tab-label">Jhuthaniya</span>
-                            <span class="tab-live-pill">LIVE</span>
                         </button>
                         <button class="game-nav-tab gsel-card" id="gsel-bindicoat" data-game="bindicoat" onclick="switchActiveGame('bindicoat')">
                             <span class="tab-icon">🔴</span>
                             <span class="tab-label">Bindi Coat</span>
-                            <span class="tab-live-pill">LIVE</span>
                         </button>
                         <button class="game-nav-tab gsel-card" id="gsel-tikdi" data-game="tikdi" onclick="switchActiveGame('tikdi')">
                             <span class="tab-icon">🔺</span>
                             <span class="tab-label">Tikdi</span>
-                            <span class="tab-live-pill">LIVE</span>
                         </button>
-                        <button class="game-nav-tab gsel-card gsel-soon" id="gsel-gadhabaji" title="Coming Soon" onclick="showGameToast('Gadha Baji')">
+                        <button class="game-nav-tab gsel-card" id="gsel-gadhabaji" data-game="gadhabaji" onclick="switchActiveGame('gadhabaji')">
                             <span class="tab-icon">🐴</span>
                             <span class="tab-label">Gadha Baji</span>
-                            <span class="tab-soon-pill">Soon</span>
                         </button>
-                        <button class="game-nav-tab gsel-card gsel-soon" id="gsel-sarkari" title="Coming Soon" onclick="showGameToast('Sarkari')">
+                        <button class="game-nav-tab gsel-card" id="gsel-sarkari" data-game="sarkari" onclick="switchActiveGame('sarkari')">
                             <span class="tab-icon">⚖️</span>
                             <span class="tab-label">Sarkari</span>
-                            <span class="tab-soon-pill">Soon</span>
-                        </button>
-                    </div>
-                    <div class="games-subnav-actions">
-                        <button class="btn-subnav-rules" id="btn-subnav-rules" onclick="openRulesPage(typeof activeSelectedGame !== 'undefined' ? activeSelectedGame : 'bikkad')">
-                            📖 Rules
-                        </button>
-                        <button class="btn-subnav-play" id="btn-subnav-play" onclick="startActiveGame()">
-                            🚀 Play Now
                         </button>
                     </div>
                 </div>
@@ -114,13 +100,18 @@
                 <!-- 1. Centered Match Setup Console Card (Immediate Action) -->
                 <section class="home-setup-card" id="home-setup-card">
 
-                    <!-- Active Game Indicator Banner -->
-                    <div class="selected-game-banner">
-                        <div class="selected-game-badge">
-                            <span class="badge-dot"></span>
-                            <span class="badge-text" id="active-game-banner-badge">NOW PLAYING: BIKKAD (LIVE)</span>
+                    <!-- Active Game Indicator Banner with Contextual How to Play -->
+                    <div class="selected-game-banner" id="selected-game-banner">
+                        <div class="banner-top-row">
+                            <div class="selected-game-badge">
+                                <span class="badge-dot"></span>
+                                <span class="badge-text" id="active-game-banner-badge">Now playing Bikkad:</span>
+                            </div>
+                            <button class="btn-how-to-play-inline" id="btn-how-to-play-inline" onclick="openRulesPage(typeof activeSelectedGame !== 'undefined' ? activeSelectedGame : 'bikkad')">
+                                📖 How to Play →
+                            </button>
                         </div>
-                        <div class="selected-game-desc" id="active-game-banner-desc">Set up your match below — Play Solo vs BOTs or invite friends using a simple 4-digit Room Code!</div>
+                        <div class="selected-game-desc" id="active-game-banner-desc">Click on <strong>How to Play</strong> to know more about Bikkad rules, scoring &amp; strategy!</div>
                     </div>
 
                     <!-- Step 1: Your Player Name -->
@@ -265,6 +256,24 @@
                             <div class="setup-actions-row">
                                 <button id="btn-submit-join" class="btn btn-primary btn-xl">🔗 Join Game Room</button>
                             </div>
+                        </div>
+                </section>
+
+                <!-- Work in Progress Card for Gadha Baji & Sarkari -->
+                <section class="home-wip-card hidden" id="home-wip-card">
+                    <div class="wip-icon-header" id="wip-game-icon">🐴</div>
+                    <h2 class="wip-title" id="wip-game-title">Gadha Baji — Work in Progress</h2>
+                    <div class="wip-badge">🚧 Under Active Development</div>
+                    <p class="wip-desc" id="wip-game-desc">
+                        Gadha Baji (Donkey / Get Away) is currently in development with authentic Rajasthani card rules, custom AI bots, and online multiplayer.
+                    </p>
+                    <div class="wip-alternative-box">
+                        <div class="wip-alt-title">✨ While we craft this game, enjoy our live desi card games:</div>
+                        <div class="wip-alt-buttons">
+                            <button type="button" class="wip-alt-btn" onclick="switchActiveGame('bikkad')">🂠 Play Bikkad</button>
+                            <button type="button" class="wip-alt-btn" onclick="switchActiveGame('jhuthaniya')">🃏 Play Jhuthaniya</button>
+                            <button type="button" class="wip-alt-btn" onclick="switchActiveGame('tikdi')">🔺 Play Tikdi</button>
+                            <button type="button" class="wip-alt-btn" onclick="switchActiveGame('bindicoat')">🔴 Play Bindi Coat</button>
                         </div>
                     </div>
                 </section>
@@ -1271,12 +1280,12 @@
     <!-- Games Hub Toast Notification for Coming Soon Games -->
     <div id="hub-toast" class="hub-toast hidden"></div>
 
-    <script src="config.js?v=28"></script>
-    <script src="i18n.js?v=28"></script>
-    <script src="cards.js?v=28"></script>
-    <script src="audio.js?v=28"></script>
-    <script src="app.js?v=28"></script>
-    <script src="rules.js?v=28"></script>
-    <script src="pwa.js?v=28"></script>
+    <script src="config.js?v=29"></script>
+    <script src="i18n.js?v=29"></script>
+    <script src="cards.js?v=29"></script>
+    <script src="audio.js?v=29"></script>
+    <script src="app.js?v=29"></script>
+    <script src="rules.js?v=29"></script>
+    <script src="pwa.js?v=29"></script>
 </body>
 </html>
