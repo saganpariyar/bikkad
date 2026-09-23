@@ -236,12 +236,16 @@ document.addEventListener("DOMContentLoaded", () => {
 function switchView(targetView) {
     activeView = targetView;
     lastAnnouncedContract = null;
+    const currentBase = window.location.pathname.endsWith(".html")
+        ? window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/") + 1)
+        : (window.location.pathname.endsWith("/") ? window.location.pathname : window.location.pathname + "/");
+
     if (targetView === "home") {
         if (viewHome) viewHome.classList.remove("hidden");
         if (viewTable) viewTable.classList.add("hidden");
         if (modalDealComplete) modalDealComplete.classList.add("hidden");
         if (window.history && window.history.pushState) {
-            window.history.pushState({}, "", "/");
+            window.history.pushState({}, "", currentBase);
         }
     } else {
         if (viewHome) viewHome.classList.add("hidden");
@@ -250,7 +254,7 @@ function switchView(targetView) {
             const seatParam = myPlayerSeat || "P1";
             const nameParam = encodeURIComponent(myPlayerName || "Sagan");
             const gameParam = currentGameType === "tikdi" ? "&game=tikdi" : "";
-            window.history.pushState({}, "", `/?game_id=${encodeURIComponent(currentGameId)}&seat=${seatParam}&name=${nameParam}${gameParam}`);
+            window.history.pushState({}, "", `${currentBase}?game_id=${encodeURIComponent(currentGameId)}&seat=${seatParam}&name=${nameParam}${gameParam}`);
         }
     }
     if (typeof applyLanguageToDOM === "function") {
@@ -646,7 +650,7 @@ function setupEventListeners() {
     const btnGoHome = document.getElementById("btn-go-home");
     if (btnGoHome) btnGoHome.addEventListener("click", () => {
         stopAutoPlay();
-        window.location.href = "index.html";  // stay inside current path
+        handleReturnToHomeNewGame();
     });
 
     const btnRestartDeal = document.getElementById("btn-restart-deal");
