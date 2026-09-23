@@ -1916,9 +1916,156 @@ body {
     margin: 0 auto;
 }
 
-/* Shelf Section */
-.home-shelf-section {
+/* =====================================================================
+   2nd Horizontal Menu Bar: Games Subnav
+   ===================================================================== */
+.home-games-subnav {
     width: 100%;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(10, 16, 31, 0.96) 100%);
+    border-bottom: 1.5px solid rgba(218, 165, 32, 0.35);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 8px 16px;
+    position: relative;
+    z-index: 80;
+}
+
+.games-subnav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.games-subnav-heading {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #ffd700;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    padding-right: 8px;
+    border-right: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.home-games-subnav .game-selector-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-bottom: 0;
+    padding: 2px 0;
+}
+.home-games-subnav .game-selector-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.home-games-subnav .gsel-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    min-width: max-content;
+    border-radius: 12px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.home-games-subnav .gsel-card::after {
+    display: none;
+}
+
+.home-games-subnav .gsel-card:hover {
+    border-color: rgba(255, 215, 0, 0.6);
+    background: rgba(30, 41, 59, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.15);
+}
+
+.home-games-subnav .gsel-card.gsel-active {
+    border-color: #ffd700;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(30, 41, 59, 0.98) 100%);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.4), 0 6px 20px rgba(245, 158, 11, 0.25);
+    transform: translateY(-1px);
+}
+
+.home-games-subnav .gsel-top {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+.home-games-subnav .gsel-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.home-games-subnav .gsel-live {
+    font-size: 0.62rem;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.home-games-subnav .gsel-soon-pill {
+    font-size: 0.62rem;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.home-games-subnav .gsel-name {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.home-games-subnav .gsel-genre {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    white-space: nowrap;
+}
+
+.home-games-subnav .gsel-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 6px;
+    padding-left: 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.home-games-subnav .gsel-rules-btn,
+.home-games-subnav .gsel-play-btn {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+/* Bottom Hero Section */
+.home-hero-bottom {
+    margin-top: 36px;
+    padding: 36px 30px;
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%);
+    border-radius: 22px;
+    border: 1px solid rgba(218, 165, 32, 0.22);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    text-align: center;
 }
 
 /* Home Setup Card */

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Desi Card Games - Traditional Indian &amp; Rajasthani Card Games Hub</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=24">
+    <link rel="stylesheet" href="style.css?v=27">
     <!-- Google Fonts: Cinzel & Outfit for Royal Rajput Aesthetics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,32 +63,13 @@
                 </div>
             </header>
 
-
-            <div class="home-main-layout">
-                <!-- 1. Majestic Centered Hero Section -->
-                <section class="home-hero-section">
-                    <div class="hero-badge">🏜️ TRADITIONAL DESI &amp; RAJASTHANI CARD GAMES HUB</div>
-                    <h2 class="hero-title">Play Classic Desi Card Games <span class="highlight-gold">Online with Friends</span></h2>
-                    <div class="hero-dev-credit">
-                        <span class="dev-sparkle">✨</span>
-                        <span>Owned &amp; Developed by <strong>Sobha IT Solutions</strong> · Founded by <strong>Sagan &amp; Anita Parihariya</strong></span>
-                        <a href="about.html" class="hero-dev-link">👑 Read Developer Journey →</a>
+            <!-- 2nd Horizontal Menu Bar: Games Selector Strip -->
+            <nav class="home-games-subnav" id="home-games-subnav">
+                <div class="games-subnav-container">
+                    <div class="games-subnav-heading">
+                        <span class="subnav-heading-icon">🎴</span>
+                        <span class="subnav-heading-text">GAMES ARENA:</span>
                     </div>
-                    <p class="hero-lead">
-                        Apne Rajasthan aur Bharat ke sabse lokpriya aur shandar traditional card games ka digital adda! Experience authentic regional rules preserved faithfully, royal court cards, smart bots, and private rooms with friends. Start playing <strong>Bikkad</strong> right now, or explore our other live games like <strong>Jhuthaniya</strong>, <strong>Bindi Coat</strong>, and <strong>Tikdi</strong>!
-                    </p>
-                </section>
-
-                <!-- 2. Full-Width Horizontal Arena Shelf -->
-                <section class="home-shelf-section">
-                    <div class="game-selector-header">
-                        <div class="game-selector-header-left">
-                            <span class="game-selector-title">🎴 CHOOSE YOUR GAME ARENA</span>
-                            <span class="game-selector-sub">Select an authentic Desi card game to launch or join a table</span>
-                        </div>
-                        <a href="about.html" class="shelf-dev-hint">👑 Built by Sobha IT Solutions</a>
-                    </div>
-
                     <div class="game-selector-strip" id="game-selector-strip">
 
                         <!-- Bikkad (Live & Featured) -->
@@ -99,10 +80,9 @@
                             </div>
                             <div class="gsel-name">Bikkad</div>
                             <div class="gsel-genre">Pot Sweep · 4 Players</div>
-                            <p class="gsel-desc">Apna Rajasthan ka premier hidden trump cut, ladder burden scoring &amp; solo Tera contracts.</p>
                             <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bikkad')">📖 How to Play</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bikkad')">▶ Select</button>
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bikkad')">📖 Rules</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bikkad')">▶ Play</button>
                             </div>
                         </div>
 
@@ -114,10 +94,9 @@
                             </div>
                             <div class="gsel-name">Jhuthaniya</div>
                             <div class="gsel-genre">Bluff · 2–7 Players</div>
-                            <p class="gsel-desc">Play cards face-down and bluff your friends. Call "JHUTH!" to catch liars or trick the table!</p>
                             <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('jhuthaniya')">📖 How to Play</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('jhuthaniya')">▶ Select</button>
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('jhuthaniya')">📖 Rules</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('jhuthaniya')">▶ Play</button>
                             </div>
                         </div>
 
@@ -129,10 +108,9 @@
                             </div>
                             <div class="gsel-name">Bindi Coat</div>
                             <div class="gsel-genre">Partnership · 4 Players</div>
-                            <p class="gsel-desc">Mendikot 2v2 clash. Capture the four 10s (Bindis) and score the Coat against opponents!</p>
                             <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bindicoat')">📖 How to Play</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bindicoat')">▶ Select</button>
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('bindicoat')">📖 Rules</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('bindicoat')">▶ Play</button>
                             </div>
                         </div>
 
@@ -144,39 +122,39 @@
                             </div>
                             <div class="gsel-name">Tikdi (3-2-5)</div>
                             <div class="gsel-genre">Trick Quota · 3 Players</div>
-                            <p class="gsel-desc">Classic 30-card quota game: 5-3-2 targets with authentic Tash Khinchai card pulling penalties.</p>
                             <div class="gsel-actions">
-                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('tikdi')">📖 How to Play</button>
-                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('tikdi')">▶ Select</button>
+                                <button class="gsel-rules-btn" onclick="event.stopPropagation();openRulesPage('tikdi')">📖 Rules</button>
+                                <button class="gsel-play-btn" onclick="event.stopPropagation();switchActiveGame('tikdi')">▶ Play</button>
                             </div>
                         </div>
 
                         <!-- Coming Soon: Gadha Baji -->
-                        <div class="gsel-card gsel-soon">
+                        <div class="gsel-card gsel-soon" title="Coming Soon">
                             <div class="gsel-top">
                                 <span class="gsel-icon">🐴</span>
                                 <span class="gsel-soon-pill">🔒 Soon</span>
                             </div>
                             <div class="gsel-name">Gadha Baji</div>
                             <div class="gsel-genre">Elimination · 3–6P</div>
-                            <p class="gsel-desc">Discard matching pairs and don't get stuck holding the unmatchable Queen donkey card!</p>
                         </div>
 
                         <!-- Coming Soon: Sarkari -->
-                        <div class="gsel-card gsel-soon">
+                        <div class="gsel-card gsel-soon" title="Coming Soon">
                             <div class="gsel-top">
                                 <span class="gsel-icon">⚖️</span>
                                 <span class="gsel-soon-pill">🔒 Soon</span>
                             </div>
                             <div class="gsel-name">Sarkari</div>
                             <div class="gsel-genre">Trump Clash · 4P</div>
-                            <p class="gsel-desc">High stakes government trump showdown with royal scoring and strategic partners.</p>
                         </div>
 
                     </div>
-                </section>
+                </div>
+            </nav>
 
-                <!-- 3. Centered Match Setup Console Card -->
+
+            <div class="home-main-layout">
+                <!-- 1. Centered Match Setup Console Card (Immediate Action) -->
                 <section class="home-setup-card" id="home-setup-card">
 
                     <!-- Active Game Indicator Banner -->
@@ -334,7 +312,21 @@
                     </div>
                 </section>
 
-                <!-- 4. Cultural & Platform Pillars Grid -->
+                <!-- 2. Cultural & Regional Hero Section (Down Below) -->
+                <section class="home-hero-section home-hero-bottom">
+                    <div class="hero-badge">🏜️ TRADITIONAL DESI &amp; RAJASTHANI CARD GAMES HUB</div>
+                    <h2 class="hero-title">Play Classic Desi Card Games <span class="highlight-gold">Online with Friends</span></h2>
+                    <div class="hero-dev-credit">
+                        <span class="dev-sparkle">✨</span>
+                        <span>Owned &amp; Developed by <strong>Sobha IT Solutions</strong> · Founded by <strong>Sagan &amp; Anita Parihariya</strong></span>
+                        <a href="about.html" class="hero-dev-link">👑 Read Developer Journey →</a>
+                    </div>
+                    <p class="hero-lead">
+                        Apne Rajasthan aur Bharat ke sabse lokpriya aur shandar traditional card games ka digital adda! Experience authentic regional rules preserved faithfully, royal court cards, smart bots, and private rooms with friends. Start playing <strong>Bikkad</strong> right now, or explore our other live games like <strong>Jhuthaniya</strong>, <strong>Bindi Coat</strong>, and <strong>Tikdi</strong>!
+                    </p>
+                </section>
+
+                <!-- 3. Cultural & Platform Pillars Grid -->
                 <section class="home-pillars-section">
                     <div class="rules-highlight-grid" id="rules-section">
                         <div class="rule-card">
