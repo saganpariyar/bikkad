@@ -4073,18 +4073,8 @@ body {
     transform: translateY(-3px);
 }
 .gsel-card.gsel-active::after {
-    content: '✔ ACTIVE';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: #ffd700;
-    background: rgba(245, 158, 11, 0.2);
-    border: 1px solid rgba(245, 158, 11, 0.5);
-    border-radius: 6px;
-    padding: 2px 7px;
-    letter-spacing: 0.5px;
+    display: none !important;
+    content: none !important;
 }
 
 .gsel-card.gsel-soon {
