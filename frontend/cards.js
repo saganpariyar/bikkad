@@ -103,6 +103,13 @@ function createRoyalCardElement(cardCode) {
         art.src = "assets/cards/kathputli-puppet.svg";
         art.alt = "Kotwal Puppet";
         art.draggable = false;
+        art.onerror = function() {
+            this.style.display = "none";
+            const fb = document.createElement("span");
+            fb.className = "face-fallback-symbol";
+            fb.textContent = "⚔️";
+            center.appendChild(fb);
+        };
         center.appendChild(art);
     } else if (rank === "K") {
         // King: Rajput Maharaja
@@ -111,6 +118,13 @@ function createRoyalCardElement(cardCode) {
         art.src = "assets/cards/royal-raja.svg";
         art.alt = "Rajput Raja";
         art.draggable = false;
+        art.onerror = function() {
+            this.style.display = "none";
+            const fb = document.createElement("span");
+            fb.className = "face-fallback-symbol";
+            fb.textContent = "🤴";
+            center.appendChild(fb);
+        };
         center.appendChild(art);
     } else if (rank === "Q") {
         // Queen: Rajput Maharani with traditional borla
@@ -119,6 +133,13 @@ function createRoyalCardElement(cardCode) {
         art.src = "assets/cards/royal-rani.svg";
         art.alt = "Rajput Rani";
         art.draggable = false;
+        art.onerror = function() {
+            this.style.display = "none";
+            const fb = document.createElement("span");
+            fb.className = "face-fallback-symbol";
+            fb.textContent = "👑";
+            center.appendChild(fb);
+        };
         center.appendChild(art);
     } else if (rank === "A") {
         // Ace: Golden Howdah Camel (Spades/Hukum) or Royal Elephant (Hearts, Diamonds, Clubs)
@@ -127,6 +148,13 @@ function createRoyalCardElement(cardCode) {
         art.src = (suit === "S") ? "assets/cards/royal-camel.svg" : "assets/cards/royal-elephant.svg";
         art.alt = (suit === "S") ? "Royal Camel" : "Royal Elephant";
         art.draggable = false;
+        art.onerror = function() {
+            this.style.display = "none";
+            const fb = document.createElement("span");
+            fb.className = "ace-fallback-symbol";
+            fb.textContent = symbol;
+            center.appendChild(fb);
+        };
         center.appendChild(art);
     } else {
         // Number Cards (2-10): Jharokha Arch Watermark + Arranged Suit Pips
@@ -135,6 +163,7 @@ function createRoyalCardElement(cardCode) {
         watermark.src = "assets/cards/jharokha-watermark.svg";
         watermark.alt = "Jharokha Arch";
         watermark.draggable = false;
+        watermark.onerror = function() { this.style.display = "none"; };
         center.appendChild(watermark);
 
         const pipMatrix = createPipMatrix(rank, symbol);
